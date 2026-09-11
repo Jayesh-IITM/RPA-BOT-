@@ -182,7 +182,12 @@
       }
     ],
     "branching": {
-      "enabled": false
+      "enabled": false,
+      "terminal_branch": {
+        "title": "Workflow Completed",
+        "subtitle": "End of the RPA BOT task",
+        "outcome": "success"
+      }
     }
   },
   {
@@ -766,9 +771,9 @@
       {
         "id": "step_2",
         "step_number": 2,
-        "title": "New Prime 3.0\nNew Courses\nOur Results\nDsa Sheet\nLog In\nLearn & Become The \nTop 1% Software Developer\n|\nUltimate Placement Solution\nIndia'S Most Loved Coding Community ❤️\n7,000,000+\nHappy Learners \n2 Crore+\nMonthly Views\n100,000+\nNew Monthly Subscribers\nNew Placement Prep Batch🔥\nSigmax : Ai Powered 10X Software Engineer\nStart Your Placement Preparation Today!\nExplore More\n\nThousands Of Students Achieved Their Dream Job At\n\n+ Many More\n\nOur Selected Students\nSee More\nOn A Mission To Teach Millions\nBe A Part Of The Apna College Community!\nYoutube\nLinkedin\nInstagram\nTelegram\nWhatsapp\nWhere Education Meets Real-World Needs.\nHelpful Links\nCourses\nPrivacy Policy\nRefund Policy\nTerms & Conditions\nGet In Touch\nAlpha@Apnacollege.In\nDelta@Apnacollege.In\nSigma@Apnacollege.In\nSupport Team : 10Am-6Pm\nConnect With Us\nFacebook  \nTwitter  \nYoutube  \nInstagram  \nLinkedin  \nCopyright © 2026\nRec\n00:13\n1 Steps\n+ Wait 1S\n⏹ Stop & Send To Govbridge Button",
+        "title": "New Prime 3.0\nNew Courses\nOur Results\nDsa Sheet\nLog In\nLearn & Become The\u00a0\nTop 1% Software Developer\n|\nUltimate Placement Solution\nIndia'S Most Loved Coding Community \u2764\ufe0f\n7,000,000+\nHappy Learners\u00a0\n2 Crore+\nMonthly Views\n100,000+\nNew Monthly Subscribers\nNew Placement Prep Batch\ud83d\udd25\nSigmax : Ai Powered 10X Software Engineer\nStart Your Placement Preparation Today!\nExplore More\n\nThousands Of Students Achieved Their Dream Job At\n\n+ Many More\n\nOur Selected Students\nSee More\nOn A Mission To Teach Millions\nBe A Part Of The Apna College Community!\nYoutube\nLinkedin\nInstagram\nTelegram\nWhatsapp\nWhere Education Meets Real-World Needs.\nHelpful Links\nCourses\nPrivacy Policy\nRefund Policy\nTerms & Conditions\nGet In Touch\nAlpha@Apnacollege.In\nDelta@Apnacollege.In\nSigma@Apnacollege.In\nSupport Team : 10Am-6Pm\nConnect With Us\nFacebook\u00a0\u00a0\nTwitter\u00a0\u00a0\nYoutube\u00a0\u00a0\nInstagram\u00a0\u00a0\nLinkedin\u00a0\u00a0\nCopyright \u00a9 2026\nRec\n00:13\n1 Steps\n+ Wait 1S\n\u23f9 Stop & Send To Govbridge Button",
         "action_type": "click",
-        "target_description": "New Prime 3.0\nNew Courses\nOur Results\nDSA Sheet\nLog in\nLearn & become the \nTop 1% software developer\n|\nUltimate Placement Solution\nINDIA'S MOST LOVED CODING COMMUNITY ❤️\n7,000,000+\nHAPPY LEARNERS \n2 CRORE+\nMONTHLY VIEWS\n100,000+\nNEW MONTHLY SUBSCRIBERS\nNEW PLACEMENT PREP BATCH🔥\nSIGMAX : AI POWERED 10X SOFTWARE ENGINEER\nStart your placement preparation today!\nExplore more\n\nThousands of students achieved their dream job at\n\n+ many more\n\nOur Selected Students\nSee more\nON A MISSION TO TEACH MILLIONS\nBE A PART OF THE APNA COLLEGE COMMUNITY!\nYoutube\nLinkedin\nInstagram\nTelegram\nWhatsApp\nWhere education meets real-world needs.\nHELPFUL LINKS\nCourses\nPrivacy policy\nRefund Policy\nTerms & Conditions\nGET IN TOUCH\nalpha@apnacollege.in\ndelta@apnacollege.in\nsigma@apnacollege.in\nSupport Team : 10am-6pm\nCONNECT WITH US\nFacebook  \nTwitter  \nYoutube  \nInstagram  \nLinkedin  \nCopyright © 2026\nREC\n00:13\n1 steps\n+ Wait 1s\n⏹ Stop & Send to GovBridge Button",
+        "target_description": "New Prime 3.0\nNew Courses\nOur Results\nDSA Sheet\nLog in\nLearn & become the\u00a0\nTop 1% software developer\n|\nUltimate Placement Solution\nINDIA'S MOST LOVED CODING COMMUNITY \u2764\ufe0f\n7,000,000+\nHAPPY LEARNERS\u00a0\n2 CRORE+\nMONTHLY VIEWS\n100,000+\nNEW MONTHLY SUBSCRIBERS\nNEW PLACEMENT PREP BATCH\ud83d\udd25\nSIGMAX : AI POWERED 10X SOFTWARE ENGINEER\nStart your placement preparation today!\nExplore more\n\nThousands of students achieved their dream job at\n\n+ many more\n\nOur Selected Students\nSee more\nON A MISSION TO TEACH MILLIONS\nBE A PART OF THE APNA COLLEGE COMMUNITY!\nYoutube\nLinkedin\nInstagram\nTelegram\nWhatsApp\nWhere education meets real-world needs.\nHELPFUL LINKS\nCourses\nPrivacy policy\nRefund Policy\nTerms & Conditions\nGET IN TOUCH\nalpha@apnacollege.in\ndelta@apnacollege.in\nsigma@apnacollege.in\nSupport Team : 10am-6pm\nCONNECT WITH US\nFacebook\u00a0\u00a0\nTwitter\u00a0\u00a0\nYoutube\u00a0\u00a0\nInstagram\u00a0\u00a0\nLinkedin\u00a0\u00a0\nCopyright \u00a9 2026\nREC\n00:13\n1 steps\n+ Wait 1s\n\u23f9 Stop & Send to GovBridge Button",
         "selector": "html > body",
         "fallback_selectors": [
           "/html/body"
@@ -785,9 +790,9 @@
       {
         "id": "step_3",
         "step_number": 3,
-        "title": "New Prime 3.0\nNew Courses\nOur Results\nDsa Sheet\nLog In\nLearn & Become The \nTop 1% Software Developer\nAlpha Plus - Dsa (Java|\nUltimate Placement Solution\nIndia'S Most Loved Coding Community ❤️\n7,000,000+\nHappy Learners \n2 Crore+\nMonthly Views\n100,000+\nNew Monthly Subscribers\nNew Placement Prep Batch🔥\nSigmax : Ai Powered 10X Software Engineer\nStart Your Placement Preparation Today!\nExplore More\n\nThousands Of Students Achieved Their Dream Job At\n\n+ Many More\n\nOur Selected Students\nSee More\nOn A Mission To Teach Millions\nBe A Part Of The Apna College Community!\nYoutube\nLinkedin\nInstagram\nTelegram\nWhatsapp\nWhere Education Meets Real-World Needs.\nHelpful Links\nCourses\nPrivacy Policy\nRefund Policy\nTerms & Conditions\nGet In Touch\nAlpha@Apnacollege.In\nDelta@Apnacollege.In\nSigma@Apnacollege.In\nSupport Team : 10Am-6Pm\nConnect With Us\nFacebook  \nTwitter  \nYoutube  \nInstagram  \nLinkedin  \nCopyright © 2026\nRec\n00:14\n2 Steps\n+ Wait 1S\n⏹ Stop & Send To Govbridge Button",
+        "title": "New Prime 3.0\nNew Courses\nOur Results\nDsa Sheet\nLog In\nLearn & Become The\u00a0\nTop 1% Software Developer\nAlpha Plus - Dsa (Java|\nUltimate Placement Solution\nIndia'S Most Loved Coding Community \u2764\ufe0f\n7,000,000+\nHappy Learners\u00a0\n2 Crore+\nMonthly Views\n100,000+\nNew Monthly Subscribers\nNew Placement Prep Batch\ud83d\udd25\nSigmax : Ai Powered 10X Software Engineer\nStart Your Placement Preparation Today!\nExplore More\n\nThousands Of Students Achieved Their Dream Job At\n\n+ Many More\n\nOur Selected Students\nSee More\nOn A Mission To Teach Millions\nBe A Part Of The Apna College Community!\nYoutube\nLinkedin\nInstagram\nTelegram\nWhatsapp\nWhere Education Meets Real-World Needs.\nHelpful Links\nCourses\nPrivacy Policy\nRefund Policy\nTerms & Conditions\nGet In Touch\nAlpha@Apnacollege.In\nDelta@Apnacollege.In\nSigma@Apnacollege.In\nSupport Team : 10Am-6Pm\nConnect With Us\nFacebook\u00a0\u00a0\nTwitter\u00a0\u00a0\nYoutube\u00a0\u00a0\nInstagram\u00a0\u00a0\nLinkedin\u00a0\u00a0\nCopyright \u00a9 2026\nRec\n00:14\n2 Steps\n+ Wait 1S\n\u23f9 Stop & Send To Govbridge Button",
         "action_type": "click",
-        "target_description": "New Prime 3.0\nNew Courses\nOur Results\nDSA Sheet\nLog in\nLearn & become the \nTop 1% software developer\nAlpha Plus - DSA (Java|\nUltimate Placement Solution\nINDIA'S MOST LOVED CODING COMMUNITY ❤️\n7,000,000+\nHAPPY LEARNERS \n2 CRORE+\nMONTHLY VIEWS\n100,000+\nNEW MONTHLY SUBSCRIBERS\nNEW PLACEMENT PREP BATCH🔥\nSIGMAX : AI POWERED 10X SOFTWARE ENGINEER\nStart your placement preparation today!\nExplore more\n\nThousands of students achieved their dream job at\n\n+ many more\n\nOur Selected Students\nSee more\nON A MISSION TO TEACH MILLIONS\nBE A PART OF THE APNA COLLEGE COMMUNITY!\nYoutube\nLinkedin\nInstagram\nTelegram\nWhatsApp\nWhere education meets real-world needs.\nHELPFUL LINKS\nCourses\nPrivacy policy\nRefund Policy\nTerms & Conditions\nGET IN TOUCH\nalpha@apnacollege.in\ndelta@apnacollege.in\nsigma@apnacollege.in\nSupport Team : 10am-6pm\nCONNECT WITH US\nFacebook  \nTwitter  \nYoutube  \nInstagram  \nLinkedin  \nCopyright © 2026\nREC\n00:14\n2 steps\n+ Wait 1s\n⏹ Stop & Send to GovBridge Button",
+        "target_description": "New Prime 3.0\nNew Courses\nOur Results\nDSA Sheet\nLog in\nLearn & become the\u00a0\nTop 1% software developer\nAlpha Plus - DSA (Java|\nUltimate Placement Solution\nINDIA'S MOST LOVED CODING COMMUNITY \u2764\ufe0f\n7,000,000+\nHAPPY LEARNERS\u00a0\n2 CRORE+\nMONTHLY VIEWS\n100,000+\nNEW MONTHLY SUBSCRIBERS\nNEW PLACEMENT PREP BATCH\ud83d\udd25\nSIGMAX : AI POWERED 10X SOFTWARE ENGINEER\nStart your placement preparation today!\nExplore more\n\nThousands of students achieved their dream job at\n\n+ many more\n\nOur Selected Students\nSee more\nON A MISSION TO TEACH MILLIONS\nBE A PART OF THE APNA COLLEGE COMMUNITY!\nYoutube\nLinkedin\nInstagram\nTelegram\nWhatsApp\nWhere education meets real-world needs.\nHELPFUL LINKS\nCourses\nPrivacy policy\nRefund Policy\nTerms & Conditions\nGET IN TOUCH\nalpha@apnacollege.in\ndelta@apnacollege.in\nsigma@apnacollege.in\nSupport Team : 10am-6pm\nCONNECT WITH US\nFacebook\u00a0\u00a0\nTwitter\u00a0\u00a0\nYoutube\u00a0\u00a0\nInstagram\u00a0\u00a0\nLinkedin\u00a0\u00a0\nCopyright \u00a9 2026\nREC\n00:14\n2 steps\n+ Wait 1s\n\u23f9 Stop & Send to GovBridge Button",
         "selector": "html > body",
         "fallback_selectors": [
           "/html/body"
@@ -804,9 +809,9 @@
       {
         "id": "step_4",
         "step_number": 4,
-        "title": "New Prime 3.0\nNew Courses\nOur Results\nDsa Sheet\nLog In\nLearn & Become The \nTop 1% Software Developer\nAlpha Plus - Dsa (Java/C++)|\nUltimate Placement Solution\nIndia'S Most Loved Coding Community ❤️\n7,000,000+\nHappy Learners \n2 Crore+\nMonthly Views\n100,000+\nNew Monthly Subscribers\nNew Placement Prep Batch🔥\nSigmax : Ai Powered 10X Software Engineer\nStart Your Placement Preparation Today!\nExplore More\n\nThousands Of Students Achieved Their Dream Job At\n\n+ Many More\n\nOur Selected Students\nSee More\nOn A Mission To Teach Millions\nBe A Part Of The Apna College Community!\nYoutube\nLinkedin\nInstagram\nTelegram\nWhatsapp\nWhere Education Meets Real-World Needs.\nHelpful Links\nCourses\nPrivacy Policy\nRefund Policy\nTerms & Conditions\nGet In Touch\nAlpha@Apnacollege.In\nDelta@Apnacollege.In\nSigma@Apnacollege.In\nSupport Team : 10Am-6Pm\nConnect With Us\nFacebook  \nTwitter  \nYoutube  \nInstagram  \nLinkedin  \nCopyright © 2026\nRec\n00:15\n3 Steps\n+ Wait 1S\n⏹ Stop & Send To Govbridge Button",
+        "title": "New Prime 3.0\nNew Courses\nOur Results\nDsa Sheet\nLog In\nLearn & Become The\u00a0\nTop 1% Software Developer\nAlpha Plus - Dsa (Java/C++)|\nUltimate Placement Solution\nIndia'S Most Loved Coding Community \u2764\ufe0f\n7,000,000+\nHappy Learners\u00a0\n2 Crore+\nMonthly Views\n100,000+\nNew Monthly Subscribers\nNew Placement Prep Batch\ud83d\udd25\nSigmax : Ai Powered 10X Software Engineer\nStart Your Placement Preparation Today!\nExplore More\n\nThousands Of Students Achieved Their Dream Job At\n\n+ Many More\n\nOur Selected Students\nSee More\nOn A Mission To Teach Millions\nBe A Part Of The Apna College Community!\nYoutube\nLinkedin\nInstagram\nTelegram\nWhatsapp\nWhere Education Meets Real-World Needs.\nHelpful Links\nCourses\nPrivacy Policy\nRefund Policy\nTerms & Conditions\nGet In Touch\nAlpha@Apnacollege.In\nDelta@Apnacollege.In\nSigma@Apnacollege.In\nSupport Team : 10Am-6Pm\nConnect With Us\nFacebook\u00a0\u00a0\nTwitter\u00a0\u00a0\nYoutube\u00a0\u00a0\nInstagram\u00a0\u00a0\nLinkedin\u00a0\u00a0\nCopyright \u00a9 2026\nRec\n00:15\n3 Steps\n+ Wait 1S\n\u23f9 Stop & Send To Govbridge Button",
         "action_type": "click",
-        "target_description": "New Prime 3.0\nNew Courses\nOur Results\nDSA Sheet\nLog in\nLearn & become the \nTop 1% software developer\nAlpha Plus - DSA (Java/C++)|\nUltimate Placement Solution\nINDIA'S MOST LOVED CODING COMMUNITY ❤️\n7,000,000+\nHAPPY LEARNERS \n2 CRORE+\nMONTHLY VIEWS\n100,000+\nNEW MONTHLY SUBSCRIBERS\nNEW PLACEMENT PREP BATCH🔥\nSIGMAX : AI POWERED 10X SOFTWARE ENGINEER\nStart your placement preparation today!\nExplore more\n\nThousands of students achieved their dream job at\n\n+ many more\n\nOur Selected Students\nSee more\nON A MISSION TO TEACH MILLIONS\nBE A PART OF THE APNA COLLEGE COMMUNITY!\nYoutube\nLinkedin\nInstagram\nTelegram\nWhatsApp\nWhere education meets real-world needs.\nHELPFUL LINKS\nCourses\nPrivacy policy\nRefund Policy\nTerms & Conditions\nGET IN TOUCH\nalpha@apnacollege.in\ndelta@apnacollege.in\nsigma@apnacollege.in\nSupport Team : 10am-6pm\nCONNECT WITH US\nFacebook  \nTwitter  \nYoutube  \nInstagram  \nLinkedin  \nCopyright © 2026\nREC\n00:15\n3 steps\n+ Wait 1s\n⏹ Stop & Send to GovBridge Button",
+        "target_description": "New Prime 3.0\nNew Courses\nOur Results\nDSA Sheet\nLog in\nLearn & become the\u00a0\nTop 1% software developer\nAlpha Plus - DSA (Java/C++)|\nUltimate Placement Solution\nINDIA'S MOST LOVED CODING COMMUNITY \u2764\ufe0f\n7,000,000+\nHAPPY LEARNERS\u00a0\n2 CRORE+\nMONTHLY VIEWS\n100,000+\nNEW MONTHLY SUBSCRIBERS\nNEW PLACEMENT PREP BATCH\ud83d\udd25\nSIGMAX : AI POWERED 10X SOFTWARE ENGINEER\nStart your placement preparation today!\nExplore more\n\nThousands of students achieved their dream job at\n\n+ many more\n\nOur Selected Students\nSee more\nON A MISSION TO TEACH MILLIONS\nBE A PART OF THE APNA COLLEGE COMMUNITY!\nYoutube\nLinkedin\nInstagram\nTelegram\nWhatsApp\nWhere education meets real-world needs.\nHELPFUL LINKS\nCourses\nPrivacy policy\nRefund Policy\nTerms & Conditions\nGET IN TOUCH\nalpha@apnacollege.in\ndelta@apnacollege.in\nsigma@apnacollege.in\nSupport Team : 10am-6pm\nCONNECT WITH US\nFacebook\u00a0\u00a0\nTwitter\u00a0\u00a0\nYoutube\u00a0\u00a0\nInstagram\u00a0\u00a0\nLinkedin\u00a0\u00a0\nCopyright \u00a9 2026\nREC\n00:15\n3 steps\n+ Wait 1s\n\u23f9 Stop & Send to GovBridge Button",
         "selector": "html > body",
         "fallback_selectors": [
           "/html/body"
@@ -822,24 +827,11 @@
       }
     ],
     "branching": {
-      "enabled": true,
-      "check_type": "url_or_element",
-      "failure_selector": "#error-message",
-      "success_url_contains": "dashboard",
-      "success_selector": "",
-      "failure_branch": {
-        "title": "Login Failed return error",
+      "enabled": false,
+      "terminal_branch": {
+        "title": "Workflow Completed",
         "subtitle": "End of the RPA BOT task",
-        "outcome": "error",
-        "message": "Invalid authentication credentials.",
-        "status_code": 401
-      },
-      "success_branch": {
-        "title": "Login Successful",
-        "subtitle": "End of the RPA BOT task",
-        "outcome": "success",
-        "message": "Workflow reached target success state.",
-        "status_code": 200
+        "outcome": "success"
       }
     },
     "created_at": "2026-09-07T22:33:01.505296",
@@ -872,9 +864,9 @@
       {
         "id": "step_2",
         "step_number": 2,
-        "title": "New Prime 3.0\nNew Courses\nOur Results\nDsa Sheet\nLog In\nLearn & Become The \nTop 1% Software Developer\nSigmax - Dsa + Ai|\nUltimate Placement Solution\nIndia'S Most Loved Coding Community ❤️\n7,000,000+\nHappy Learners \n2 Crore+\nMonthly Views\n100,000+\nNew Monthly Subscribers\nNew Placement Prep Batch🔥\nSigmax : Ai Powered 10X Software Engineer\nStart Your Placement Preparation Today!\nExplore More\n\nThousands Of Students Achieved Their Dream Job At\n\n+ Many More\n\nOur Selected Students\nSee More\nOn A Mission To Teach Millions\nBe A Part Of The Apna College Community!\nYoutube\nLinkedin\nInstagram\nTelegram\nWhatsapp\nWhere Education Meets Real-World Needs.\nHelpful Links\nCourses\nPrivacy Policy\nRefund Policy\nTerms & Conditions\nGet In Touch\nAlpha@Apnacollege.In\nDelta@Apnacollege.In\nSigma@Apnacollege.In\nSupport Team : 10Am-6Pm\nConnect With Us\nFacebook  \nTwitter  \nYoutube  \nInstagram  \nLinkedin  \nCopyright © 2026\nRec\n00:03\n1 Steps\n+ Wait 1S\n⏹ Stop & Send To Govbridge Button",
+        "title": "New Prime 3.0\nNew Courses\nOur Results\nDsa Sheet\nLog In\nLearn & Become The\u00a0\nTop 1% Software Developer\nSigmax - Dsa + Ai|\nUltimate Placement Solution\nIndia'S Most Loved Coding Community \u2764\ufe0f\n7,000,000+\nHappy Learners\u00a0\n2 Crore+\nMonthly Views\n100,000+\nNew Monthly Subscribers\nNew Placement Prep Batch\ud83d\udd25\nSigmax : Ai Powered 10X Software Engineer\nStart Your Placement Preparation Today!\nExplore More\n\nThousands Of Students Achieved Their Dream Job At\n\n+ Many More\n\nOur Selected Students\nSee More\nOn A Mission To Teach Millions\nBe A Part Of The Apna College Community!\nYoutube\nLinkedin\nInstagram\nTelegram\nWhatsapp\nWhere Education Meets Real-World Needs.\nHelpful Links\nCourses\nPrivacy Policy\nRefund Policy\nTerms & Conditions\nGet In Touch\nAlpha@Apnacollege.In\nDelta@Apnacollege.In\nSigma@Apnacollege.In\nSupport Team : 10Am-6Pm\nConnect With Us\nFacebook\u00a0\u00a0\nTwitter\u00a0\u00a0\nYoutube\u00a0\u00a0\nInstagram\u00a0\u00a0\nLinkedin\u00a0\u00a0\nCopyright \u00a9 2026\nRec\n00:03\n1 Steps\n+ Wait 1S\n\u23f9 Stop & Send To Govbridge Button",
         "action_type": "click",
-        "target_description": "New Prime 3.0\nNew Courses\nOur Results\nDSA Sheet\nLog in\nLearn & become the \nTop 1% software developer\nSigmaX - DSA + AI|\nUltimate Placement Solution\nINDIA'S MOST LOVED CODING COMMUNITY ❤️\n7,000,000+\nHAPPY LEARNERS \n2 CRORE+\nMONTHLY VIEWS\n100,000+\nNEW MONTHLY SUBSCRIBERS\nNEW PLACEMENT PREP BATCH🔥\nSIGMAX : AI POWERED 10X SOFTWARE ENGINEER\nStart your placement preparation today!\nExplore more\n\nThousands of students achieved their dream job at\n\n+ many more\n\nOur Selected Students\nSee more\nON A MISSION TO TEACH MILLIONS\nBE A PART OF THE APNA COLLEGE COMMUNITY!\nYoutube\nLinkedin\nInstagram\nTelegram\nWhatsApp\nWhere education meets real-world needs.\nHELPFUL LINKS\nCourses\nPrivacy policy\nRefund Policy\nTerms & Conditions\nGET IN TOUCH\nalpha@apnacollege.in\ndelta@apnacollege.in\nsigma@apnacollege.in\nSupport Team : 10am-6pm\nCONNECT WITH US\nFacebook  \nTwitter  \nYoutube  \nInstagram  \nLinkedin  \nCopyright © 2026\nREC\n00:03\n1 steps\n+ Wait 1s\n⏹ Stop & Send to GovBridge Button",
+        "target_description": "New Prime 3.0\nNew Courses\nOur Results\nDSA Sheet\nLog in\nLearn & become the\u00a0\nTop 1% software developer\nSigmaX - DSA + AI|\nUltimate Placement Solution\nINDIA'S MOST LOVED CODING COMMUNITY \u2764\ufe0f\n7,000,000+\nHAPPY LEARNERS\u00a0\n2 CRORE+\nMONTHLY VIEWS\n100,000+\nNEW MONTHLY SUBSCRIBERS\nNEW PLACEMENT PREP BATCH\ud83d\udd25\nSIGMAX : AI POWERED 10X SOFTWARE ENGINEER\nStart your placement preparation today!\nExplore more\n\nThousands of students achieved their dream job at\n\n+ many more\n\nOur Selected Students\nSee more\nON A MISSION TO TEACH MILLIONS\nBE A PART OF THE APNA COLLEGE COMMUNITY!\nYoutube\nLinkedin\nInstagram\nTelegram\nWhatsApp\nWhere education meets real-world needs.\nHELPFUL LINKS\nCourses\nPrivacy policy\nRefund Policy\nTerms & Conditions\nGET IN TOUCH\nalpha@apnacollege.in\ndelta@apnacollege.in\nsigma@apnacollege.in\nSupport Team : 10am-6pm\nCONNECT WITH US\nFacebook\u00a0\u00a0\nTwitter\u00a0\u00a0\nYoutube\u00a0\u00a0\nInstagram\u00a0\u00a0\nLinkedin\u00a0\u00a0\nCopyright \u00a9 2026\nREC\n00:03\n1 steps\n+ Wait 1s\n\u23f9 Stop & Send to GovBridge Button",
         "selector": "html > body",
         "fallback_selectors": [
           "/html/body"
@@ -891,9 +883,9 @@
       {
         "id": "step_3",
         "step_number": 3,
-        "title": "New Prime 3.0\nNew Courses\nOur Results\nDsa Sheet\nLog In\nLearn & Become The \nTop 1% Software Developer\nSigmax - Dsa + Ai Full Stack Web|\nUltimate Placement Solution\nIndia'S Most Loved Coding Community ❤️\n7,000,000+\nHappy Learners \n2 Crore+\nMonthly Views\n100,000+\nNew Monthly Subscribers\nNew Placement Prep Batch🔥\nSigmax : Ai Powered 10X Software Engineer\nStart Your Placement Preparation Today!\nExplore More\n\nThousands Of Students Achieved Their Dream Job At\n\n+ Many More\n\nOur Selected Students\nSee More\nOn A Mission To Teach Millions\nBe A Part Of The Apna College Community!\nYoutube\nLinkedin\nInstagram\nTelegram\nWhatsapp\nWhere Education Meets Real-World Needs.\nHelpful Links\nCourses\nPrivacy Policy\nRefund Policy\nTerms & Conditions\nGet In Touch\nAlpha@Apnacollege.In\nDelta@Apnacollege.In\nSigma@Apnacollege.In\nSupport Team : 10Am-6Pm\nConnect With Us\nFacebook  \nTwitter  \nYoutube  \nInstagram  \nLinkedin  \nCopyright © 2026\nRec\n00:04\n2 Steps\n+ Wait 1S\n⏹ Stop & Send To Govbridge Button",
+        "title": "New Prime 3.0\nNew Courses\nOur Results\nDsa Sheet\nLog In\nLearn & Become The\u00a0\nTop 1% Software Developer\nSigmax - Dsa + Ai Full Stack Web|\nUltimate Placement Solution\nIndia'S Most Loved Coding Community \u2764\ufe0f\n7,000,000+\nHappy Learners\u00a0\n2 Crore+\nMonthly Views\n100,000+\nNew Monthly Subscribers\nNew Placement Prep Batch\ud83d\udd25\nSigmax : Ai Powered 10X Software Engineer\nStart Your Placement Preparation Today!\nExplore More\n\nThousands Of Students Achieved Their Dream Job At\n\n+ Many More\n\nOur Selected Students\nSee More\nOn A Mission To Teach Millions\nBe A Part Of The Apna College Community!\nYoutube\nLinkedin\nInstagram\nTelegram\nWhatsapp\nWhere Education Meets Real-World Needs.\nHelpful Links\nCourses\nPrivacy Policy\nRefund Policy\nTerms & Conditions\nGet In Touch\nAlpha@Apnacollege.In\nDelta@Apnacollege.In\nSigma@Apnacollege.In\nSupport Team : 10Am-6Pm\nConnect With Us\nFacebook\u00a0\u00a0\nTwitter\u00a0\u00a0\nYoutube\u00a0\u00a0\nInstagram\u00a0\u00a0\nLinkedin\u00a0\u00a0\nCopyright \u00a9 2026\nRec\n00:04\n2 Steps\n+ Wait 1S\n\u23f9 Stop & Send To Govbridge Button",
         "action_type": "click",
-        "target_description": "New Prime 3.0\nNew Courses\nOur Results\nDSA Sheet\nLog in\nLearn & become the \nTop 1% software developer\nSigmaX - DSA + AI Full Stack Web|\nUltimate Placement Solution\nINDIA'S MOST LOVED CODING COMMUNITY ❤️\n7,000,000+\nHAPPY LEARNERS \n2 CRORE+\nMONTHLY VIEWS\n100,000+\nNEW MONTHLY SUBSCRIBERS\nNEW PLACEMENT PREP BATCH🔥\nSIGMAX : AI POWERED 10X SOFTWARE ENGINEER\nStart your placement preparation today!\nExplore more\n\nThousands of students achieved their dream job at\n\n+ many more\n\nOur Selected Students\nSee more\nON A MISSION TO TEACH MILLIONS\nBE A PART OF THE APNA COLLEGE COMMUNITY!\nYoutube\nLinkedin\nInstagram\nTelegram\nWhatsApp\nWhere education meets real-world needs.\nHELPFUL LINKS\nCourses\nPrivacy policy\nRefund Policy\nTerms & Conditions\nGET IN TOUCH\nalpha@apnacollege.in\ndelta@apnacollege.in\nsigma@apnacollege.in\nSupport Team : 10am-6pm\nCONNECT WITH US\nFacebook  \nTwitter  \nYoutube  \nInstagram  \nLinkedin  \nCopyright © 2026\nREC\n00:04\n2 steps\n+ Wait 1s\n⏹ Stop & Send to GovBridge Button",
+        "target_description": "New Prime 3.0\nNew Courses\nOur Results\nDSA Sheet\nLog in\nLearn & become the\u00a0\nTop 1% software developer\nSigmaX - DSA + AI Full Stack Web|\nUltimate Placement Solution\nINDIA'S MOST LOVED CODING COMMUNITY \u2764\ufe0f\n7,000,000+\nHAPPY LEARNERS\u00a0\n2 CRORE+\nMONTHLY VIEWS\n100,000+\nNEW MONTHLY SUBSCRIBERS\nNEW PLACEMENT PREP BATCH\ud83d\udd25\nSIGMAX : AI POWERED 10X SOFTWARE ENGINEER\nStart your placement preparation today!\nExplore more\n\nThousands of students achieved their dream job at\n\n+ many more\n\nOur Selected Students\nSee more\nON A MISSION TO TEACH MILLIONS\nBE A PART OF THE APNA COLLEGE COMMUNITY!\nYoutube\nLinkedin\nInstagram\nTelegram\nWhatsApp\nWhere education meets real-world needs.\nHELPFUL LINKS\nCourses\nPrivacy policy\nRefund Policy\nTerms & Conditions\nGET IN TOUCH\nalpha@apnacollege.in\ndelta@apnacollege.in\nsigma@apnacollege.in\nSupport Team : 10am-6pm\nCONNECT WITH US\nFacebook\u00a0\u00a0\nTwitter\u00a0\u00a0\nYoutube\u00a0\u00a0\nInstagram\u00a0\u00a0\nLinkedin\u00a0\u00a0\nCopyright \u00a9 2026\nREC\n00:04\n2 steps\n+ Wait 1s\n\u23f9 Stop & Send to GovBridge Button",
         "selector": "html > body",
         "fallback_selectors": [
           "/html/body"
@@ -910,9 +902,9 @@
       {
         "id": "step_4",
         "step_number": 4,
-        "title": "New Prime 3.0\nNew Courses\nOur Results\nDsa Sheet\nLog In\nLearn & Become The \nTop 1% Software Developer\nSigmax - Dsa + Ai Full Stack Web Developm|\nUltimate Placement Solution\nIndia'S Most Loved Coding Community ❤️\n7,000,000+\nHappy Learners \n2 Crore+\nMonthly Views\n100,000+\nNew Monthly Subscribers\nNew Placement Prep Batch🔥\nSigmax : Ai Powered 10X Software Engineer\nStart Your Placement Preparation Today!\nExplore More\n\nThousands Of Students Achieved Their Dream Job At\n\n+ Many More\n\nOur Selected Students\nSee More\nOn A Mission To Teach Millions\nBe A Part Of The Apna College Community!\nYoutube\nLinkedin\nInstagram\nTelegram\nWhatsapp\nWhere Education Meets Real-World Needs.\nHelpful Links\nCourses\nPrivacy Policy\nRefund Policy\nTerms & Conditions\nGet In Touch\nAlpha@Apnacollege.In\nDelta@Apnacollege.In\nSigma@Apnacollege.In\nSupport Team : 10Am-6Pm\nConnect With Us\nFacebook  \nTwitter  \nYoutube  \nInstagram  \nLinkedin  \nCopyright © 2026\nRec\n00:05\n3 Steps\n+ Wait 1S\n⏹ Stop & Send To Govbridge Button",
+        "title": "New Prime 3.0\nNew Courses\nOur Results\nDsa Sheet\nLog In\nLearn & Become The\u00a0\nTop 1% Software Developer\nSigmax - Dsa + Ai Full Stack Web Developm|\nUltimate Placement Solution\nIndia'S Most Loved Coding Community \u2764\ufe0f\n7,000,000+\nHappy Learners\u00a0\n2 Crore+\nMonthly Views\n100,000+\nNew Monthly Subscribers\nNew Placement Prep Batch\ud83d\udd25\nSigmax : Ai Powered 10X Software Engineer\nStart Your Placement Preparation Today!\nExplore More\n\nThousands Of Students Achieved Their Dream Job At\n\n+ Many More\n\nOur Selected Students\nSee More\nOn A Mission To Teach Millions\nBe A Part Of The Apna College Community!\nYoutube\nLinkedin\nInstagram\nTelegram\nWhatsapp\nWhere Education Meets Real-World Needs.\nHelpful Links\nCourses\nPrivacy Policy\nRefund Policy\nTerms & Conditions\nGet In Touch\nAlpha@Apnacollege.In\nDelta@Apnacollege.In\nSigma@Apnacollege.In\nSupport Team : 10Am-6Pm\nConnect With Us\nFacebook\u00a0\u00a0\nTwitter\u00a0\u00a0\nYoutube\u00a0\u00a0\nInstagram\u00a0\u00a0\nLinkedin\u00a0\u00a0\nCopyright \u00a9 2026\nRec\n00:05\n3 Steps\n+ Wait 1S\n\u23f9 Stop & Send To Govbridge Button",
         "action_type": "click",
-        "target_description": "New Prime 3.0\nNew Courses\nOur Results\nDSA Sheet\nLog in\nLearn & become the \nTop 1% software developer\nSigmaX - DSA + AI Full Stack Web Developm|\nUltimate Placement Solution\nINDIA'S MOST LOVED CODING COMMUNITY ❤️\n7,000,000+\nHAPPY LEARNERS \n2 CRORE+\nMONTHLY VIEWS\n100,000+\nNEW MONTHLY SUBSCRIBERS\nNEW PLACEMENT PREP BATCH🔥\nSIGMAX : AI POWERED 10X SOFTWARE ENGINEER\nStart your placement preparation today!\nExplore more\n\nThousands of students achieved their dream job at\n\n+ many more\n\nOur Selected Students\nSee more\nON A MISSION TO TEACH MILLIONS\nBE A PART OF THE APNA COLLEGE COMMUNITY!\nYoutube\nLinkedin\nInstagram\nTelegram\nWhatsApp\nWhere education meets real-world needs.\nHELPFUL LINKS\nCourses\nPrivacy policy\nRefund Policy\nTerms & Conditions\nGET IN TOUCH\nalpha@apnacollege.in\ndelta@apnacollege.in\nsigma@apnacollege.in\nSupport Team : 10am-6pm\nCONNECT WITH US\nFacebook  \nTwitter  \nYoutube  \nInstagram  \nLinkedin  \nCopyright © 2026\nREC\n00:05\n3 steps\n+ Wait 1s\n⏹ Stop & Send to GovBridge Button",
+        "target_description": "New Prime 3.0\nNew Courses\nOur Results\nDSA Sheet\nLog in\nLearn & become the\u00a0\nTop 1% software developer\nSigmaX - DSA + AI Full Stack Web Developm|\nUltimate Placement Solution\nINDIA'S MOST LOVED CODING COMMUNITY \u2764\ufe0f\n7,000,000+\nHAPPY LEARNERS\u00a0\n2 CRORE+\nMONTHLY VIEWS\n100,000+\nNEW MONTHLY SUBSCRIBERS\nNEW PLACEMENT PREP BATCH\ud83d\udd25\nSIGMAX : AI POWERED 10X SOFTWARE ENGINEER\nStart your placement preparation today!\nExplore more\n\nThousands of students achieved their dream job at\n\n+ many more\n\nOur Selected Students\nSee more\nON A MISSION TO TEACH MILLIONS\nBE A PART OF THE APNA COLLEGE COMMUNITY!\nYoutube\nLinkedin\nInstagram\nTelegram\nWhatsApp\nWhere education meets real-world needs.\nHELPFUL LINKS\nCourses\nPrivacy policy\nRefund Policy\nTerms & Conditions\nGET IN TOUCH\nalpha@apnacollege.in\ndelta@apnacollege.in\nsigma@apnacollege.in\nSupport Team : 10am-6pm\nCONNECT WITH US\nFacebook\u00a0\u00a0\nTwitter\u00a0\u00a0\nYoutube\u00a0\u00a0\nInstagram\u00a0\u00a0\nLinkedin\u00a0\u00a0\nCopyright \u00a9 2026\nREC\n00:05\n3 steps\n+ Wait 1s\n\u23f9 Stop & Send to GovBridge Button",
         "selector": "html > body",
         "fallback_selectors": [
           "/html/body"
@@ -928,24 +920,11 @@
       }
     ],
     "branching": {
-      "enabled": true,
-      "check_type": "url_or_element",
-      "failure_selector": "#error-message",
-      "success_url_contains": "dashboard",
-      "success_selector": "",
-      "failure_branch": {
-        "title": "Login Failed return error",
+      "enabled": false,
+      "terminal_branch": {
+        "title": "Workflow Completed",
         "subtitle": "End of the RPA BOT task",
-        "outcome": "error",
-        "message": "Invalid authentication credentials.",
-        "status_code": 401
-      },
-      "success_branch": {
-        "title": "Login Successful",
-        "subtitle": "End of the RPA BOT task",
-        "outcome": "success",
-        "message": "Workflow reached target success state.",
-        "status_code": 200
+        "outcome": "success"
       }
     },
     "created_at": "2026-09-07T22:45:08.104607",
@@ -1098,24 +1077,11 @@
       }
     ],
     "branching": {
-      "enabled": true,
-      "check_type": "url_or_element",
-      "failure_selector": "#error-message",
-      "success_url_contains": "dashboard",
-      "success_selector": "",
-      "failure_branch": {
-        "title": "Login Failed return error",
+      "enabled": false,
+      "terminal_branch": {
+        "title": "Workflow Completed",
         "subtitle": "End of the RPA BOT task",
-        "outcome": "error",
-        "message": "Invalid authentication credentials.",
-        "status_code": 401
-      },
-      "success_branch": {
-        "title": "Login Successful",
-        "subtitle": "End of the RPA BOT task",
-        "outcome": "success",
-        "message": "Workflow reached target success state.",
-        "status_code": 200
+        "outcome": "success"
       }
     },
     "created_at": "2026-09-07T22:57:16.185747",
@@ -1765,25 +1731,12 @@
   },
   {
     "branching": {
-      "check_type": "url_or_element",
-      "enabled": true,
-      "failure_branch": {
-        "message": "Invalid authentication credentials.",
-        "outcome": "error",
-        "status_code": 401,
+      "enabled": false,
+      "terminal_branch": {
+        "title": "Workflow Completed",
         "subtitle": "End of the RPA BOT task",
-        "title": "Login Failed return error"
-      },
-      "failure_selector": "#error-message",
-      "success_branch": {
-        "message": "Workflow reached target success state.",
-        "outcome": "success",
-        "status_code": 200,
-        "subtitle": "End of the RPA BOT task",
-        "title": "Login Successful"
-      },
-      "success_selector": "",
-      "success_url_contains": "dashboard"
+        "outcome": "success"
+      }
     },
     "created_at": "2026-09-08T00:16:44.099693",
     "description": "Workflow automatically generated from Chrome Extension path trace on https://excalidraw.com/",
@@ -2070,25 +2023,12 @@
   },
   {
     "branching": {
-      "check_type": "url_or_element",
-      "enabled": true,
-      "failure_branch": {
-        "message": "Invalid authentication credentials.",
-        "outcome": "error",
-        "status_code": 401,
+      "enabled": false,
+      "terminal_branch": {
+        "title": "Workflow Completed",
         "subtitle": "End of the RPA BOT task",
-        "title": "Login Failed return error"
-      },
-      "failure_selector": "#error-message",
-      "success_branch": {
-        "message": "Workflow reached target success state.",
-        "outcome": "success",
-        "status_code": 200,
-        "subtitle": "End of the RPA BOT task",
-        "title": "Login Successful"
-      },
-      "success_selector": "",
-      "success_url_contains": "dashboard"
+        "outcome": "success"
+      }
     },
     "created_at": "2026-09-08T00:26:18.953301",
     "description": "Workflow automatically generated from Chrome Extension path trace on https://excalidraw.com/",
@@ -2261,25 +2201,12 @@
   },
   {
     "branching": {
-      "check_type": "url_or_element",
-      "enabled": true,
-      "failure_branch": {
-        "message": "Invalid authentication credentials.",
-        "outcome": "error",
-        "status_code": 401,
+      "enabled": false,
+      "terminal_branch": {
+        "title": "Workflow Completed",
         "subtitle": "End of the RPA BOT task",
-        "title": "Login Failed return error"
-      },
-      "failure_selector": "#error-message",
-      "success_branch": {
-        "message": "Workflow reached target success state.",
-        "outcome": "success",
-        "status_code": 200,
-        "subtitle": "End of the RPA BOT task",
-        "title": "Login Successful"
-      },
-      "success_selector": "",
-      "success_url_contains": "dashboard"
+        "outcome": "success"
+      }
     },
     "created_at": "2026-09-08T00:36:15.794353",
     "description": "Workflow automatically generated from Chrome Extension path trace on https://excalidraw.com/",
@@ -2721,7 +2648,7 @@
         "step_number": 2,
         "title": "Draw Rectangle on Canvas",
         "action_type": "canvas_draw",
-        "target_description": "Canvas Gesture (20%, 25% → 60%, 70%)",
+        "target_description": "Canvas Gesture (20%, 25% \u2192 60%, 70%)",
         "selector": "#drawing-board",
         "fallback_selectors": [
           "canvas",
@@ -2783,24 +2710,11 @@
       }
     ],
     "branching": {
-      "enabled": true,
-      "check_type": "url_or_element",
-      "failure_selector": "#error-message",
-      "success_url_contains": "dashboard",
-      "success_selector": "",
-      "failure_branch": {
-        "title": "Login Failed return error",
+      "enabled": false,
+      "terminal_branch": {
+        "title": "Workflow Completed",
         "subtitle": "End of the RPA BOT task",
-        "outcome": "error",
-        "message": "Invalid authentication credentials.",
-        "status_code": 401
-      },
-      "success_branch": {
-        "title": "Login Successful",
-        "subtitle": "End of the RPA BOT task",
-        "outcome": "success",
-        "message": "Workflow reached target success state.",
-        "status_code": 200
+        "outcome": "success"
       }
     },
     "created_at": "2026-09-08T00:52:00.188258",
@@ -2808,25 +2722,12 @@
   },
   {
     "branching": {
-      "check_type": "url_or_element",
-      "enabled": true,
-      "failure_branch": {
-        "message": "Invalid authentication credentials.",
-        "outcome": "error",
-        "status_code": 401,
+      "enabled": false,
+      "terminal_branch": {
+        "title": "Workflow Completed",
         "subtitle": "End of the RPA BOT task",
-        "title": "Login Failed return error"
-      },
-      "failure_selector": "#error-message",
-      "success_branch": {
-        "message": "Workflow reached target success state.",
-        "outcome": "success",
-        "status_code": 200,
-        "subtitle": "End of the RPA BOT task",
-        "title": "Login Successful"
-      },
-      "success_selector": "",
-      "success_url_contains": "dashboard"
+        "outcome": "success"
+      }
     },
     "created_at": "2026-09-08T00:52:20.223109",
     "description": "Workflow automatically generated from Chrome Extension path trace on http://127.0.0.1:5000/demo-canvas",
@@ -2866,7 +2767,7 @@
         "start_percent_x": 0.2,
         "start_percent_y": 0.25,
         "step_number": 2,
-        "target_description": "Canvas Gesture (20%, 25% → 60%, 70%)",
+        "target_description": "Canvas Gesture (20%, 25% \u2192 60%, 70%)",
         "timeout_ms": 10000,
         "title": "Draw Rectangle on Canvas",
         "value": "{\"start_percent_x\": 0.2, \"start_percent_y\": 0.25, \"end_percent_x\": 0.6, \"end_percent_y\": 0.7, \"start_x\": 136, \"start_y\": 95, \"end_x\": 408, \"end_y\": 266, \"steps\": 20}",
@@ -3043,25 +2944,12 @@
   },
   {
     "branching": {
-      "check_type": "url_or_element",
-      "enabled": true,
-      "failure_branch": {
-        "message": "Invalid authentication credentials.",
-        "outcome": "error",
-        "status_code": 401,
+      "enabled": false,
+      "terminal_branch": {
+        "title": "Workflow Completed",
         "subtitle": "End of the RPA BOT task",
-        "title": "Login Failed return error"
-      },
-      "failure_selector": "#error-message",
-      "success_branch": {
-        "message": "Workflow reached target success state.",
-        "outcome": "success",
-        "status_code": 200,
-        "subtitle": "End of the RPA BOT task",
-        "title": "Login Successful"
-      },
-      "success_selector": "",
-      "success_url_contains": "dashboard"
+        "outcome": "success"
+      }
     },
     "created_at": "2026-09-08T01:06:09.087988",
     "description": "Workflow automatically generated from Chrome Extension path trace on https://excalidraw.com/",
@@ -3090,7 +2978,7 @@
         "action_type": "click",
         "fallback_selectors": [
           "button[aria-label=\"Text\"]",
-          "button[title=\"Text — T or 8\"]",
+          "button[title=\"Text \u2014 T or 8\"]",
           "[data-testid=\"toolbar-text\"]",
           "//button[contains(normalize-space(), \"8\")]"
         ],
@@ -3150,7 +3038,7 @@
         "action_type": "click",
         "fallback_selectors": [
           "button[aria-label=\"Rectangle\"]",
-          "button[title=\"Rectangle — R or 2\"]",
+          "button[title=\"Rectangle \u2014 R or 2\"]",
           "[data-testid=\"toolbar-rectangle\"]",
           "//button[contains(normalize-space(), \"2\")]"
         ],
@@ -3182,7 +3070,7 @@
         "start_percent_x": 0.5672,
         "start_percent_y": 0.2749,
         "step_number": 6,
-        "target_description": "Canvas Gesture (57%, 27% → 62%, 32%)",
+        "target_description": "Canvas Gesture (57%, 27% \u2192 62%, 32%)",
         "timeout_ms": 10000,
         "title": "Draw Rectangle on Canvas",
         "value": "{\"start_percent_x\": 0.5672, \"start_percent_y\": 0.2749, \"end_percent_x\": 0.625, \"end_percent_y\": 0.3242, \"start_x\": 1089, \"start_y\": 262, \"end_x\": 1200, \"end_y\": 309, \"steps\": 20}",
@@ -3336,7 +3224,7 @@
         "step_number": 3,
         "title": "Draw Rectangle on Canvas",
         "action_type": "canvas_draw",
-        "target_description": "Canvas Gesture (50%, 37% → 62%, 31%)",
+        "target_description": "Canvas Gesture (50%, 37% \u2192 62%, 31%)",
         "selector": "div#root > div > div > canvas",
         "fallback_selectors": [
           "//canvas"
@@ -3359,7 +3247,7 @@
         "step_number": 4,
         "title": "Draw Rectangle on Canvas",
         "action_type": "canvas_draw",
-        "target_description": "Canvas Gesture (62%, 31% → 52%, 30%)",
+        "target_description": "Canvas Gesture (62%, 31% \u2192 52%, 30%)",
         "selector": "div#root > div > div > canvas",
         "fallback_selectors": [
           "//canvas"
@@ -3379,24 +3267,11 @@
       }
     ],
     "branching": {
-      "enabled": true,
-      "check_type": "url_or_element",
-      "failure_selector": "#error-message",
-      "success_url_contains": "dashboard",
-      "success_selector": "",
-      "failure_branch": {
-        "title": "Login Failed return error",
+      "enabled": false,
+      "terminal_branch": {
+        "title": "Workflow Completed",
         "subtitle": "End of the RPA BOT task",
-        "outcome": "error",
-        "message": "Invalid authentication credentials.",
-        "status_code": 401
-      },
-      "success_branch": {
-        "title": "Login Successful",
-        "subtitle": "End of the RPA BOT task",
-        "outcome": "success",
-        "message": "Workflow reached target success state.",
-        "status_code": 200
+        "outcome": "success"
       }
     },
     "created_at": "2026-09-09T21:57:18.407081",
@@ -3677,24 +3552,11 @@
       }
     ],
     "branching": {
-      "enabled": true,
-      "check_type": "url_or_element",
-      "failure_selector": "#error-message",
-      "success_url_contains": "dashboard",
-      "success_selector": "",
-      "failure_branch": {
-        "title": "Login Failed return error",
+      "enabled": false,
+      "terminal_branch": {
+        "title": "Workflow Completed",
         "subtitle": "End of the RPA BOT task",
-        "outcome": "error",
-        "message": "Invalid authentication credentials.",
-        "status_code": 401
-      },
-      "success_branch": {
-        "title": "Login Successful",
-        "subtitle": "End of the RPA BOT task",
-        "outcome": "success",
-        "message": "Workflow reached target success state.",
-        "status_code": 200
+        "outcome": "success"
       }
     },
     "created_at": "2026-09-09T22:06:24.576861",
@@ -3702,25 +3564,12 @@
   },
   {
     "branching": {
-      "check_type": "url_or_element",
-      "enabled": true,
-      "failure_branch": {
-        "message": "Invalid authentication credentials.",
-        "outcome": "error",
-        "status_code": 401,
+      "enabled": false,
+      "terminal_branch": {
+        "title": "Workflow Completed",
         "subtitle": "End of the RPA BOT task",
-        "title": "Login Failed return error"
-      },
-      "failure_selector": "#error-message",
-      "success_branch": {
-        "message": "Workflow reached target success state.",
-        "outcome": "success",
-        "status_code": 200,
-        "subtitle": "End of the RPA BOT task",
-        "title": "Login Successful"
-      },
-      "success_selector": "",
-      "success_url_contains": "dashboard"
+        "outcome": "success"
+      }
     },
     "created_at": "2026-09-09T22:07:51.785416",
     "description": "Workflow automatically generated from Chrome Extension path trace on https://timetable.ietonline.in/pdf/166?session=2026-2027&semester=ODD",
@@ -4074,24 +3923,11 @@
       }
     ],
     "branching": {
-      "enabled": true,
-      "check_type": "url_or_element",
-      "failure_selector": "#error-message",
-      "success_url_contains": "dashboard",
-      "success_selector": "",
-      "failure_branch": {
-        "title": "Login Failed return error",
+      "enabled": false,
+      "terminal_branch": {
+        "title": "Workflow Completed",
         "subtitle": "End of the RPA BOT task",
-        "outcome": "error",
-        "message": "Invalid authentication credentials.",
-        "status_code": 401
-      },
-      "success_branch": {
-        "title": "Login Successful",
-        "subtitle": "End of the RPA BOT task",
-        "outcome": "success",
-        "message": "Workflow reached target success state.",
-        "status_code": 200
+        "outcome": "success"
       }
     },
     "created_at": "2026-09-11T08:09:49.038317",
@@ -4489,7 +4325,7 @@
         "step_number": 2,
         "title": "Draw Rectangle on Canvas",
         "action_type": "canvas_draw",
-        "target_description": "Canvas Gesture (20%, 25% → 60%, 70%)",
+        "target_description": "Canvas Gesture (20%, 25% \u2192 60%, 70%)",
         "selector": "#drawing-board",
         "fallback_selectors": [
           "canvas",
@@ -4551,24 +4387,11 @@
       }
     ],
     "branching": {
-      "enabled": true,
-      "check_type": "url_or_element",
-      "failure_selector": "#error-message",
-      "success_url_contains": "dashboard",
-      "success_selector": "",
-      "failure_branch": {
-        "title": "Login Failed return error",
+      "enabled": false,
+      "terminal_branch": {
+        "title": "Workflow Completed",
         "subtitle": "End of the RPA BOT task",
-        "outcome": "error",
-        "message": "Invalid authentication credentials.",
-        "status_code": 401
-      },
-      "success_branch": {
-        "title": "Login Successful",
-        "subtitle": "End of the RPA BOT task",
-        "outcome": "success",
-        "message": "Workflow reached target success state.",
-        "status_code": 200
+        "outcome": "success"
       }
     },
     "created_at": "2026-09-11T20:54:29.595696",
@@ -4635,7 +4458,7 @@
         "selector": "[data-testid=\"toolbar-rectangle\"]",
         "fallback_selectors": [
           "button[aria-label=\"Rectangle\"]",
-          "button[title=\"Rectangle — R or 2\"]",
+          "button[title=\"Rectangle \u2014 R or 2\"]",
           "[data-testid=\"toolbar-rectangle\"]",
           "//button[contains(normalize-space(), \"R\")]"
         ],
@@ -4653,7 +4476,7 @@
         "step_number": 4,
         "title": "Draw Rectangle on Canvas",
         "action_type": "canvas_draw",
-        "target_description": "Canvas Gesture (28%, 25% → 77%, 69%)",
+        "target_description": "Canvas Gesture (28%, 25% \u2192 77%, 69%)",
         "selector": "div#root > div > div > canvas:nth-of-type(2)",
         "fallback_selectors": [
           "//canvas"
@@ -4680,7 +4503,7 @@
         "selector": "[data-testid=\"toolbar-text\"]",
         "fallback_selectors": [
           "button[aria-label=\"Text\"]",
-          "button[title=\"Text — T or 8\"]",
+          "button[title=\"Text \u2014 T or 8\"]",
           "[data-testid=\"toolbar-text\"]",
           "//button[contains(normalize-space(), \"T\")]"
         ],
@@ -4740,7 +4563,7 @@
         "selector": "[data-testid=\"toolbar-rectangle\"]",
         "fallback_selectors": [
           "button[aria-label=\"Rectangle\"]",
-          "button[title=\"Rectangle — R or 2\"]",
+          "button[title=\"Rectangle \u2014 R or 2\"]",
           "[data-testid=\"toolbar-rectangle\"]",
           "//button[contains(normalize-space(), \"R\")]"
         ],
@@ -4758,7 +4581,7 @@
         "step_number": 9,
         "title": "Draw Rectangle on Canvas",
         "action_type": "canvas_draw",
-        "target_description": "Canvas Gesture (34%, 36% → 72%, 57%)",
+        "target_description": "Canvas Gesture (34%, 36% \u2192 72%, 57%)",
         "selector": "div#root > div > div > canvas:nth-of-type(2)",
         "fallback_selectors": [
           "//canvas"
@@ -4806,7 +4629,7 @@
         "selector": "[data-testid=\"toolbar-text\"]",
         "fallback_selectors": [
           "button[aria-label=\"Text\"]",
-          "button[title=\"Text — T or 8\"]",
+          "button[title=\"Text \u2014 T or 8\"]",
           "[data-testid=\"toolbar-text\"]",
           "//button[contains(normalize-space(), \"T\")]"
         ],
@@ -4943,24 +4766,11 @@
       }
     ],
     "branching": {
-      "enabled": true,
-      "check_type": "url_or_element",
-      "failure_selector": "#error-message",
-      "success_url_contains": "dashboard",
-      "success_selector": "",
-      "failure_branch": {
-        "title": "Login Failed return error",
+      "enabled": false,
+      "terminal_branch": {
+        "title": "Workflow Completed",
         "subtitle": "End of the RPA BOT task",
-        "outcome": "error",
-        "message": "Invalid authentication credentials.",
-        "status_code": 401
-      },
-      "success_branch": {
-        "title": "Login Successful",
-        "subtitle": "End of the RPA BOT task",
-        "outcome": "success",
-        "message": "Workflow reached target success state.",
-        "status_code": 200
+        "outcome": "success"
       }
     },
     "created_at": "2026-09-11T21:59:15.861190",

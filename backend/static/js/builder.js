@@ -101,10 +101,18 @@ function renderWorkflowCanvas() {
     container.appendChild(connector);
   });
 
-  // 3. Render Final Branching (if enabled)
-  if (currentBot.branching && currentBot.branching.enabled) {
-    const branchContainer = createBranchingNode();
-    container.appendChild(branchContainer);
+  // 3. Render Final Node (Branching only if Login Form exists, otherwise clean Completion node)
+  if (steps.length > 0) {
+    const isLogin = hasLoginForm(currentBot);
+    const branchEnabled = currentBot.branching ? currentBot.branching.enabled === true : isLogin;
+
+    if (isLogin && branchEnabled) {
+      const branchContainer = createBranchingNode();
+      container.appendChild(branchContainer);
+    } else {
+      const endContainer = createWorkflowEndNode();
+      container.appendChild(endContainer);
+    }
   }
 }
 
@@ -401,6 +409,80 @@ function deleteCurrentInspectedStep() {
     closeStepInspector();
     deleteStep(idx);
   }
+}
+
+function hasLoginForm(bot) {
+  if (!bot) return false;
+
+  // 1. Check variables for password
+  const variables = bot.variables || [];
+  for (let i = 0; i < variables.length; i++) {
+    const v = variables[i];
+    const t = (v.type || "").toLowerCase();
+    const n = (v.name || "").toLowerCase();
+    if (t === "password" || n.includes("password") || n.includes("passwd") || n === "pwd" || n === "pass") {
+      return true;
+    }
+  }
+
+  // 2. Check steps for password fields or selectors
+  const steps = bot.steps || [];
+  for (let i = 0; i < steps.length; i++) {
+    const s = steps[i];
+    const vName = (s.variable_name || "").toLowerCase();
+    const sel = (s.selector || "").toLowerCase();
+    const title = (s.title || "").toLowerCase();
+    const targetDesc = (s.target_description || "").toLowerCase();
+    const fallbacks = (s.fallback_selectors || []).join(" ").toLowerCase();
+
+    if (vName.includes("password") || vName.includes("pass") || vName === "pwd") return true;
+    if (sel.includes("password") || sel.includes("type='password'") || sel.includes('type="password"')) return true;
+    if (fallbacks.includes("password") || fallbacks.includes("type='password'") || fallbacks.includes('type="password"')) return true;
+    if (title.includes("password") || targetDesc.includes("password")) return true;
+  }
+
+  // 3. Check for login submit button with any input field
+  const hasInput = steps.some(s => s.action_type === "type");
+  if (hasInput) {
+    for (let i = 0; i < steps.length; i++) {
+      const s = steps[i];
+      const title = (s.title || "").toLowerCase();
+      const targetDesc = (s.target_description || "").toLowerCase();
+      const sel = (s.selector || "").toLowerCase();
+      if (
+        title.includes("login") || title.includes("sign in") || title.includes("signin") ||
+        targetDesc.includes("login") || targetDesc.includes("sign in") ||
+        sel.includes("login") || sel.includes("signin")
+      ) {
+        return true;
+      }
+    }
+  }
+
+  return false;
+}
+
+function createWorkflowEndNode() {
+  const wrapper = document.createElement("div");
+  wrapper.className = "branching-wrapper";
+  wrapper.style.display = "flex";
+  wrapper.style.alignItems = "center";
+  wrapper.style.justifyContent = "center";
+
+  const bConfig = currentBot.branching || {};
+  const term = bConfig.terminal_branch || { title: "Workflow Completed", subtitle: "End of the RPA BOT task" };
+
+  wrapper.innerHTML = `
+    <div class="branch-node branch-terminal">
+      <div class="branch-title" style="color: #38bdf8; display: flex; align-items: center; justify-content: center; gap: 8px;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+        ${escapeHtml(term.title || "Workflow Completed")}
+      </div>
+      <div class="branch-subtitle">${escapeHtml(term.subtitle || "End of the RPA BOT task")}</div>
+    </div>
+  `;
+
+  return wrapper;
 }
 
 function createBranchingNode() {

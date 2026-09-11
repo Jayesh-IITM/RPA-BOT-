@@ -30,6 +30,39 @@ def interpolate_variables(text: str, variables: Dict[str, str]) -> str:
     return re.sub(r"\{\{\s*([a-zA-Z0-9_-]+)\s*\}\}", replacer, text)
 
 
+def is_login_bot(bot_data: Dict) -> bool:
+    """Detects if this bot workflow interacts with an authentication / login form."""
+    variables = bot_data.get("variables", [])
+    for v in variables:
+        v_name = (v.get("name") or "").lower()
+        v_type = (v.get("type") or "").lower()
+        if v_type == "password" or "password" in v_name or "passwd" in v_name or v_name == "pwd" or v_name == "pass":
+            return True
+
+    steps = bot_data.get("steps", [])
+    for s in steps:
+        target = (s.get("target_description") or "").lower()
+        title = (s.get("title") or "").lower()
+        sel = (s.get("selector") or "").lower()
+        var = (s.get("variable_name") or "").lower()
+        fallbacks = " ".join(s.get("fallback_selectors") or []).lower()
+        
+        combined = f"{target} {title} {sel} {var} {fallbacks}"
+        if "password" in combined or "passwd" in combined:
+            return True
+
+    has_input = any(s.get("action_type") == "type" for s in steps)
+    has_login_btn = any(
+        any(k in (s.get("title") or "").lower() or k in (s.get("target_description") or "").lower() or k in (s.get("selector") or "").lower()
+            for k in ["login", "sign in", "signin"])
+        for s in steps
+    )
+    if has_input and has_login_btn:
+        return True
+
+    return False
+
+
 class BotExecutionEngine:
     def __init__(self, bot_data: Dict, variables: Optional[Dict[str, str]] = None, options: Optional[Dict] = None):
         self.bot_data = bot_data
@@ -500,9 +533,9 @@ class BotExecutionEngine:
                     if wait_after > 0:
                         time.sleep(wait_after / 1000.0)
 
-                # Evaluate branching / outcome if defined
+                # Evaluate branching / outcome if defined and bot has a login form
                 branch_cfg = self.bot_data.get("branching", {})
-                if branch_cfg and branch_cfg.get("enabled", False):
+                if branch_cfg and branch_cfg.get("enabled", False) and is_login_bot(self.bot_data):
                     branch_result = self._evaluate_branching(page, branch_cfg)
                     self.emit_event("branch_evaluated", branch_result)
 

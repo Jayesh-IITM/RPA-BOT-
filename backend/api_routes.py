@@ -625,6 +625,49 @@ def upload_recording():
             })
             step_idx += 1
 
+    # Detect if this recording actually contains a login form
+    has_login = False
+    for action in raw_actions:
+        target_name = (action.get("target_name") or action.get("placeholder") or action.get("id") or "").lower()
+        sel = (action.get("selector") or "").lower()
+        inp_type = (action.get("input_type") or "").lower()
+        if "password" in target_name or "password" in sel or inp_type == "password" or "passwd" in target_name or "pass" in target_name:
+            has_login = True
+            break
+        if ("login" in target_name or "sign in" in target_name or "signin" in target_name) and any(a.get("type") in ("input", "type") for a in raw_actions):
+            has_login = True
+            break
+
+    if not has_login and any(v.get("type") == "password" or "pass" in v.get("name", "").lower() for v in variables_found.values()):
+        has_login = True
+
+    branching_cfg = {
+        "enabled": has_login,
+        "check_type": "url_or_element" if has_login else "none",
+        "failure_selector": "#error-message" if has_login else "",
+        "success_url_contains": "dashboard" if has_login else "",
+        "success_selector": "",
+        "failure_branch": {
+            "title": "Login Failed return error",
+            "subtitle": "End of the RPA BOT task",
+            "outcome": "error",
+            "message": "Invalid authentication credentials.",
+            "status_code": 401
+        } if has_login else None,
+        "success_branch": {
+            "title": "Login Successful",
+            "subtitle": "End of the RPA BOT task",
+            "outcome": "success",
+            "message": "Workflow reached target success state.",
+            "status_code": 200
+        } if has_login else None,
+        "terminal_branch": {
+            "title": "Workflow Completed",
+            "subtitle": "End of the RPA BOT task",
+            "outcome": "success"
+        }
+    }
+
     # Form new draft bot
     bot_id = f"bot_rec_{int(time.time())}"
     bot_data = {
@@ -634,27 +677,7 @@ def upload_recording():
         "initial_url": initial_url,
         "variables": list(variables_found.values()),
         "steps": steps,
-        "branching": {
-            "enabled": True,
-            "check_type": "url_or_element",
-            "failure_selector": "#error-message",
-            "success_url_contains": "dashboard",
-            "success_selector": "",
-            "failure_branch": {
-                "title": "Login Failed return error",
-                "subtitle": "End of the RPA BOT task",
-                "outcome": "error",
-                "message": "Invalid authentication credentials.",
-                "status_code": 401
-            },
-            "success_branch": {
-                "title": "Login Successful",
-                "subtitle": "End of the RPA BOT task",
-                "outcome": "success",
-                "message": "Workflow reached target success state.",
-                "status_code": 200
-            }
-        }
+        "branching": branching_cfg
     }
 
     # Save to storage
