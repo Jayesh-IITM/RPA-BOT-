@@ -1,0 +1,395 @@
+{
+  "recording_id": "bot_rec_1788971871",
+  "raw_actions": [
+    {
+      "fallbacks": [
+        "form#filterForm > div > div > select"
+      ],
+      "selector": "select[name=\"session\"]",
+      "target_name": "session",
+      "text": "All Sessions",
+      "type": "click"
+    },
+    {
+      "fallbacks": [
+        "form#filterForm > div > div > select"
+      ],
+      "selector": "select[name=\"session\"]",
+      "target_name": "session",
+      "text": "All Sessions",
+      "type": "click"
+    },
+    {
+      "fallbacks": [
+        "form#filterForm > div > div:nth-of-type(2) > select"
+      ],
+      "selector": "select[name=\"semester\"]",
+      "target_name": "semester",
+      "text": "All Semesters",
+      "type": "click"
+    },
+    {
+      "fallbacks": [
+        "form#filterForm > div > div:nth-of-type(2) > select"
+      ],
+      "selector": "select[name=\"semester\"]",
+      "target_name": "semester",
+      "text": "All Semesters",
+      "type": "click"
+    },
+    {
+      "fallbacks": [
+        "form#filterForm > div > div:nth-of-type(3) > select"
+      ],
+      "selector": "select[name=\"course\"]",
+      "target_name": "course",
+      "text": "All Programs",
+      "type": "click"
+    },
+    {
+      "fallbacks": [
+        "form#filterForm > div > div:nth-of-type(3) > select"
+      ],
+      "selector": "select[name=\"course\"]",
+      "target_name": "course",
+      "text": "All Programs",
+      "type": "click"
+    },
+    {
+      "fallbacks": [
+        "form#filterForm > div > div:nth-of-type(4) > select"
+      ],
+      "selector": "select[name=\"branch\"]",
+      "target_name": "branch",
+      "text": "All Branches",
+      "type": "click"
+    },
+    {
+      "fallbacks": [
+        "form#filterForm > div > div:nth-of-type(4) > select"
+      ],
+      "selector": "select[name=\"branch\"]",
+      "target_name": "branch",
+      "text": "All Branches",
+      "type": "click"
+    },
+    {
+      "fallbacks": [
+        "form#filterForm > div > div:nth-of-type(5) > select"
+      ],
+      "selector": "select[name=\"year\"]",
+      "target_name": "year",
+      "text": "All",
+      "type": "click"
+    },
+    {
+      "fallbacks": [
+        "form#filterForm > div > div:nth-of-type(5) > select"
+      ],
+      "selector": "select[name=\"year\"]",
+      "target_name": "year",
+      "text": "All",
+      "type": "click"
+    },
+    {
+      "fallbacks": [
+        "form#filterForm > div > div:nth-of-type(8) > button",
+        "//button[contains(normalize-space(), \"Apply\")]"
+      ],
+      "selector": "button:has-text(\"Apply\")",
+      "target_name": "Apply",
+      "text": "Apply",
+      "type": "click"
+    },
+    {
+      "fallbacks": [
+        "a:has-text(\"View / Print PDF\")",
+        "//a[contains(normalize-space(), \"View / Print PDF\")]"
+      ],
+      "selector": "div:nth-of-type(4) > div:nth-of-type(3) > div:nth-of-type(3) > a",
+      "target_name": "View / Print PDF",
+      "text": "View / Print PDF",
+      "type": "click"
+    }
+  ],
+  "bot_data": {
+    "id": "bot_rec_1788971871",
+    "name": "Recorded Path - 10:07:51 PM",
+    "description": "Workflow automatically generated from Chrome Extension path trace on https://timetable.ietonline.in/pdf/166?session=2026-2027&semester=ODD",
+    "initial_url": "https://timetable.ietonline.in/pdf/166?session=2026-2027&semester=ODD",
+    "variables": [],
+    "steps": [
+      {
+        "id": "step_1",
+        "step_number": 1,
+        "title": "Extension initiated on timetable.ietonline.in",
+        "action_type": "navigate",
+        "target_description": "Initial URL",
+        "selector": "",
+        "fallback_selectors": [],
+        "value_mode": "fixed",
+        "value": "https://timetable.ietonline.in/pdf/166?session=2026-2027&semester=ODD",
+        "variable_name": "",
+        "wait_before_ms": 200,
+        "wait_after_ms": 500,
+        "timeout_ms": 15000,
+        "optional": false,
+        "highlight": true
+      },
+      {
+        "id": "step_2",
+        "step_number": 2,
+        "title": "All Sessions Button",
+        "action_type": "click",
+        "target_description": "All Sessions Button",
+        "selector": "select[name=\"session\"]",
+        "fallback_selectors": [
+          "form#filterForm > div > div > select"
+        ],
+        "value_mode": "fixed",
+        "value": "",
+        "variable_name": "",
+        "wait_before_ms": 300,
+        "wait_after_ms": 800,
+        "timeout_ms": 10000,
+        "optional": false,
+        "highlight": true
+      },
+      {
+        "id": "step_3",
+        "step_number": 3,
+        "title": "All Sessions Button",
+        "action_type": "click",
+        "target_description": "All Sessions Button",
+        "selector": "select[name=\"session\"]",
+        "fallback_selectors": [
+          "form#filterForm > div > div > select"
+        ],
+        "value_mode": "fixed",
+        "value": "",
+        "variable_name": "",
+        "wait_before_ms": 300,
+        "wait_after_ms": 800,
+        "timeout_ms": 10000,
+        "optional": false,
+        "highlight": true
+      },
+      {
+        "id": "step_4",
+        "step_number": 4,
+        "title": "All Semesters Button",
+        "action_type": "click",
+        "target_description": "All Semesters Button",
+        "selector": "select[name=\"semester\"]",
+        "fallback_selectors": [
+          "form#filterForm > div > div:nth-of-type(2) > select"
+        ],
+        "value_mode": "fixed",
+        "value": "",
+        "variable_name": "",
+        "wait_before_ms": 300,
+        "wait_after_ms": 800,
+        "timeout_ms": 10000,
+        "optional": false,
+        "highlight": true
+      },
+      {
+        "id": "step_5",
+        "step_number": 5,
+        "title": "All Semesters Button",
+        "action_type": "click",
+        "target_description": "All Semesters Button",
+        "selector": "select[name=\"semester\"]",
+        "fallback_selectors": [
+          "form#filterForm > div > div:nth-of-type(2) > select"
+        ],
+        "value_mode": "fixed",
+        "value": "",
+        "variable_name": "",
+        "wait_before_ms": 300,
+        "wait_after_ms": 800,
+        "timeout_ms": 10000,
+        "optional": false,
+        "highlight": true
+      },
+      {
+        "id": "step_6",
+        "step_number": 6,
+        "title": "All Programs Button",
+        "action_type": "click",
+        "target_description": "All Programs Button",
+        "selector": "select[name=\"course\"]",
+        "fallback_selectors": [
+          "form#filterForm > div > div:nth-of-type(3) > select"
+        ],
+        "value_mode": "fixed",
+        "value": "",
+        "variable_name": "",
+        "wait_before_ms": 300,
+        "wait_after_ms": 800,
+        "timeout_ms": 10000,
+        "optional": false,
+        "highlight": true
+      },
+      {
+        "id": "step_7",
+        "step_number": 7,
+        "title": "All Programs Button",
+        "action_type": "click",
+        "target_description": "All Programs Button",
+        "selector": "select[name=\"course\"]",
+        "fallback_selectors": [
+          "form#filterForm > div > div:nth-of-type(3) > select"
+        ],
+        "value_mode": "fixed",
+        "value": "",
+        "variable_name": "",
+        "wait_before_ms": 300,
+        "wait_after_ms": 800,
+        "timeout_ms": 10000,
+        "optional": false,
+        "highlight": true
+      },
+      {
+        "id": "step_8",
+        "step_number": 8,
+        "title": "All Branches Button",
+        "action_type": "click",
+        "target_description": "All Branches Button",
+        "selector": "select[name=\"branch\"]",
+        "fallback_selectors": [
+          "form#filterForm > div > div:nth-of-type(4) > select"
+        ],
+        "value_mode": "fixed",
+        "value": "",
+        "variable_name": "",
+        "wait_before_ms": 300,
+        "wait_after_ms": 800,
+        "timeout_ms": 10000,
+        "optional": false,
+        "highlight": true
+      },
+      {
+        "id": "step_9",
+        "step_number": 9,
+        "title": "All Branches Button",
+        "action_type": "click",
+        "target_description": "All Branches Button",
+        "selector": "select[name=\"branch\"]",
+        "fallback_selectors": [
+          "form#filterForm > div > div:nth-of-type(4) > select"
+        ],
+        "value_mode": "fixed",
+        "value": "",
+        "variable_name": "",
+        "wait_before_ms": 300,
+        "wait_after_ms": 800,
+        "timeout_ms": 10000,
+        "optional": false,
+        "highlight": true
+      },
+      {
+        "id": "step_10",
+        "step_number": 10,
+        "title": "All Button",
+        "action_type": "click",
+        "target_description": "All Button",
+        "selector": "select[name=\"year\"]",
+        "fallback_selectors": [
+          "form#filterForm > div > div:nth-of-type(5) > select"
+        ],
+        "value_mode": "fixed",
+        "value": "",
+        "variable_name": "",
+        "wait_before_ms": 300,
+        "wait_after_ms": 800,
+        "timeout_ms": 10000,
+        "optional": false,
+        "highlight": true
+      },
+      {
+        "id": "step_11",
+        "step_number": 11,
+        "title": "All Button",
+        "action_type": "click",
+        "target_description": "All Button",
+        "selector": "select[name=\"year\"]",
+        "fallback_selectors": [
+          "form#filterForm > div > div:nth-of-type(5) > select"
+        ],
+        "value_mode": "fixed",
+        "value": "",
+        "variable_name": "",
+        "wait_before_ms": 300,
+        "wait_after_ms": 800,
+        "timeout_ms": 10000,
+        "optional": false,
+        "highlight": true
+      },
+      {
+        "id": "step_12",
+        "step_number": 12,
+        "title": "Apply Button",
+        "action_type": "click",
+        "target_description": "Apply Button",
+        "selector": "button:has-text(\"Apply\")",
+        "fallback_selectors": [
+          "form#filterForm > div > div:nth-of-type(8) > button",
+          "//button[contains(normalize-space(), \"Apply\")]"
+        ],
+        "value_mode": "fixed",
+        "value": "",
+        "variable_name": "",
+        "wait_before_ms": 300,
+        "wait_after_ms": 800,
+        "timeout_ms": 10000,
+        "optional": false,
+        "highlight": true
+      },
+      {
+        "id": "step_13",
+        "step_number": 13,
+        "title": "View / Print Pdf Button",
+        "action_type": "click",
+        "target_description": "View / Print PDF Button",
+        "selector": "div:nth-of-type(4) > div:nth-of-type(3) > div:nth-of-type(3) > a",
+        "fallback_selectors": [
+          "a:has-text(\"View / Print PDF\")",
+          "//a[contains(normalize-space(), \"View / Print PDF\")]"
+        ],
+        "value_mode": "fixed",
+        "value": "",
+        "variable_name": "",
+        "wait_before_ms": 300,
+        "wait_after_ms": 800,
+        "timeout_ms": 10000,
+        "optional": false,
+        "highlight": true
+      }
+    ],
+    "branching": {
+      "enabled": true,
+      "check_type": "url_or_element",
+      "failure_selector": "#error-message",
+      "success_url_contains": "dashboard",
+      "success_selector": "",
+      "failure_branch": {
+        "title": "Login Failed return error",
+        "subtitle": "End of the RPA BOT task",
+        "outcome": "error",
+        "message": "Invalid authentication credentials.",
+        "status_code": 401
+      },
+      "success_branch": {
+        "title": "Login Successful",
+        "subtitle": "End of the RPA BOT task",
+        "outcome": "success",
+        "message": "Workflow reached target success state.",
+        "status_code": 200
+      }
+    },
+    "created_at": "2026-09-09T22:07:51.785416",
+    "updated_at": "2026-09-09T22:07:51.785416"
+  },
+  "saved_at": "2026-09-09T22:07:51.793930"
+}

@@ -1,0 +1,364 @@
+{
+  "recording_id": "bot_rec_1788809769",
+  "raw_actions": [
+    {
+      "fallbacks": [
+        "button[aria-label=\"Text\"]",
+        "button[title=\"Text — T or 8\"]",
+        "[data-testid=\"toolbar-text\"]",
+        "//button[contains(normalize-space(), \"8\")]"
+      ],
+      "selector": "[data-testid=\"toolbar-text\"]",
+      "target_name": "toolbar-text",
+      "text": "8",
+      "type": "click"
+    },
+    {
+      "action_type": "canvas_click",
+      "fallbacks": [
+        "//canvas"
+      ],
+      "offset_x": 1108,
+      "offset_y": 283,
+      "percent_x": 0.5771,
+      "percent_y": 0.297,
+      "selector": "div#root > div > div > canvas:nth-of-type(2)",
+      "target_name": "Canvas Point (58%, 30%)",
+      "text": "Click canvas point at (58%, 30%)",
+      "type": "canvas_click"
+    },
+    {
+      "fallbacks": [],
+      "input_type": "textarea",
+      "selector": "div > div > div:nth-of-type(2) > textarea",
+      "target_name": "textarea",
+      "type": "input",
+      "value": "hello ji"
+    },
+    {
+      "fallbacks": [
+        "button[aria-label=\"Rectangle\"]",
+        "button[title=\"Rectangle — R or 2\"]",
+        "[data-testid=\"toolbar-rectangle\"]",
+        "//button[contains(normalize-space(), \"2\")]"
+      ],
+      "selector": "[data-testid=\"toolbar-rectangle\"]",
+      "target_name": "toolbar-rectangle",
+      "text": "2",
+      "type": "click"
+    },
+    {
+      "action_type": "canvas_draw",
+      "end_percent_x": 0.625,
+      "end_percent_y": 0.3242,
+      "end_x": 1200,
+      "end_y": 309,
+      "fallbacks": [
+        "//canvas"
+      ],
+      "selector": "div#root > div > div > canvas:nth-of-type(2)",
+      "shape_hint": "rectangle",
+      "start_percent_x": 0.5672,
+      "start_percent_y": 0.2749,
+      "start_x": 1089,
+      "start_y": 262,
+      "target_name": "Draw on Canvas (57%, 27% → 63%, 32%)",
+      "text": "Draw rectangle from (57%, 27%) to (63%, 32%)",
+      "type": "canvas_draw"
+    },
+    {
+      "action_type": "canvas_click",
+      "fallbacks": [
+        "//canvas"
+      ],
+      "offset_x": 926,
+      "offset_y": 171,
+      "percent_x": 0.4823,
+      "percent_y": 0.1794,
+      "selector": "div#root > div > div > canvas",
+      "target_name": "Canvas Point (48%, 18%)",
+      "text": "Click canvas point at (48%, 18%)",
+      "type": "canvas_click"
+    },
+    {
+      "fallbacks": [
+        "[data-testid=\"main-menu-trigger\"]"
+      ],
+      "selector": "[data-testid=\"main-menu-trigger\"]",
+      "target_name": "main-menu-trigger",
+      "text": "",
+      "type": "click"
+    },
+    {
+      "fallbacks": [
+        "button[aria-label=\"Export image...\"]",
+        "button:has-text(\"Export image...\")",
+        "button[title=\"Export image...\"]",
+        "[data-testid=\"image-export-button\"]",
+        "//button[contains(normalize-space(), \"Export image...\")]"
+      ],
+      "selector": "[data-testid=\"image-export-button\"]",
+      "target_name": "image-export-button",
+      "text": "Export image...",
+      "type": "click"
+    },
+    {
+      "fallbacks": [
+        "button:has-text(\"Copy to clipboard\")",
+        "div > div:nth-of-type(2) > div:nth-of-type(5) > button:nth-of-type(3)",
+        "//button[contains(normalize-space(), \"Copy to clipboard\")]"
+      ],
+      "selector": "button[aria-label=\"Copy PNG to clipboard\"]",
+      "target_name": "Copy PNG to clipboard",
+      "text": "Copy to clipboard",
+      "type": "click"
+    }
+  ],
+  "bot_data": {
+    "id": "bot_rec_1788809769",
+    "name": "Recorded Path - 1:06:09 AM",
+    "description": "Workflow automatically generated from Chrome Extension path trace on https://excalidraw.com/",
+    "initial_url": "https://excalidraw.com/",
+    "variables": [
+      {
+        "name": "var_textarea",
+        "default_value": "hello ji",
+        "type": "string",
+        "description": "Input for textarea",
+        "required": true
+      }
+    ],
+    "steps": [
+      {
+        "id": "step_1",
+        "step_number": 1,
+        "title": "Extension initiated on excalidraw.com",
+        "action_type": "navigate",
+        "target_description": "Initial URL",
+        "selector": "",
+        "fallback_selectors": [],
+        "value_mode": "fixed",
+        "value": "https://excalidraw.com/",
+        "variable_name": "",
+        "wait_before_ms": 200,
+        "wait_after_ms": 500,
+        "timeout_ms": 15000,
+        "optional": false,
+        "highlight": true
+      },
+      {
+        "id": "step_2",
+        "step_number": 2,
+        "title": "8 Button",
+        "action_type": "click",
+        "target_description": "8 Button",
+        "selector": "[data-testid=\"toolbar-text\"]",
+        "fallback_selectors": [
+          "button[aria-label=\"Text\"]",
+          "button[title=\"Text — T or 8\"]",
+          "[data-testid=\"toolbar-text\"]",
+          "//button[contains(normalize-space(), \"8\")]"
+        ],
+        "value_mode": "fixed",
+        "value": "",
+        "variable_name": "",
+        "wait_before_ms": 300,
+        "wait_after_ms": 800,
+        "timeout_ms": 10000,
+        "optional": false,
+        "highlight": true
+      },
+      {
+        "id": "step_3",
+        "step_number": 3,
+        "title": "Click Canvas Point (58%, 30%)",
+        "action_type": "canvas_click",
+        "target_description": "Canvas Point (58%, 30%)",
+        "selector": "div#root > div > div > canvas:nth-of-type(2)",
+        "fallback_selectors": [
+          "//canvas"
+        ],
+        "value_mode": "fixed",
+        "value": "{\"percent_x\": 0.5771, \"percent_y\": 0.297, \"offset_x\": 1108, \"offset_y\": 283}",
+        "percent_x": 0.5771,
+        "percent_y": 0.297,
+        "variable_name": "",
+        "wait_before_ms": 300,
+        "wait_after_ms": 500,
+        "timeout_ms": 10000,
+        "optional": false,
+        "highlight": true
+      },
+      {
+        "id": "step_4",
+        "step_number": 4,
+        "title": "Input in Textarea field",
+        "action_type": "type",
+        "target_description": "textarea field",
+        "selector": "div > div > div:nth-of-type(2) > textarea",
+        "fallback_selectors": [],
+        "value_mode": "variable",
+        "value": "hello ji",
+        "variable_name": "var_textarea",
+        "wait_before_ms": 250,
+        "wait_after_ms": 300,
+        "timeout_ms": 10000,
+        "optional": false,
+        "highlight": true
+      },
+      {
+        "id": "step_5",
+        "step_number": 5,
+        "title": "2 Button",
+        "action_type": "click",
+        "target_description": "2 Button",
+        "selector": "[data-testid=\"toolbar-rectangle\"]",
+        "fallback_selectors": [
+          "button[aria-label=\"Rectangle\"]",
+          "button[title=\"Rectangle — R or 2\"]",
+          "[data-testid=\"toolbar-rectangle\"]",
+          "//button[contains(normalize-space(), \"2\")]"
+        ],
+        "value_mode": "fixed",
+        "value": "",
+        "variable_name": "",
+        "wait_before_ms": 300,
+        "wait_after_ms": 800,
+        "timeout_ms": 10000,
+        "optional": false,
+        "highlight": true
+      },
+      {
+        "id": "step_6",
+        "step_number": 6,
+        "title": "Draw Rectangle on Canvas",
+        "action_type": "canvas_draw",
+        "target_description": "Canvas Gesture (57%, 27% → 62%, 32%)",
+        "selector": "div#root > div > div > canvas:nth-of-type(2)",
+        "fallback_selectors": [
+          "//canvas"
+        ],
+        "value_mode": "fixed",
+        "value": "{\"start_percent_x\": 0.5672, \"start_percent_y\": 0.2749, \"end_percent_x\": 0.625, \"end_percent_y\": 0.3242, \"start_x\": 1089, \"start_y\": 262, \"end_x\": 1200, \"end_y\": 309, \"steps\": 20}",
+        "start_percent_x": 0.5672,
+        "start_percent_y": 0.2749,
+        "end_percent_x": 0.625,
+        "end_percent_y": 0.3242,
+        "variable_name": "",
+        "wait_before_ms": 300,
+        "wait_after_ms": 600,
+        "timeout_ms": 10000,
+        "optional": false,
+        "highlight": true
+      },
+      {
+        "id": "step_7",
+        "step_number": 7,
+        "title": "Click Canvas Point (48%, 18%)",
+        "action_type": "canvas_click",
+        "target_description": "Canvas Point (48%, 18%)",
+        "selector": "div#root > div > div > canvas",
+        "fallback_selectors": [
+          "//canvas"
+        ],
+        "value_mode": "fixed",
+        "value": "{\"percent_x\": 0.4823, \"percent_y\": 0.1794, \"offset_x\": 926, \"offset_y\": 171}",
+        "percent_x": 0.4823,
+        "percent_y": 0.1794,
+        "variable_name": "",
+        "wait_before_ms": 300,
+        "wait_after_ms": 500,
+        "timeout_ms": 10000,
+        "optional": false,
+        "highlight": true
+      },
+      {
+        "id": "step_8",
+        "step_number": 8,
+        "title": "Main-Menu-Trigger Button",
+        "action_type": "click",
+        "target_description": "main-menu-trigger Button",
+        "selector": "[data-testid=\"main-menu-trigger\"]",
+        "fallback_selectors": [
+          "[data-testid=\"main-menu-trigger\"]"
+        ],
+        "value_mode": "fixed",
+        "value": "",
+        "variable_name": "",
+        "wait_before_ms": 300,
+        "wait_after_ms": 800,
+        "timeout_ms": 10000,
+        "optional": false,
+        "highlight": true
+      },
+      {
+        "id": "step_9",
+        "step_number": 9,
+        "title": "Export Image... Button",
+        "action_type": "click",
+        "target_description": "Export image... Button",
+        "selector": "[data-testid=\"image-export-button\"]",
+        "fallback_selectors": [
+          "button[aria-label=\"Export image...\"]",
+          "button:has-text(\"Export image...\")",
+          "button[title=\"Export image...\"]",
+          "[data-testid=\"image-export-button\"]",
+          "//button[contains(normalize-space(), \"Export image...\")]"
+        ],
+        "value_mode": "fixed",
+        "value": "",
+        "variable_name": "",
+        "wait_before_ms": 300,
+        "wait_after_ms": 800,
+        "timeout_ms": 10000,
+        "optional": false,
+        "highlight": true
+      },
+      {
+        "id": "step_10",
+        "step_number": 10,
+        "title": "Copy To Clipboard Button",
+        "action_type": "click",
+        "target_description": "Copy to clipboard Button",
+        "selector": "button[aria-label=\"Copy PNG to clipboard\"]",
+        "fallback_selectors": [
+          "button:has-text(\"Copy to clipboard\")",
+          "div > div:nth-of-type(2) > div:nth-of-type(5) > button:nth-of-type(3)",
+          "//button[contains(normalize-space(), \"Copy to clipboard\")]"
+        ],
+        "value_mode": "fixed",
+        "value": "",
+        "variable_name": "",
+        "wait_before_ms": 300,
+        "wait_after_ms": 800,
+        "timeout_ms": 10000,
+        "optional": false,
+        "highlight": true
+      }
+    ],
+    "branching": {
+      "enabled": true,
+      "check_type": "url_or_element",
+      "failure_selector": "#error-message",
+      "success_url_contains": "dashboard",
+      "success_selector": "",
+      "failure_branch": {
+        "title": "Login Failed return error",
+        "subtitle": "End of the RPA BOT task",
+        "outcome": "error",
+        "message": "Invalid authentication credentials.",
+        "status_code": 401
+      },
+      "success_branch": {
+        "title": "Login Successful",
+        "subtitle": "End of the RPA BOT task",
+        "outcome": "success",
+        "message": "Workflow reached target success state.",
+        "status_code": 200
+      }
+    },
+    "created_at": "2026-09-08T01:06:09.087988",
+    "updated_at": "2026-09-08T01:06:09.087988"
+  },
+  "saved_at": "2026-09-08T01:06:09.096890"
+}

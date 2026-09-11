@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MahaSetu RPA Recorder - Settings</title>
+  <style>
+    :root {
+      --bg-main: #0b0f19;
+      --bg-card: #131b2e;
+      --bg-input: #0a0e17;
+      --border-color: #1e293b;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --primary: #0284c7;
+      --primary-hover: #0369a1;
+      --emerald: #10b981;
+      --emerald-hover: #059669;
+      --danger: #ef4444;
+      --radius: 8px;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    }
+    body {
+      background: var(--bg-main);
+      color: var(--text-main);
+      min-width: 480px;
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 24px;
+    }
+    .header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 24px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--border-color);
+    }
+    .header img {
+      width: 36px;
+      height: 36px;
+    }
+    .header-title h1 {
+      font-size: 18px;
+      font-weight: 700;
+      color: #fff;
+    }
+    .header-title p {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius);
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+    .card-title {
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: #e2e8f0;
+    }
+    .form-group {
+      margin-bottom: 16px;
+    }
+    .form-label {
+      display: block;
+      font-size: 12px;
+      font-weight: 600;
+      color: #cbd5e1;
+      margin-bottom: 6px;
+    }
+    .form-hint {
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-top: 4px;
+      line-height: 1.4;
+    }
+    .form-control {
+      width: 100%;
+      background: var(--bg-input);
+      border: 1px solid #334155;
+      color: #fff;
+      padding: 10px 12px;
+      border-radius: 6px;
+      font-size: 13px;
+      font-family: monospace;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .form-control:focus {
+      border-color: var(--primary);
+    }
+    .btn-group {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      margin-top: 12px;
+    }
+    .btn {
+      padding: 8px 14px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      border: none;
+      transition: all 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .btn-primary {
+      background: var(--emerald);
+      color: #06150f;
+    }
+    .btn-primary:hover {
+      background: var(--emerald-hover);
+    }
+    .btn-secondary {
+      background: var(--primary);
+      color: #fff;
+    }
+    .btn-secondary:hover {
+      background: var(--primary-hover);
+    }
+    .btn-outline {
+      background: transparent;
+      border: 1px solid #334155;
+      color: #cbd5e1;
+    }
+    .btn-outline:hover {
+      background: rgba(255, 255, 255, 0.05);
+      border-color: #475569;
+    }
+    .status-box {
+      margin-top: 14px;
+      padding: 10px 14px;
+      border-radius: 6px;
+      font-size: 12px;
+      display: none;
+    }
+    .status-success {
+      background: rgba(16, 185, 129, 0.15);
+      border: 1px solid var(--emerald);
+      color: #34d399;
+    }
+    .status-error {
+      background: rgba(239, 68, 68, 0.15);
+      border: 1px solid var(--danger);
+      color: #f87171;
+    }
+    .status-info {
+      background: rgba(2, 132, 199, 0.15);
+      border: 1px solid var(--primary);
+      color: #38bdf8;
+    }
+    .links-group {
+      display: flex;
+      gap: 10px;
+      margin-top: 10px;
+    }
+    .footer {
+      font-size: 11px;
+      color: #64748b;
+      text-align: center;
+      margin-top: 24px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <img src="../icons/icon48.png" alt="MahaSetu Icon" />
+    <div class="header-title">
+      <h1>MahaSetu RPA Recorder Settings</h1>
+      <p>Configure backend API server and synchronization parameters</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Backend API Server Connection</div>
+    <div class="form-group">
+      <label class="form-label" for="server-url">MahaSetu Server URL</label>
+      <input type="text" id="server-url" class="form-control" placeholder="http://127.0.0.1:5000" />
+      <div class="form-hint">
+        Enter the deployed web app URL or local development server address. (e.g. <code>https://rpa.yourdomain.com</code> or <code>http://127.0.0.1:5000</code>).
+      </div>
+    </div>
+
+    <div class="btn-group">
+      <button id="btn-save" class="btn btn-primary">Save Settings</button>
+      <button id="btn-test" class="btn btn-secondary">Test Connection</button>
+      <button id="btn-reset" class="btn btn-outline">Reset Default</button>
+    </div>
+
+    <div id="status-box" class="status-box"></div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Quick Portals</div>
+    <p style="font-size: 12px; color: var(--text-muted); margin-bottom: 12px;">
+      Quickly navigate to your configured MahaSetu web application instance:
+    </p>
+    <div class="links-group">
+      <button id="btn-open-builder" class="btn btn-outline">Open Workflow Builder</button>
+      <button id="btn-open-guide" class="btn btn-outline">Open Setup Guide</button>
+      <button id="btn-open-demo" class="btn btn-outline">Open Demo Target</button>
+    </div>
+  </div>
+
+  <div class="footer">
+    MahaSetu RPA Bot Ecosystem &bull; Manifest V3 &bull; Version 1.0.0
+  </div>
+
+  <script src="options.js"></script>
+</body>
+</html>

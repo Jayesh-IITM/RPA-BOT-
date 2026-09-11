@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GovBridge Citizen Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', sans-serif; }
+    body {
+      background: #0a0f1d;
+      color: #f8fafc;
+      padding: 2rem;
+    }
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .header {
+      background: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 12px;
+      padding: 1.5rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2rem;
+    }
+    .success-pill {
+      background: rgba(16, 185, 129, 0.15);
+      border: 1px solid #10b981;
+      color: #34d399;
+      padding: 4px 12px;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: 700;
+    }
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+    }
+    .card {
+      background: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 12px;
+      padding: 1.5rem;
+    }
+    .card h3 { font-size: 1.1rem; color: #fff; margin-bottom: 0.5rem; }
+    .card p { font-size: 0.85rem; color: #94a3b8; }
+    .btn {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.5rem 1rem;
+      background: #0284c7;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="header">
+      <div>
+        <h1 id="dashboard-header" style="font-size: 1.5rem; font-weight: 700; color: #fff;">
+          Welcome back, <span style="color: #38bdf8;">{{ user }}</span>
+        </h1>
+        <p style="font-size: 0.85rem; color: #94a3b8; margin-top: 2px;">GovBridge Citizen Services Portal &bull; Session Authenticated</p>
+      </div>
+      <span class="success-pill">Active Session Verified</span>
+    </div>
+
+    <div class="card-grid">
+      <div class="card">
+        <h3>Passport Renewal Service</h3>
+        <p>Status: Application #84920 under review.</p>
+        <a href="#" class="btn">View Application</a>
+      </div>
+
+      <div class="card">
+        <h3>Tax Assessment 2026</h3>
+        <p>Status: Verified. Tax Certificate #10294 issued.</p>
+        <a href="#" class="btn">Download Certificate</a>
+      </div>
+
+      <div class="card">
+        <h3>Business License Filing</h3>
+        <p>Status: Renewal due in 45 days.</p>
+        <a href="#" class="btn">Renew License</a>
+      </div>
+    </div>
+
+    <div style="margin-top: 2rem; text-align: center;">
+      <a href="/demo-target" style="color: #64748b; font-size: 0.85rem; text-decoration: none;">&larr; Log out of Demo Citizen Portal</a>
+    </div>
+  </div>
+
+</body>
+</html>

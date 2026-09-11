@@ -1,0 +1,262 @@
+{
+  "recording_id": "bot_rec_1788807378",
+  "raw_actions": [
+    {
+      "fallbacks": [
+        "//*[@id=\"root\"]/div[1]/div[1]/div[1]/div[1]/div[1]/section[1]/div[1]/div[1]/div[1]/div[1]/div[2]/button[4]"
+      ],
+      "selector": "[data-testid=\"toolbar-rectangle\"]",
+      "target_name": "2",
+      "text": "2",
+      "type": "click"
+    },
+    {
+      "fallbacks": [
+        "//*[@id=\"root\"]/div[1]/div[1]/div[1]/div[1]/div[1]/section[1]/div[1]/div[1]/div[1]/div[1]/div[1]/button[10]"
+      ],
+      "selector": "[data-testid=\"toolbar-text\"]",
+      "target_name": "8",
+      "text": "8",
+      "type": "click"
+    },
+    {
+      "fallbacks": [
+        "//*[@id=\"root\"]/div[1]/div[1]/canvas[1]"
+      ],
+      "selector": "div#root > div > div > canvas",
+      "target_name": "canvas",
+      "text": "",
+      "type": "click"
+    },
+    {
+      "fallbacks": [
+        "[data-testid=\"main-menu-trigger\"]",
+        "//*[@id=\"radix-:r2:\"]"
+      ],
+      "selector": "#radix-:r2:",
+      "target_name": "button",
+      "text": "",
+      "type": "click"
+    },
+    {
+      "fallbacks": [
+        "//*[@id=\"root\"]/div[1]/div[1]/div[2]/textarea[1]"
+      ],
+      "input_type": "textarea",
+      "selector": "div#root > div > div > div:nth-of-type(2) > textarea",
+      "target_name": "textarea",
+      "type": "input",
+      "value": "testing"
+    },
+    {
+      "fallbacks": [
+        "//*[@id=\"radix-:r3:\"]/div[1]/button[3]"
+      ],
+      "selector": "[data-testid=\"image-export-button\"]",
+      "target_name": "Export image...\nCtrl",
+      "text": "Export image...\nCtrl+Shift+E",
+      "type": "click"
+    },
+    {
+      "fallbacks": [
+        "/html/body/div[4]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[6]/button[1]"
+      ],
+      "selector": "html > body > div:nth-of-type(4) > div > div:nth-of-type(2) > div > div > div > div:nth-of-type(2) > div:nth-of-type(6) > button",
+      "target_name": "PNG",
+      "text": "PNG",
+      "type": "click"
+    }
+  ],
+  "bot_data": {
+    "id": "bot_rec_1788807378",
+    "name": "Recorded Path - 12:26:18 AM",
+    "description": "Workflow automatically generated from Chrome Extension path trace on https://excalidraw.com/",
+    "initial_url": "https://excalidraw.com/",
+    "variables": [
+      {
+        "name": "var_textarea",
+        "default_value": "testing",
+        "type": "string",
+        "description": "Input for textarea",
+        "required": true
+      }
+    ],
+    "steps": [
+      {
+        "id": "step_1",
+        "step_number": 1,
+        "title": "Extension initiated on excalidraw.com",
+        "action_type": "navigate",
+        "target_description": "Initial URL",
+        "selector": "",
+        "fallback_selectors": [],
+        "value_mode": "fixed",
+        "value": "https://excalidraw.com/",
+        "variable_name": "",
+        "wait_before_ms": 200,
+        "wait_after_ms": 500,
+        "timeout_ms": 15000,
+        "optional": false,
+        "highlight": true
+      },
+      {
+        "id": "step_2",
+        "step_number": 2,
+        "title": "2 Button",
+        "action_type": "click",
+        "target_description": "2 Button",
+        "selector": "[data-testid=\"toolbar-rectangle\"]",
+        "fallback_selectors": [
+          "//*[@id=\"root\"]/div[1]/div[1]/div[1]/div[1]/div[1]/section[1]/div[1]/div[1]/div[1]/div[1]/div[2]/button[4]"
+        ],
+        "value_mode": "fixed",
+        "value": "",
+        "variable_name": "",
+        "wait_before_ms": 300,
+        "wait_after_ms": 800,
+        "timeout_ms": 10000,
+        "optional": false,
+        "highlight": true
+      },
+      {
+        "id": "step_3",
+        "step_number": 3,
+        "title": "8 Button",
+        "action_type": "click",
+        "target_description": "8 Button",
+        "selector": "[data-testid=\"toolbar-text\"]",
+        "fallback_selectors": [
+          "//*[@id=\"root\"]/div[1]/div[1]/div[1]/div[1]/div[1]/section[1]/div[1]/div[1]/div[1]/div[1]/div[1]/button[10]"
+        ],
+        "value_mode": "fixed",
+        "value": "",
+        "variable_name": "",
+        "wait_before_ms": 300,
+        "wait_after_ms": 800,
+        "timeout_ms": 10000,
+        "optional": false,
+        "highlight": true
+      },
+      {
+        "id": "step_4",
+        "step_number": 4,
+        "title": "Canvas Button",
+        "action_type": "click",
+        "target_description": "canvas Button",
+        "selector": "div#root > div > div > canvas",
+        "fallback_selectors": [
+          "//*[@id=\"root\"]/div[1]/div[1]/canvas[1]"
+        ],
+        "value_mode": "fixed",
+        "value": "",
+        "variable_name": "",
+        "wait_before_ms": 300,
+        "wait_after_ms": 800,
+        "timeout_ms": 10000,
+        "optional": false,
+        "highlight": true
+      },
+      {
+        "id": "step_5",
+        "step_number": 5,
+        "title": "Button Button",
+        "action_type": "click",
+        "target_description": "button Button",
+        "selector": "#radix-:r2:",
+        "fallback_selectors": [
+          "[data-testid=\"main-menu-trigger\"]",
+          "//*[@id=\"radix-:r2:\"]"
+        ],
+        "value_mode": "fixed",
+        "value": "",
+        "variable_name": "",
+        "wait_before_ms": 300,
+        "wait_after_ms": 800,
+        "timeout_ms": 10000,
+        "optional": false,
+        "highlight": true
+      },
+      {
+        "id": "step_6",
+        "step_number": 6,
+        "title": "Input in Textarea field",
+        "action_type": "type",
+        "target_description": "textarea field",
+        "selector": "div#root > div > div > div:nth-of-type(2) > textarea",
+        "fallback_selectors": [
+          "//*[@id=\"root\"]/div[1]/div[1]/div[2]/textarea[1]"
+        ],
+        "value_mode": "variable",
+        "value": "testing",
+        "variable_name": "var_textarea",
+        "wait_before_ms": 250,
+        "wait_after_ms": 300,
+        "timeout_ms": 10000,
+        "optional": false,
+        "highlight": true
+      },
+      {
+        "id": "step_7",
+        "step_number": 7,
+        "title": "Export Image...\nCtrl+Shift+E Button",
+        "action_type": "click",
+        "target_description": "Export image...\nCtrl+Shift+E Button",
+        "selector": "[data-testid=\"image-export-button\"]",
+        "fallback_selectors": [
+          "//*[@id=\"radix-:r3:\"]/div[1]/button[3]"
+        ],
+        "value_mode": "fixed",
+        "value": "",
+        "variable_name": "",
+        "wait_before_ms": 300,
+        "wait_after_ms": 800,
+        "timeout_ms": 10000,
+        "optional": false,
+        "highlight": true
+      },
+      {
+        "id": "step_8",
+        "step_number": 8,
+        "title": "Png Button",
+        "action_type": "click",
+        "target_description": "PNG Button",
+        "selector": "html > body > div:nth-of-type(4) > div > div:nth-of-type(2) > div > div > div > div:nth-of-type(2) > div:nth-of-type(6) > button",
+        "fallback_selectors": [
+          "/html/body/div[4]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[6]/button[1]"
+        ],
+        "value_mode": "fixed",
+        "value": "",
+        "variable_name": "",
+        "wait_before_ms": 300,
+        "wait_after_ms": 800,
+        "timeout_ms": 10000,
+        "optional": false,
+        "highlight": true
+      }
+    ],
+    "branching": {
+      "enabled": true,
+      "check_type": "url_or_element",
+      "failure_selector": "#error-message",
+      "success_url_contains": "dashboard",
+      "success_selector": "",
+      "failure_branch": {
+        "title": "Login Failed return error",
+        "subtitle": "End of the RPA BOT task",
+        "outcome": "error",
+        "message": "Invalid authentication credentials.",
+        "status_code": 401
+      },
+      "success_branch": {
+        "title": "Login Successful",
+        "subtitle": "End of the RPA BOT task",
+        "outcome": "success",
+        "message": "Workflow reached target success state.",
+        "status_code": 200
+      }
+    },
+    "created_at": "2026-09-08T00:26:18.953301",
+    "updated_at": "2026-09-08T00:26:18.953301"
+  },
+  "saved_at": "2026-09-08T00:26:18.961023"
+}

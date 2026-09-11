@@ -1,0 +1,54 @@
+{
+  "recording_id": "bot_rec_1788802036",
+  "raw_actions": [],
+  "bot_data": {
+    "id": "bot_rec_1788802036",
+    "name": "Recorded Path - 10:57:16 PM",
+    "description": "Workflow automatically generated from Chrome Extension path trace on http://127.0.0.1:5000/demo-target",
+    "initial_url": "http://127.0.0.1:5000/demo-target",
+    "variables": [],
+    "steps": [
+      {
+        "id": "step_1",
+        "step_number": 1,
+        "title": "Extension initiated on 127.0.0.1:5000",
+        "action_type": "navigate",
+        "target_description": "Initial URL",
+        "selector": "",
+        "fallback_selectors": [],
+        "value_mode": "fixed",
+        "value": "http://127.0.0.1:5000/demo-target",
+        "variable_name": "",
+        "wait_before_ms": 200,
+        "wait_after_ms": 500,
+        "timeout_ms": 15000,
+        "optional": false,
+        "highlight": true
+      }
+    ],
+    "branching": {
+      "enabled": true,
+      "check_type": "url_or_element",
+      "failure_selector": "#error-message",
+      "success_url_contains": "dashboard",
+      "success_selector": "",
+      "failure_branch": {
+        "title": "Login Failed return error",
+        "subtitle": "End of the RPA BOT task",
+        "outcome": "error",
+        "message": "Invalid authentication credentials.",
+        "status_code": 401
+      },
+      "success_branch": {
+        "title": "Login Successful",
+        "subtitle": "End of the RPA BOT task",
+        "outcome": "success",
+        "message": "Workflow reached target success state.",
+        "status_code": 200
+      }
+    },
+    "created_at": "2026-09-07T22:57:16.185747",
+    "updated_at": "2026-09-07T22:57:16.185747"
+  },
+  "saved_at": "2026-09-07T22:57:16.189107"
+}

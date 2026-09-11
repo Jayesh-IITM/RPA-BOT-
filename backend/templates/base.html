@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}GovBridge - RPA Bot Ecosystem{% endblock %}</title>
+  <!-- Google Fonts: Inter & Outfit -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+  {% block extra_head %}{% endblock %}
+</head>
+<body>
+
+  <!-- Top Navigation Bar with MahaSetu Branding -->
+  <header class="navbar">
+    <div class="nav-brand-container">
+      <a href="/" style="text-decoration: none;">
+        <div class="govbridge-title" style="font-size: 1.4rem; font-weight: 800; color: #ffffff; letter-spacing: -0.5px;">
+          MahaSetu - RPA
+        </div>
+      </a>
+      <div class="nav-subtitle">Path Traced RPA Bot Ecosystem</div>
+    </div>
+
+    <nav class="nav-links">
+      <a href="/builder" class="nav-link {% if request.path == '/builder' or request.path == '/' %}active{% endif %}">
+        Workflow Builder
+      </a>
+      <a href="/extension-guide" class="nav-link {% if request.path == '/extension-guide' %}active{% endif %}">
+        Chrome Extension
+      </a>
+    </nav>
+  </header>
+
+  <!-- Page Content -->
+  <main>
+    {% block content %}{% endblock %}
+  </main>
+
+  {% block scripts %}{% endblock %}
+</body>
+</html>

@@ -1,0 +1,35 @@
+# ==============================================================================
+# Nixpacks Configuration for Railway (Fallback if Nixpacks builder is selected)
+# ==============================================================================
+
+[phases.setup]
+nixPkgs = [
+  "python311",
+  "chromium",
+  "glib",
+  "nss",
+  "nspr",
+  "atk",
+  "at-spi2-atk",
+  "libdrm",
+  "libxkbcommon",
+  "mesa",
+  "curl"
+]
+
+[phases.install]
+cmds = [
+  "python -m venv /opt/venv",
+  ". /opt/venv/bin/activate && pip install --upgrade pip",
+  ". /opt/venv/bin/activate && pip install -r requirements.txt gunicorn",
+  ". /opt/venv/bin/activate && playwright install chromium",
+  ". /opt/venv/bin/activate && python scripts/package_extension.py"
+]
+
+[phases.build]
+cmds = [
+  "mkdir -p backend/data/recordings backend/data/screenshots"
+]
+
+[start]
+cmd = ". /opt/venv/bin/activate && gunicorn --workers 2 --threads 4 --bind 0.0.0.0:$PORT --timeout 120 wsgi:application"

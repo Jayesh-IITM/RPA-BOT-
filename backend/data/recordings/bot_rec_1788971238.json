@@ -1,0 +1,169 @@
+{
+  "recording_id": "bot_rec_1788971238",
+  "raw_actions": [
+    {
+      "fallbacks": [
+        "a:has-text(\"Excalidraw Whiteboard\")",
+        "//a[contains(normalize-space(), \"Excalidraw Whiteboard\")]"
+      ],
+      "selector": "div > div > span > a",
+      "target_name": "Excalidraw Whiteboard",
+      "text": "Excalidraw Whiteboard",
+      "type": "click"
+    },
+    {
+      "action_type": "canvas_draw",
+      "end_percent_x": 0.6188,
+      "end_percent_y": 0.3054,
+      "end_x": 1485,
+      "end_y": 364,
+      "fallbacks": [
+        "//canvas"
+      ],
+      "selector": "div#root > div > div > canvas",
+      "shape_hint": "rectangle",
+      "start_percent_x": 0.4984,
+      "start_percent_y": 0.3683,
+      "start_x": 1196,
+      "start_y": 439,
+      "target_name": "Draw on Canvas (50%, 37% → 62%, 31%)",
+      "text": "Draw rectangle from (50%, 37%) to (62%, 31%)",
+      "type": "canvas_draw"
+    },
+    {
+      "action_type": "canvas_draw",
+      "end_percent_x": 0.5224,
+      "end_percent_y": 0.3043,
+      "end_x": 1254,
+      "end_y": 363,
+      "fallbacks": [
+        "//canvas"
+      ],
+      "selector": "div#root > div > div > canvas",
+      "shape_hint": "rectangle",
+      "start_percent_x": 0.6188,
+      "start_percent_y": 0.3054,
+      "start_x": 1485,
+      "start_y": 364,
+      "target_name": "Draw on Canvas (62%, 31% → 52%, 30%)",
+      "text": "Draw rectangle from (62%, 31%) to (52%, 30%)",
+      "type": "canvas_draw"
+    }
+  ],
+  "bot_data": {
+    "id": "bot_rec_1788971238",
+    "name": "Recorded Path - 9:57:18 PM",
+    "description": "Workflow automatically generated from Chrome Extension path trace on https://meet.google.com/hwd-akzv-wqu",
+    "initial_url": "https://meet.google.com/hwd-akzv-wqu",
+    "variables": [],
+    "steps": [
+      {
+        "id": "step_1",
+        "step_number": 1,
+        "title": "Extension initiated on meet.google.com",
+        "action_type": "navigate",
+        "target_description": "Initial URL",
+        "selector": "",
+        "fallback_selectors": [],
+        "value_mode": "fixed",
+        "value": "https://meet.google.com/hwd-akzv-wqu",
+        "variable_name": "",
+        "wait_before_ms": 200,
+        "wait_after_ms": 500,
+        "timeout_ms": 15000,
+        "optional": false,
+        "highlight": true
+      },
+      {
+        "id": "step_2",
+        "step_number": 2,
+        "title": "Excalidraw Whiteboard Button",
+        "action_type": "click",
+        "target_description": "Excalidraw Whiteboard Button",
+        "selector": "div > div > span > a",
+        "fallback_selectors": [
+          "a:has-text(\"Excalidraw Whiteboard\")",
+          "//a[contains(normalize-space(), \"Excalidraw Whiteboard\")]"
+        ],
+        "value_mode": "fixed",
+        "value": "",
+        "variable_name": "",
+        "wait_before_ms": 300,
+        "wait_after_ms": 800,
+        "timeout_ms": 10000,
+        "optional": false,
+        "highlight": true
+      },
+      {
+        "id": "step_3",
+        "step_number": 3,
+        "title": "Draw Rectangle on Canvas",
+        "action_type": "canvas_draw",
+        "target_description": "Canvas Gesture (50%, 37% → 62%, 31%)",
+        "selector": "div#root > div > div > canvas",
+        "fallback_selectors": [
+          "//canvas"
+        ],
+        "value_mode": "fixed",
+        "value": "{\"start_percent_x\": 0.4984, \"start_percent_y\": 0.3683, \"end_percent_x\": 0.6188, \"end_percent_y\": 0.3054, \"start_x\": 1196, \"start_y\": 439, \"end_x\": 1485, \"end_y\": 364, \"steps\": 20}",
+        "start_percent_x": 0.4984,
+        "start_percent_y": 0.3683,
+        "end_percent_x": 0.6188,
+        "end_percent_y": 0.3054,
+        "variable_name": "",
+        "wait_before_ms": 300,
+        "wait_after_ms": 600,
+        "timeout_ms": 10000,
+        "optional": false,
+        "highlight": true
+      },
+      {
+        "id": "step_4",
+        "step_number": 4,
+        "title": "Draw Rectangle on Canvas",
+        "action_type": "canvas_draw",
+        "target_description": "Canvas Gesture (62%, 31% → 52%, 30%)",
+        "selector": "div#root > div > div > canvas",
+        "fallback_selectors": [
+          "//canvas"
+        ],
+        "value_mode": "fixed",
+        "value": "{\"start_percent_x\": 0.6188, \"start_percent_y\": 0.3054, \"end_percent_x\": 0.5224, \"end_percent_y\": 0.3043, \"start_x\": 1485, \"start_y\": 364, \"end_x\": 1254, \"end_y\": 363, \"steps\": 20}",
+        "start_percent_x": 0.6188,
+        "start_percent_y": 0.3054,
+        "end_percent_x": 0.5224,
+        "end_percent_y": 0.3043,
+        "variable_name": "",
+        "wait_before_ms": 300,
+        "wait_after_ms": 600,
+        "timeout_ms": 10000,
+        "optional": false,
+        "highlight": true
+      }
+    ],
+    "branching": {
+      "enabled": true,
+      "check_type": "url_or_element",
+      "failure_selector": "#error-message",
+      "success_url_contains": "dashboard",
+      "success_selector": "",
+      "failure_branch": {
+        "title": "Login Failed return error",
+        "subtitle": "End of the RPA BOT task",
+        "outcome": "error",
+        "message": "Invalid authentication credentials.",
+        "status_code": 401
+      },
+      "success_branch": {
+        "title": "Login Successful",
+        "subtitle": "End of the RPA BOT task",
+        "outcome": "success",
+        "message": "Workflow reached target success state.",
+        "status_code": 200
+      }
+    },
+    "created_at": "2026-09-09T21:57:18.407081",
+    "updated_at": "2026-09-09T21:57:18.407081"
+  },
+  "saved_at": "2026-09-09T21:57:18.414213"
+}

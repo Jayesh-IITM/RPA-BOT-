@@ -1,0 +1,211 @@
+{% extends "base.html" %}
+
+{% block title %}Chrome Extension Setup & Distribution - MahaSetu RPA{% endblock %}
+
+{% block content %}
+<div style="padding: 2.5rem 3rem; max-width: 1050px; margin: 0 auto;">
+
+  <!-- Hero Header -->
+  <div style="margin-bottom: 2rem; display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 1rem;">
+    <div>
+      <div class="govbridge-badge" style="margin-bottom: 0.75rem;">
+        <span style="font-size: 0.85rem; font-weight: 700; color: var(--gov-green-light); text-transform: uppercase;">Browser Extension (Manifest V3)</span>
+      </div>
+      <h1 style="font-size: 2.1rem; font-weight: 800; color: #ffffff; letter-spacing: -0.5px;">
+        MahaSetu RPA Recorder Extension
+      </h1>
+      <p style="color: var(--text-secondary); margin-top: 0.35rem; font-size: 0.95rem; max-width: 650px;">
+        Record user browser interactions with noise filtering, multi-selector fallbacks, canvas drawing capture, and automatic sync to the visual builder.
+      </p>
+    </div>
+
+    <!-- Live Extension Detection Status Badge -->
+    <div id="ext-detect-badge" style="background: rgba(100, 116, 139, 0.15); border: 1px solid #334155; padding: 0.75rem 1.25rem; border-radius: 8px; display: flex; align-items: center; gap: 10px;">
+      <span id="ext-detect-dot" style="width: 10px; height: 10px; border-radius: 50%; background: #94a3b8;"></span>
+      <div>
+        <div id="ext-detect-title" style="font-size: 0.85rem; font-weight: 700; color: #e2e8f0;">Detecting Extension...</div>
+        <div id="ext-detect-sub" style="font-size: 0.75rem; color: #94a3b8;">Checking browser environment</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Quick Download & Connection Info Banner -->
+  <div style="background: linear-gradient(135deg, rgba(2, 132, 199, 0.15) 0%, rgba(16, 185, 129, 0.12) 100%); border: 1px solid rgba(56, 189, 248, 0.3); border-radius: var(--radius-md); padding: 1.5rem 2rem; margin-bottom: 2rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1.5rem;">
+    <div>
+      <h2 style="font-size: 1.25rem; font-weight: 700; color: #fff; margin-bottom: 0.25rem;">
+        Production Extension Package Ready
+      </h2>
+      <p style="color: #cbd5e1; font-size: 0.875rem;">
+        Download the verified Manifest V3 production package ready for Chrome Web Store upload or offline installation.
+      </p>
+      <div style="margin-top: 0.75rem; display: flex; align-items: center; gap: 8px; font-size: 0.82rem; color: #94a3b8;">
+        <span>Active Instance URL:</span>
+        <code id="active-instance-url" style="color: #38bdf8; background: #030712; padding: 2px 8px; border-radius: 4px; border: 1px solid #1e293b; font-family: monospace;">Loading...</code>
+        <button class="btn btn-outline" style="padding: 2px 8px; font-size: 0.75rem;" onclick="copyInstanceUrl()">Copy URL</button>
+      </div>
+    </div>
+    
+    <div style="display: flex; gap: 0.75rem; align-items: center;">
+      <a href="/api/extension/download" class="btn btn-primary" style="padding: 0.75rem 1.4rem; font-size: 0.95rem; font-weight: 700; display: inline-flex; align-items: center; gap: 8px; text-decoration: none;">
+        <span>↓ Download Extension (.zip)</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- Dual Installation Tabs -->
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(460px, 1fr)); gap: 1.5rem; margin-bottom: 2rem;">
+    
+    <!-- Card 1: Production ZIP / Chrome Web Store -->
+    <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 1.75rem;">
+      <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 1rem;">
+        <span style="background: #0284c7; color: #fff; padding: 2px 8px; border-radius: 4px; font-size: 0.75rem; font-weight: 700;">METHOD 1</span>
+        <h3 style="font-size: 1.15rem; font-weight: 700; color: #fff;">Production ZIP / Deployment</h3>
+      </div>
+      <p style="font-size: 0.875rem; color: var(--text-secondary); margin-bottom: 1.25rem;">
+        For enterprise rollouts, cloud deployments, or submission to the official Chrome Web Store.
+      </p>
+
+      <ol style="margin-left: 1.25rem; font-size: 0.875rem; color: #cbd5e1; display: flex; flex-direction: column; gap: 0.85rem;">
+        <li>
+          <strong>Download Extension ZIP:</strong>
+          <p style="color: var(--text-secondary); font-size: 0.82rem; margin-top: 2px;">
+            Click the download button above or grab <code>dist/mahasetu-rpa-recorder-v1.0.0.zip</code>.
+          </p>
+        </li>
+        <li>
+          <strong>Unzip to Local Folder:</strong>
+          <p style="color: var(--text-secondary); font-size: 0.82rem; margin-top: 2px;">
+            Extract the ZIP archive into a permanent folder on your workstation.
+          </p>
+        </li>
+        <li>
+          <strong>Configure Server Backend URL:</strong>
+          <p style="color: var(--text-secondary); font-size: 0.82rem; margin-top: 2px;">
+            In the extension popup or options, set your production backend URL (e.g. <code>https://rpa.yourdomain.com</code>). Click <strong>Test Ping</strong> to verify.
+          </p>
+        </li>
+      </ol>
+    </div>
+
+    <!-- Card 2: Developer Mode (Unpacked) -->
+    <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 1.75rem;">
+      <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 1rem;">
+        <span style="background: #10b981; color: #06150f; padding: 2px 8px; border-radius: 4px; font-size: 0.75rem; font-weight: 700;">METHOD 2</span>
+        <h3 style="font-size: 1.15rem; font-weight: 700; color: #fff;">Developer Mode (Unpacked)</h3>
+      </div>
+      <p style="font-size: 0.875rem; color: var(--text-secondary); margin-bottom: 1.25rem;">
+        Quickest method for local testing and customization during development.
+      </p>
+
+      <ol style="margin-left: 1.25rem; font-size: 0.875rem; color: #cbd5e1; display: flex; flex-direction: column; gap: 0.85rem;">
+        <li>
+          <strong>Open Chrome Extensions:</strong>
+          <p style="color: var(--text-secondary); font-size: 0.82rem; margin-top: 2px;">
+            Navigate to <code>chrome://extensions</code> in Google Chrome and enable <strong>Developer mode</strong> (top-right toggle).
+          </p>
+        </li>
+        <li>
+          <strong>Load Unpacked:</strong>
+          <p style="color: var(--text-secondary); font-size: 0.82rem; margin-top: 2px;">
+            Click <strong>Load unpacked</strong> and select the extension directory:
+          </p>
+          <div style="background: #030712; padding: 0.5rem 0.75rem; border-radius: 4px; border: 1px solid #1e293b; font-family: monospace; font-size: 0.8rem; color: #38bdf8; margin-top: 4px; display: flex; justify-content: space-between; align-items: center;">
+            <span id="ext-src-path">extension</span>
+            <button class="btn btn-outline" style="font-size: 0.7rem; padding: 1px 6px;" onclick="copyExtPath()">Copy</button>
+          </div>
+        </li>
+        <li>
+          <strong>Ready to Record:</strong>
+          <p style="color: var(--text-secondary); font-size: 0.82rem; margin-top: 2px;">
+            The MahaSetu icon will appear in your Chrome toolbar.
+          </p>
+        </li>
+      </ol>
+    </div>
+
+  </div>
+
+  <!-- Bottom Navigation -->
+  <div style="display: flex; gap: 1rem; align-items: center;">
+    <a href="/builder" class="btn btn-primary">
+      Open Workflow Builder
+    </a>
+    <a href="/demo-target" class="btn btn-outline">
+      Open Demo Login Target
+    </a>
+  </div>
+
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+  // Populate active host/origin
+  const currentOrigin = window.location.origin;
+  document.getElementById("active-instance-url").innerText = currentOrigin;
+
+  function copyInstanceUrl() {
+    navigator.clipboard.writeText(currentOrigin);
+    alert("Server URL copied to clipboard: " + currentOrigin);
+  }
+
+  function copyExtPath() {
+    navigator.clipboard.writeText("c:\\RPA Bots\\extension");
+    alert("Path copied: c:\\RPA Bots\\extension");
+  }
+
+  // Extension Detection Logic
+  let extensionDetected = false;
+
+  function markExtensionConnected(version) {
+    extensionDetected = true;
+    const dot = document.getElementById("ext-detect-dot");
+    const title = document.getElementById("ext-detect-title");
+    const sub = document.getElementById("ext-detect-sub");
+    const badge = document.getElementById("ext-detect-badge");
+
+    dot.style.background = "#10b981";
+    dot.style.boxShadow = "0 0 8px #10b981";
+    title.innerText = "Extension Connected ✓";
+    title.style.color = "#34d399";
+    sub.innerText = `MahaSetu Recorder v${version || '1.0.0'} active`;
+    badge.style.borderColor = "#10b981";
+    badge.style.background = "rgba(16, 185, 129, 0.1)";
+  }
+
+  function markExtensionMissing() {
+    if (extensionDetected) return;
+    const dot = document.getElementById("ext-detect-dot");
+    const title = document.getElementById("ext-detect-title");
+    const sub = document.getElementById("ext-detect-sub");
+
+    dot.style.background = "#f59e0b";
+    title.innerText = "Extension Not Detected";
+    title.style.color = "#fbbf24";
+    sub.innerText = "Install unpacked or download ZIP";
+  }
+
+  // Listen for handshake events from content.js
+  window.addEventListener("message", (event) => {
+    if (event.data && (event.data.type === "MAHASETU_EXTENSION_READY" || event.data.type === "MAHASETU_EXTENSION_PONG")) {
+      markExtensionConnected(event.data.version);
+    }
+  });
+
+  document.addEventListener("MahaSetuExtensionReady", (e) => {
+    markExtensionConnected(e.detail ? e.detail.version : "1.0.0");
+  });
+
+  // Ping extension after 200ms
+  setTimeout(() => {
+    window.postMessage({ type: "MAHASETU_PING_EXTENSION" }, "*");
+  }, 200);
+
+  // Fallback timeout after 1.5 seconds if no response
+  setTimeout(() => {
+    if (!extensionDetected) {
+      markExtensionMissing();
+    }
+  }, 1500);
+</script>
+{% endblock %}

@@ -1,0 +1,162 @@
+{
+  "recording_id": "bot_rec_1788808920",
+  "raw_actions": [
+    {
+      "type": "canvas_draw",
+      "action_type": "canvas_draw",
+      "selector": "#drawing-board",
+      "fallbacks": [
+        "canvas",
+        "//canvas"
+      ],
+      "target_name": "Draw on Canvas (20%, 25% → 60%, 70%)",
+      "shape_hint": "rectangle",
+      "start_x": 136,
+      "start_y": 95,
+      "end_x": 408,
+      "end_y": 266,
+      "start_percent_x": 0.2,
+      "start_percent_y": 0.25,
+      "end_percent_x": 0.6,
+      "end_percent_y": 0.7
+    },
+    {
+      "type": "canvas_click",
+      "action_type": "canvas_click",
+      "selector": "#drawing-board",
+      "fallbacks": [
+        "canvas"
+      ],
+      "target_name": "Canvas Point (80%, 80%)",
+      "offset_x": 544,
+      "offset_y": 304,
+      "percent_x": 0.8,
+      "percent_y": 0.8
+    },
+    {
+      "type": "click",
+      "selector": "[data-testid=\"smart-export-btn\"]",
+      "fallbacks": [
+        "#radix-:r5:",
+        "button:has-text('Export Canvas Drawing')"
+      ],
+      "target_name": "Export Canvas Drawing",
+      "text": "Export Canvas Drawing\nCtrl+E"
+    }
+  ],
+  "bot_data": {
+    "id": "bot_rec_1788808920",
+    "name": "Canvas Rectangle Drawing Bot",
+    "description": "Workflow automatically generated from Chrome Extension path trace on http://127.0.0.1:5000/demo-canvas",
+    "initial_url": "http://127.0.0.1:5000/demo-canvas",
+    "variables": [],
+    "steps": [
+      {
+        "id": "step_1",
+        "step_number": 1,
+        "title": "Extension initiated on 127.0.0.1:5000",
+        "action_type": "navigate",
+        "target_description": "Initial URL",
+        "selector": "",
+        "fallback_selectors": [],
+        "value_mode": "fixed",
+        "value": "http://127.0.0.1:5000/demo-canvas",
+        "variable_name": "",
+        "wait_before_ms": 200,
+        "wait_after_ms": 500,
+        "timeout_ms": 15000,
+        "optional": false,
+        "highlight": true
+      },
+      {
+        "id": "step_2",
+        "step_number": 2,
+        "title": "Draw Rectangle on Canvas",
+        "action_type": "canvas_draw",
+        "target_description": "Canvas Gesture (20%, 25% → 60%, 70%)",
+        "selector": "#drawing-board",
+        "fallback_selectors": [
+          "canvas",
+          "//canvas"
+        ],
+        "value_mode": "fixed",
+        "value": "{\"start_percent_x\": 0.2, \"start_percent_y\": 0.25, \"end_percent_x\": 0.6, \"end_percent_y\": 0.7, \"start_x\": 136, \"start_y\": 95, \"end_x\": 408, \"end_y\": 266, \"steps\": 20}",
+        "start_percent_x": 0.2,
+        "start_percent_y": 0.25,
+        "end_percent_x": 0.6,
+        "end_percent_y": 0.7,
+        "variable_name": "",
+        "wait_before_ms": 300,
+        "wait_after_ms": 600,
+        "timeout_ms": 10000,
+        "optional": false,
+        "highlight": true
+      },
+      {
+        "id": "step_3",
+        "step_number": 3,
+        "title": "Click Canvas Point (80%, 80%)",
+        "action_type": "canvas_click",
+        "target_description": "Canvas Point (80%, 80%)",
+        "selector": "#drawing-board",
+        "fallback_selectors": [
+          "canvas"
+        ],
+        "value_mode": "fixed",
+        "value": "{\"percent_x\": 0.8, \"percent_y\": 0.8, \"offset_x\": 544, \"offset_y\": 304}",
+        "percent_x": 0.8,
+        "percent_y": 0.8,
+        "variable_name": "",
+        "wait_before_ms": 300,
+        "wait_after_ms": 500,
+        "timeout_ms": 10000,
+        "optional": false,
+        "highlight": true
+      },
+      {
+        "id": "step_4",
+        "step_number": 4,
+        "title": "Export Canvas Drawing Button",
+        "action_type": "click",
+        "target_description": "Export Canvas Drawing Button",
+        "selector": "[data-testid=\"smart-export-btn\"]",
+        "fallback_selectors": [
+          "#radix-:r5:",
+          "button:has-text('Export Canvas Drawing')"
+        ],
+        "value_mode": "fixed",
+        "value": "",
+        "variable_name": "",
+        "wait_before_ms": 300,
+        "wait_after_ms": 800,
+        "timeout_ms": 10000,
+        "optional": false,
+        "highlight": true
+      }
+    ],
+    "branching": {
+      "enabled": true,
+      "check_type": "url_or_element",
+      "failure_selector": "#error-message",
+      "success_url_contains": "dashboard",
+      "success_selector": "",
+      "failure_branch": {
+        "title": "Login Failed return error",
+        "subtitle": "End of the RPA BOT task",
+        "outcome": "error",
+        "message": "Invalid authentication credentials.",
+        "status_code": 401
+      },
+      "success_branch": {
+        "title": "Login Successful",
+        "subtitle": "End of the RPA BOT task",
+        "outcome": "success",
+        "message": "Workflow reached target success state.",
+        "status_code": 200
+      }
+    },
+    "created_at": "2026-09-08T00:52:00.188258",
+    "updated_at": "2026-09-08T00:52:00.188258"
+  },
+  "saved_at": "2026-09-08T00:52:00.194750"
+}

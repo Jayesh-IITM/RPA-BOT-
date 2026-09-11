@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Canvas & Smart Interaction Test Portal</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+  <style>
+    body {
+      background: #090d16;
+      color: #f8fafc;
+      font-family: 'Inter', sans-serif;
+      padding: 2rem;
+    }
+    .canvas-container {
+      position: relative;
+      display: inline-block;
+      border: 2px solid #334155;
+      border-radius: 8px;
+      background: #0f172a;
+      overflow: hidden;
+      margin-bottom: 1.5rem;
+    }
+    canvas {
+      display: block;
+      cursor: crosshair;
+    }
+    .floating-overlay {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background: rgba(15, 23, 42, 0.85);
+      border: 1px solid #38bdf8;
+      border-radius: 6px;
+      padding: 6px 12px;
+      font-size: 0.8rem;
+      color: #38bdf8;
+      pointer-events: none;
+    }
+    .btn-zone {
+      position: relative;
+      display: inline-block;
+      margin-top: 1rem;
+    }
+    .intercepting-banner {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(14, 165, 233, 0.05);
+      z-index: 2;
+    }
+  </style>
+</head>
+<body>
+  <div style="max-width: 800px; margin: 0 auto;">
+    <h1 style="font-size: 1.4rem; font-weight: 700; margin-bottom: 0.5rem; color: #ffffff;">
+      Interactive Canvas & Gesture Testbed
+    </h1>
+    <p style="color: #94a3b8; font-size: 0.85rem; margin-bottom: 1.5rem;">
+      Test page verifying rectangle tracing on canvas, precision point clicks, and resilient button clicks under dynamic framework overlays.
+    </p>
+
+    <!-- Canvas drawing surface -->
+    <div class="canvas-container">
+      <div class="floating-overlay" id="canvas-status">Drawings: 0</div>
+      <canvas id="drawing-board" width="680" height="380"></canvas>
+    </div>
+
+    <div>
+      <div class="btn-zone">
+        <!-- Button with volatile ID radix-:r5: but stable data-testid and text -->
+        <button id="radix-:r5:" data-testid="smart-export-btn" class="btn btn-primary" onclick="handleExportClick()" style="padding: 0.75rem 1.5rem; font-weight: 700;">
+          Export Canvas Drawing
+        </button>
+        <!-- Overlay simulating pointer interception -->
+        <div class="intercepting-banner" id="banner-overlay"></div>
+      </div>
+      <span id="export-status" style="margin-left: 1rem; color: #34d399; font-weight: 600; font-size: 0.9rem;"></span>
+    </div>
+  </div>
+
+  <script>
+    const canvas = document.getElementById("drawing-board");
+    const ctx = canvas.getContext("2d");
+    let isDrawing = false;
+    let startX = 0, startY = 0;
+    let rectCount = 0;
+    let clickCount = 0;
+
+    // Background grid
+    ctx.fillStyle = "#0f172a";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    ctx.strokeStyle = "#1e293b";
+    ctx.lineWidth = 1;
+    for (let x = 0; x < canvas.width; x += 30) {
+      ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, canvas.height); ctx.stroke();
+    }
+    for (let y = 0; y < canvas.height; y += 30) {
+      ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(canvas.width, y); ctx.stroke();
+    }
+
+    canvas.addEventListener("mousedown", (e) => {
+      isDrawing = true;
+      const rect = canvas.getBoundingClientRect();
+      startX = e.clientX - rect.left;
+      startY = e.clientY - rect.top;
+    });
+
+    canvas.addEventListener("mouseup", (e) => {
+      if (!isDrawing) return;
+      isDrawing = false;
+      const rect = canvas.getBoundingClientRect();
+      const currentX = e.clientX - rect.left;
+      const currentY = e.clientY - rect.top;
+      const w = currentX - startX;
+      const h = currentY - startY;
+
+      if (Math.hypot(w, h) >= 12) {
+        // Draw rectangle
+        ctx.strokeStyle = "#38bdf8";
+        ctx.lineWidth = 3;
+        ctx.fillStyle = "rgba(56, 189, 248, 0.25)";
+        ctx.strokeRect(startX, startY, w, h);
+        ctx.fillRect(startX, startY, w, h);
+        rectCount++;
+        window.rectanglesDrawn = rectCount;
+        document.getElementById("canvas-status").innerText = `Rectangles Drawn: ${rectCount}`;
+      } else {
+        // Draw point
+        ctx.fillStyle = "#34d399";
+        ctx.beginPath();
+        ctx.arc(startX, startY, 6, 0, Math.PI * 2);
+        ctx.fill();
+        clickCount++;
+        window.pointsClicked = clickCount;
+        document.getElementById("canvas-status").innerText = `Points Clicked: ${clickCount}`;
+      }
+    });
+
+    function handleExportClick() {
+      window.exportClicked = true;
+      document.getElementById("export-status").innerText = "✓ Export Triggered Successfully!";
+    }
+  </script>
+</body>
+</html>

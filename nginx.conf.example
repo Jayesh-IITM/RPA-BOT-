@@ -1,0 +1,73 @@
+# ==============================================================================
+# MahaSetu RPA Ecosystem - Nginx Reverse Proxy Production Configuration
+# Supports HTTPS, WebSockets, and Server-Sent Events (SSE) Live Testing Streams
+# ==============================================================================
+
+upstream mahasetu_backend {
+    server 127.0.0.1:5000;
+    keepalive 32;
+}
+
+server {
+    listen 80;
+    server_name rpa.yourdomain.com;
+    # Redirect all HTTP traffic to HTTPS
+    return 301 https://$host$request_uri;
+}
+
+server {
+    listen 443 ssl http2;
+    server_name rpa.yourdomain.com;
+
+    # SSL Certificates
+    ssl_certificate /etc/letsencrypt/live/rpa.yourdomain.com/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/rpa.yourdomain.com/privkey.pem;
+    ssl_protocols TLSv1.2 TLSv1.3;
+    ssl_ciphers HIGH:!aNULL:!MD5;
+
+    # Client upload limits
+    client_max_body_size 50M;
+
+    # Security headers
+    add_header X-Frame-Options "SAMEORIGIN" always;
+    add_header X-XSS-Protection "1; mode=block" always;
+    add_header X-Content-Type-Options "nosniff" always;
+    add_header Referrer-Policy "no-referrer-when-downgrade" always;
+
+    # Static assets caching
+    location /static/ {
+        alias /var/www/mahasetu/backend/static/;
+        expires 7d;
+        add_header Cache-Control "public, no-transform";
+    }
+
+    # CRITICAL FOR PLAYWRIGHT LIVE TEST STREAMING (Server-Sent Events)
+    location /api/bots/ {
+        proxy_pass http://mahasetu_backend;
+        proxy_http_version 1.1;
+
+        # Disable proxy buffering so SSE events stream in real-time
+        proxy_buffering off;
+        proxy_cache off;
+        proxy_read_timeout 300s;
+        proxy_send_timeout 300s;
+
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_set_header Connection '';
+        chunked_transfer_encoding off;
+    }
+
+    # Standard Web Application & API routes
+    location / {
+        proxy_pass http://mahasetu_backend;
+        proxy_http_version 1.1;
+
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+}

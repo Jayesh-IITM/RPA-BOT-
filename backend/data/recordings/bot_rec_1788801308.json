@@ -1,0 +1,139 @@
+{
+  "recording_id": "bot_rec_1788801308",
+  "raw_actions": [
+    {
+      "fallbacks": [
+        "/html/body"
+      ],
+      "selector": "html > body",
+      "target_name": "New Prime 3.0\nNew Co",
+      "text": "New Prime 3.0\nNew Courses\nOur Results\nDSA Sheet\nLog in\nLearn & become the \nTop 1% software developer\nSigmaX - DSA + AI|\nUltimate Placement Solution\nINDIA'S MOST LOVED CODING COMMUNITY ❤️\n7,000,000+\nHAPPY LEARNERS \n2 CRORE+\nMONTHLY VIEWS\n100,000+\nNEW MONTHLY SUBSCRIBERS\nNEW PLACEMENT PREP BATCH🔥\nSIGMAX : AI POWERED 10X SOFTWARE ENGINEER\nStart your placement preparation today!\nExplore more\n\nThousands of students achieved their dream job at\n\n+ many more\n\nOur Selected Students\nSee more\nON A MISSION TO TEACH MILLIONS\nBE A PART OF THE APNA COLLEGE COMMUNITY!\nYoutube\nLinkedin\nInstagram\nTelegram\nWhatsApp\nWhere education meets real-world needs.\nHELPFUL LINKS\nCourses\nPrivacy policy\nRefund Policy\nTerms & Conditions\nGET IN TOUCH\nalpha@apnacollege.in\ndelta@apnacollege.in\nsigma@apnacollege.in\nSupport Team : 10am-6pm\nCONNECT WITH US\nFacebook  \nTwitter  \nYoutube  \nInstagram  \nLinkedin  \nCopyright © 2026\nREC\n00:03\n1 steps\n+ Wait 1s\n⏹ Stop & Send to GovBridge",
+      "type": "click"
+    },
+    {
+      "fallbacks": [
+        "/html/body"
+      ],
+      "selector": "html > body",
+      "target_name": "New Prime 3.0\nNew Co",
+      "text": "New Prime 3.0\nNew Courses\nOur Results\nDSA Sheet\nLog in\nLearn & become the \nTop 1% software developer\nSigmaX - DSA + AI Full Stack Web|\nUltimate Placement Solution\nINDIA'S MOST LOVED CODING COMMUNITY ❤️\n7,000,000+\nHAPPY LEARNERS \n2 CRORE+\nMONTHLY VIEWS\n100,000+\nNEW MONTHLY SUBSCRIBERS\nNEW PLACEMENT PREP BATCH🔥\nSIGMAX : AI POWERED 10X SOFTWARE ENGINEER\nStart your placement preparation today!\nExplore more\n\nThousands of students achieved their dream job at\n\n+ many more\n\nOur Selected Students\nSee more\nON A MISSION TO TEACH MILLIONS\nBE A PART OF THE APNA COLLEGE COMMUNITY!\nYoutube\nLinkedin\nInstagram\nTelegram\nWhatsApp\nWhere education meets real-world needs.\nHELPFUL LINKS\nCourses\nPrivacy policy\nRefund Policy\nTerms & Conditions\nGET IN TOUCH\nalpha@apnacollege.in\ndelta@apnacollege.in\nsigma@apnacollege.in\nSupport Team : 10am-6pm\nCONNECT WITH US\nFacebook  \nTwitter  \nYoutube  \nInstagram  \nLinkedin  \nCopyright © 2026\nREC\n00:04\n2 steps\n+ Wait 1s\n⏹ Stop & Send to GovBridge",
+      "type": "click"
+    },
+    {
+      "fallbacks": [
+        "/html/body"
+      ],
+      "selector": "html > body",
+      "target_name": "New Prime 3.0\nNew Co",
+      "text": "New Prime 3.0\nNew Courses\nOur Results\nDSA Sheet\nLog in\nLearn & become the \nTop 1% software developer\nSigmaX - DSA + AI Full Stack Web Developm|\nUltimate Placement Solution\nINDIA'S MOST LOVED CODING COMMUNITY ❤️\n7,000,000+\nHAPPY LEARNERS \n2 CRORE+\nMONTHLY VIEWS\n100,000+\nNEW MONTHLY SUBSCRIBERS\nNEW PLACEMENT PREP BATCH🔥\nSIGMAX : AI POWERED 10X SOFTWARE ENGINEER\nStart your placement preparation today!\nExplore more\n\nThousands of students achieved their dream job at\n\n+ many more\n\nOur Selected Students\nSee more\nON A MISSION TO TEACH MILLIONS\nBE A PART OF THE APNA COLLEGE COMMUNITY!\nYoutube\nLinkedin\nInstagram\nTelegram\nWhatsApp\nWhere education meets real-world needs.\nHELPFUL LINKS\nCourses\nPrivacy policy\nRefund Policy\nTerms & Conditions\nGET IN TOUCH\nalpha@apnacollege.in\ndelta@apnacollege.in\nsigma@apnacollege.in\nSupport Team : 10am-6pm\nCONNECT WITH US\nFacebook  \nTwitter  \nYoutube  \nInstagram  \nLinkedin  \nCopyright © 2026\nREC\n00:05\n3 steps\n+ Wait 1s\n⏹ Stop & Send to GovBridge",
+      "type": "click"
+    }
+  ],
+  "bot_data": {
+    "id": "bot_rec_1788801308",
+    "name": "Recorded Path - 10:45:08 PM",
+    "description": "Workflow automatically generated from Chrome Extension path trace on https://www.apnacollege.in/",
+    "initial_url": "https://www.apnacollege.in/",
+    "variables": [],
+    "steps": [
+      {
+        "id": "step_1",
+        "step_number": 1,
+        "title": "Extension initiated on www.apnacollege.in",
+        "action_type": "navigate",
+        "target_description": "Initial URL",
+        "selector": "",
+        "fallback_selectors": [],
+        "value_mode": "fixed",
+        "value": "https://www.apnacollege.in/",
+        "variable_name": "",
+        "wait_before_ms": 200,
+        "wait_after_ms": 500,
+        "timeout_ms": 15000,
+        "optional": false,
+        "highlight": true
+      },
+      {
+        "id": "step_2",
+        "step_number": 2,
+        "title": "New Prime 3.0\nNew Courses\nOur Results\nDsa Sheet\nLog In\nLearn & Become The \nTop 1% Software Developer\nSigmax - Dsa + Ai|\nUltimate Placement Solution\nIndia'S Most Loved Coding Community ❤️\n7,000,000+\nHappy Learners \n2 Crore+\nMonthly Views\n100,000+\nNew Monthly Subscribers\nNew Placement Prep Batch🔥\nSigmax : Ai Powered 10X Software Engineer\nStart Your Placement Preparation Today!\nExplore More\n\nThousands Of Students Achieved Their Dream Job At\n\n+ Many More\n\nOur Selected Students\nSee More\nOn A Mission To Teach Millions\nBe A Part Of The Apna College Community!\nYoutube\nLinkedin\nInstagram\nTelegram\nWhatsapp\nWhere Education Meets Real-World Needs.\nHelpful Links\nCourses\nPrivacy Policy\nRefund Policy\nTerms & Conditions\nGet In Touch\nAlpha@Apnacollege.In\nDelta@Apnacollege.In\nSigma@Apnacollege.In\nSupport Team : 10Am-6Pm\nConnect With Us\nFacebook  \nTwitter  \nYoutube  \nInstagram  \nLinkedin  \nCopyright © 2026\nRec\n00:03\n1 Steps\n+ Wait 1S\n⏹ Stop & Send To Govbridge Button",
+        "action_type": "click",
+        "target_description": "New Prime 3.0\nNew Courses\nOur Results\nDSA Sheet\nLog in\nLearn & become the \nTop 1% software developer\nSigmaX - DSA + AI|\nUltimate Placement Solution\nINDIA'S MOST LOVED CODING COMMUNITY ❤️\n7,000,000+\nHAPPY LEARNERS \n2 CRORE+\nMONTHLY VIEWS\n100,000+\nNEW MONTHLY SUBSCRIBERS\nNEW PLACEMENT PREP BATCH🔥\nSIGMAX : AI POWERED 10X SOFTWARE ENGINEER\nStart your placement preparation today!\nExplore more\n\nThousands of students achieved their dream job at\n\n+ many more\n\nOur Selected Students\nSee more\nON A MISSION TO TEACH MILLIONS\nBE A PART OF THE APNA COLLEGE COMMUNITY!\nYoutube\nLinkedin\nInstagram\nTelegram\nWhatsApp\nWhere education meets real-world needs.\nHELPFUL LINKS\nCourses\nPrivacy policy\nRefund Policy\nTerms & Conditions\nGET IN TOUCH\nalpha@apnacollege.in\ndelta@apnacollege.in\nsigma@apnacollege.in\nSupport Team : 10am-6pm\nCONNECT WITH US\nFacebook  \nTwitter  \nYoutube  \nInstagram  \nLinkedin  \nCopyright © 2026\nREC\n00:03\n1 steps\n+ Wait 1s\n⏹ Stop & Send to GovBridge Button",
+        "selector": "html > body",
+        "fallback_selectors": [
+          "/html/body"
+        ],
+        "value_mode": "fixed",
+        "value": "",
+        "variable_name": "",
+        "wait_before_ms": 300,
+        "wait_after_ms": 800,
+        "timeout_ms": 10000,
+        "optional": false,
+        "highlight": true
+      },
+      {
+        "id": "step_3",
+        "step_number": 3,
+        "title": "New Prime 3.0\nNew Courses\nOur Results\nDsa Sheet\nLog In\nLearn & Become The \nTop 1% Software Developer\nSigmax - Dsa + Ai Full Stack Web|\nUltimate Placement Solution\nIndia'S Most Loved Coding Community ❤️\n7,000,000+\nHappy Learners \n2 Crore+\nMonthly Views\n100,000+\nNew Monthly Subscribers\nNew Placement Prep Batch🔥\nSigmax : Ai Powered 10X Software Engineer\nStart Your Placement Preparation Today!\nExplore More\n\nThousands Of Students Achieved Their Dream Job At\n\n+ Many More\n\nOur Selected Students\nSee More\nOn A Mission To Teach Millions\nBe A Part Of The Apna College Community!\nYoutube\nLinkedin\nInstagram\nTelegram\nWhatsapp\nWhere Education Meets Real-World Needs.\nHelpful Links\nCourses\nPrivacy Policy\nRefund Policy\nTerms & Conditions\nGet In Touch\nAlpha@Apnacollege.In\nDelta@Apnacollege.In\nSigma@Apnacollege.In\nSupport Team : 10Am-6Pm\nConnect With Us\nFacebook  \nTwitter  \nYoutube  \nInstagram  \nLinkedin  \nCopyright © 2026\nRec\n00:04\n2 Steps\n+ Wait 1S\n⏹ Stop & Send To Govbridge Button",
+        "action_type": "click",
+        "target_description": "New Prime 3.0\nNew Courses\nOur Results\nDSA Sheet\nLog in\nLearn & become the \nTop 1% software developer\nSigmaX - DSA + AI Full Stack Web|\nUltimate Placement Solution\nINDIA'S MOST LOVED CODING COMMUNITY ❤️\n7,000,000+\nHAPPY LEARNERS \n2 CRORE+\nMONTHLY VIEWS\n100,000+\nNEW MONTHLY SUBSCRIBERS\nNEW PLACEMENT PREP BATCH🔥\nSIGMAX : AI POWERED 10X SOFTWARE ENGINEER\nStart your placement preparation today!\nExplore more\n\nThousands of students achieved their dream job at\n\n+ many more\n\nOur Selected Students\nSee more\nON A MISSION TO TEACH MILLIONS\nBE A PART OF THE APNA COLLEGE COMMUNITY!\nYoutube\nLinkedin\nInstagram\nTelegram\nWhatsApp\nWhere education meets real-world needs.\nHELPFUL LINKS\nCourses\nPrivacy policy\nRefund Policy\nTerms & Conditions\nGET IN TOUCH\nalpha@apnacollege.in\ndelta@apnacollege.in\nsigma@apnacollege.in\nSupport Team : 10am-6pm\nCONNECT WITH US\nFacebook  \nTwitter  \nYoutube  \nInstagram  \nLinkedin  \nCopyright © 2026\nREC\n00:04\n2 steps\n+ Wait 1s\n⏹ Stop & Send to GovBridge Button",
+        "selector": "html > body",
+        "fallback_selectors": [
+          "/html/body"
+        ],
+        "value_mode": "fixed",
+        "value": "",
+        "variable_name": "",
+        "wait_before_ms": 300,
+        "wait_after_ms": 800,
+        "timeout_ms": 10000,
+        "optional": false,
+        "highlight": true
+      },
+      {
+        "id": "step_4",
+        "step_number": 4,
+        "title": "New Prime 3.0\nNew Courses\nOur Results\nDsa Sheet\nLog In\nLearn & Become The \nTop 1% Software Developer\nSigmax - Dsa + Ai Full Stack Web Developm|\nUltimate Placement Solution\nIndia'S Most Loved Coding Community ❤️\n7,000,000+\nHappy Learners \n2 Crore+\nMonthly Views\n100,000+\nNew Monthly Subscribers\nNew Placement Prep Batch🔥\nSigmax : Ai Powered 10X Software Engineer\nStart Your Placement Preparation Today!\nExplore More\n\nThousands Of Students Achieved Their Dream Job At\n\n+ Many More\n\nOur Selected Students\nSee More\nOn A Mission To Teach Millions\nBe A Part Of The Apna College Community!\nYoutube\nLinkedin\nInstagram\nTelegram\nWhatsapp\nWhere Education Meets Real-World Needs.\nHelpful Links\nCourses\nPrivacy Policy\nRefund Policy\nTerms & Conditions\nGet In Touch\nAlpha@Apnacollege.In\nDelta@Apnacollege.In\nSigma@Apnacollege.In\nSupport Team : 10Am-6Pm\nConnect With Us\nFacebook  \nTwitter  \nYoutube  \nInstagram  \nLinkedin  \nCopyright © 2026\nRec\n00:05\n3 Steps\n+ Wait 1S\n⏹ Stop & Send To Govbridge Button",
+        "action_type": "click",
+        "target_description": "New Prime 3.0\nNew Courses\nOur Results\nDSA Sheet\nLog in\nLearn & become the \nTop 1% software developer\nSigmaX - DSA + AI Full Stack Web Developm|\nUltimate Placement Solution\nINDIA'S MOST LOVED CODING COMMUNITY ❤️\n7,000,000+\nHAPPY LEARNERS \n2 CRORE+\nMONTHLY VIEWS\n100,000+\nNEW MONTHLY SUBSCRIBERS\nNEW PLACEMENT PREP BATCH🔥\nSIGMAX : AI POWERED 10X SOFTWARE ENGINEER\nStart your placement preparation today!\nExplore more\n\nThousands of students achieved their dream job at\n\n+ many more\n\nOur Selected Students\nSee more\nON A MISSION TO TEACH MILLIONS\nBE A PART OF THE APNA COLLEGE COMMUNITY!\nYoutube\nLinkedin\nInstagram\nTelegram\nWhatsApp\nWhere education meets real-world needs.\nHELPFUL LINKS\nCourses\nPrivacy policy\nRefund Policy\nTerms & Conditions\nGET IN TOUCH\nalpha@apnacollege.in\ndelta@apnacollege.in\nsigma@apnacollege.in\nSupport Team : 10am-6pm\nCONNECT WITH US\nFacebook  \nTwitter  \nYoutube  \nInstagram  \nLinkedin  \nCopyright © 2026\nREC\n00:05\n3 steps\n+ Wait 1s\n⏹ Stop & Send to GovBridge Button",
+        "selector": "html > body",
+        "fallback_selectors": [
+          "/html/body"
+        ],
+        "value_mode": "fixed",
+        "value": "",
+        "variable_name": "",
+        "wait_before_ms": 300,
+        "wait_after_ms": 800,
+        "timeout_ms": 10000,
+        "optional": false,
+        "highlight": true
+      }
+    ],
+    "branching": {
+      "enabled": true,
+      "check_type": "url_or_element",
+      "failure_selector": "#error-message",
+      "success_url_contains": "dashboard",
+      "success_selector": "",
+      "failure_branch": {
+        "title": "Login Failed return error",
+        "subtitle": "End of the RPA BOT task",
+        "outcome": "error",
+        "message": "Invalid authentication credentials.",
+        "status_code": 401
+      },
+      "success_branch": {
+        "title": "Login Successful",
+        "subtitle": "End of the RPA BOT task",
+        "outcome": "success",
+        "message": "Workflow reached target success state.",
+        "status_code": 200
+      }
+    },
+    "created_at": "2026-09-07T22:45:08.104607",
+    "updated_at": "2026-09-07T22:45:08.104607"
+  },
+  "saved_at": "2026-09-07T22:45:08.116326"
+}

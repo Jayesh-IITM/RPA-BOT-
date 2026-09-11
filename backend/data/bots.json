@@ -1,0 +1,4577 @@
+[
+  {
+    "branching": {
+      "check_type": "url_or_element",
+      "enabled": true,
+      "failure_branch": {
+        "message": "Invalid username or password credentials provided.",
+        "outcome": "error",
+        "status_code": 401,
+        "subtitle": "End of the RPA BOT task",
+        "title": "Login Failed return error"
+      },
+      "failure_selector": "#error-message",
+      "success_branch": {
+        "message": "Citizen logged in successfully. Dashboard session established.",
+        "outcome": "success",
+        "status_code": 200,
+        "subtitle": "End of the RPA BOT task",
+        "title": "Login Successful"
+      },
+      "success_selector": "#dashboard-header",
+      "success_url_contains": "/demo-dashboard"
+    },
+    "created_at": "2026-09-07T21:57:41.503642",
+    "description": "Automated login and verification workflow matching GovBridge path trace",
+    "id": "govbridge_login_bot_01",
+    "initial_url": "http://127.0.0.1:5000/demo-target",
+    "name": "GovBridge Portal Citizen Login",
+    "steps": [
+      {
+        "action_type": "navigate",
+        "fallback_selectors": [],
+        "highlight": true,
+        "id": "step_1",
+        "optional": false,
+        "selector": "",
+        "step_number": 1,
+        "target_description": "Initial portal webpage",
+        "timeout_ms": 15000,
+        "title": "Extension initiated on www.example.com",
+        "value": "http://127.0.0.1:5000/demo-target",
+        "value_mode": "fixed",
+        "variable_name": "",
+        "wait_after_ms": 500,
+        "wait_before_ms": 200
+      },
+      {
+        "action_type": "type",
+        "fallback_selectors": [
+          "input[name='username']",
+          "input[placeholder='Enter Username or Email']",
+          "//input[@id='username']"
+        ],
+        "highlight": true,
+        "id": "step_2",
+        "optional": false,
+        "selector": "#username",
+        "step_number": 2,
+        "target_description": "Username field",
+        "timeout_ms": 10000,
+        "title": "Input in Username field",
+        "value": "gov_citizen",
+        "value_mode": "variable",
+        "variable_name": "username",
+        "wait_after_ms": 300,
+        "wait_before_ms": 300
+      },
+      {
+        "action_type": "type",
+        "fallback_selectors": [
+          "input[name='password']",
+          "input[type='password']",
+          "//input[@id='password']"
+        ],
+        "highlight": true,
+        "id": "step_3",
+        "optional": false,
+        "selector": "#password",
+        "step_number": 3,
+        "target_description": "Password field",
+        "timeout_ms": 10000,
+        "title": "Input in Password field",
+        "value": "GovPass@2026",
+        "value_mode": "variable",
+        "variable_name": "password",
+        "wait_after_ms": 300,
+        "wait_before_ms": 300
+      },
+      {
+        "action_type": "click",
+        "fallback_selectors": [
+          "button[type='submit']",
+          "button:has-text('Sign In')",
+          "//button[@id='submit-btn']"
+        ],
+        "highlight": true,
+        "id": "step_4",
+        "optional": false,
+        "selector": "#submit-btn",
+        "step_number": 4,
+        "target_description": "Login Submit Button",
+        "timeout_ms": 10000,
+        "title": "Submit Button",
+        "value": "",
+        "value_mode": "fixed",
+        "variable_name": "",
+        "wait_after_ms": 1200,
+        "wait_before_ms": 300
+      }
+    ],
+    "updated_at": "2026-09-07T23:39:40.173212",
+    "variables": [
+      {
+        "default_value": "gov_citizen",
+        "description": "Citizen username or email",
+        "name": "username",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "default_value": "GovPass@2026",
+        "description": "Portal account secret password",
+        "name": "password",
+        "required": true,
+        "type": "password"
+      }
+    ]
+  },
+  {
+    "id": "ecommerce_search_bot_02",
+    "name": "E-Commerce Product Search & Price Check",
+    "description": "Automated catalog search with dynamic query parameter and price screenshot",
+    "initial_url": "http://127.0.0.1:5000/demo-target",
+    "created_at": "2026-09-07T21:57:41.503677",
+    "updated_at": "2026-09-07T21:57:41.503679",
+    "variables": [
+      {
+        "name": "search_query",
+        "default_value": "Passport Renewal Service",
+        "type": "string",
+        "description": "Service name to search",
+        "required": true
+      }
+    ],
+    "steps": [
+      {
+        "id": "step_1",
+        "step_number": 1,
+        "title": "Extension initiated on Portal Services",
+        "action_type": "navigate",
+        "target_description": "Initial URL",
+        "selector": "",
+        "fallback_selectors": [],
+        "value_mode": "fixed",
+        "value": "http://127.0.0.1:5000/demo-target",
+        "variable_name": "",
+        "wait_before_ms": 200,
+        "wait_after_ms": 500,
+        "timeout_ms": 15000,
+        "optional": false,
+        "highlight": true
+      },
+      {
+        "id": "step_2",
+        "step_number": 2,
+        "title": "Search Query Input",
+        "action_type": "type",
+        "target_description": "Search input box",
+        "selector": "#search-input",
+        "fallback_selectors": [
+          "input[type='search']",
+          "#search"
+        ],
+        "value_mode": "variable",
+        "value": "Passport Renewal Service",
+        "variable_name": "search_query",
+        "wait_before_ms": 200,
+        "wait_after_ms": 300,
+        "timeout_ms": 10000,
+        "optional": true,
+        "highlight": true
+      }
+    ],
+    "branching": {
+      "enabled": false
+    }
+  },
+  {
+    "id": "bot_rec_1788798502",
+    "name": "Extension Recorded Test Journey",
+    "description": "Workflow automatically generated from Chrome Extension path trace on http://127.0.0.1:5000/demo-target",
+    "initial_url": "http://127.0.0.1:5000/demo-target",
+    "variables": [
+      {
+        "name": "username",
+        "default_value": "gov_citizen",
+        "type": "string",
+        "description": "Input for username",
+        "required": true
+      },
+      {
+        "name": "password",
+        "default_value": "GovPass@2026",
+        "type": "password",
+        "description": "Input for password",
+        "required": true
+      }
+    ],
+    "steps": [
+      {
+        "id": "step_1",
+        "step_number": 1,
+        "title": "Extension initiated on 127.0.0.1:5000",
+        "action_type": "navigate",
+        "target_description": "Initial URL",
+        "selector": "",
+        "fallback_selectors": [],
+        "value_mode": "fixed",
+        "value": "http://127.0.0.1:5000/demo-target",
+        "variable_name": "",
+        "wait_before_ms": 200,
+        "wait_after_ms": 500,
+        "timeout_ms": 15000,
+        "optional": false,
+        "highlight": true
+      },
+      {
+        "id": "step_2",
+        "step_number": 2,
+        "title": "Input in Username field",
+        "action_type": "type",
+        "target_description": "username field",
+        "selector": "#username",
+        "fallback_selectors": [
+          "input[name='username']"
+        ],
+        "value_mode": "variable",
+        "value": "gov_citizen",
+        "variable_name": "username",
+        "wait_before_ms": 250,
+        "wait_after_ms": 300,
+        "timeout_ms": 10000,
+        "optional": false,
+        "highlight": true
+      },
+      {
+        "id": "step_3",
+        "step_number": 3,
+        "title": "Input in Password field",
+        "action_type": "type",
+        "target_description": "password field",
+        "selector": "#password",
+        "fallback_selectors": [
+          "input[name='password']"
+        ],
+        "value_mode": "variable",
+        "value": "GovPass@2026",
+        "variable_name": "password",
+        "wait_before_ms": 250,
+        "wait_after_ms": 300,
+        "timeout_ms": 10000,
+        "optional": false,
+        "highlight": true
+      },
+      {
+        "id": "step_4",
+        "step_number": 4,
+        "title": "Sign In To Portal Button",
+        "action_type": "click",
+        "target_description": "Sign In to Portal Button",
+        "selector": "#submit-btn",
+        "fallback_selectors": [
+          "button[type='submit']"
+        ],
+        "value_mode": "fixed",
+        "value": "",
+        "variable_name": "",
+        "wait_before_ms": 300,
+        "wait_after_ms": 800,
+        "timeout_ms": 10000,
+        "optional": false,
+        "highlight": true
+      }
+    ],
+    "branching": {
+      "enabled": true,
+      "check_type": "url_or_element",
+      "failure_selector": "#error-message",
+      "success_url_contains": "dashboard",
+      "success_selector": "",
+      "failure_branch": {
+        "title": "Login Failed return error",
+        "subtitle": "End of the RPA BOT task",
+        "outcome": "error",
+        "message": "Invalid authentication credentials.",
+        "status_code": 401
+      },
+      "success_branch": {
+        "title": "Login Successful",
+        "subtitle": "End of the RPA BOT task",
+        "outcome": "success",
+        "message": "Workflow reached target success state.",
+        "status_code": 200
+      }
+    },
+    "created_at": "2026-09-07T21:58:22.547025",
+    "updated_at": "2026-09-07T21:58:22.547025"
+  },
+  {
+    "id": "bot_rec_1788798541",
+    "name": "Extension Recorded Test Journey",
+    "description": "Workflow automatically generated from Chrome Extension path trace on http://127.0.0.1:5000/demo-target",
+    "initial_url": "http://127.0.0.1:5000/demo-target",
+    "variables": [
+      {
+        "name": "username",
+        "default_value": "gov_citizen",
+        "type": "string",
+        "description": "Input for username",
+        "required": true
+      },
+      {
+        "name": "password",
+        "default_value": "GovPass@2026",
+        "type": "password",
+        "description": "Input for password",
+        "required": true
+      }
+    ],
+    "steps": [
+      {
+        "id": "step_1",
+        "step_number": 1,
+        "title": "Extension initiated on 127.0.0.1:5000",
+        "action_type": "navigate",
+        "target_description": "Initial URL",
+        "selector": "",
+        "fallback_selectors": [],
+        "value_mode": "fixed",
+        "value": "http://127.0.0.1:5000/demo-target",
+        "variable_name": "",
+        "wait_before_ms": 200,
+        "wait_after_ms": 500,
+        "timeout_ms": 15000,
+        "optional": false,
+        "highlight": true
+      },
+      {
+        "id": "step_2",
+        "step_number": 2,
+        "title": "Input in Username field",
+        "action_type": "type",
+        "target_description": "username field",
+        "selector": "#username",
+        "fallback_selectors": [
+          "input[name='username']"
+        ],
+        "value_mode": "variable",
+        "value": "gov_citizen",
+        "variable_name": "username",
+        "wait_before_ms": 250,
+        "wait_after_ms": 300,
+        "timeout_ms": 10000,
+        "optional": false,
+        "highlight": true
+      },
+      {
+        "id": "step_3",
+        "step_number": 3,
+        "title": "Input in Password field",
+        "action_type": "type",
+        "target_description": "password field",
+        "selector": "#password",
+        "fallback_selectors": [
+          "input[name='password']"
+        ],
+        "value_mode": "variable",
+        "value": "GovPass@2026",
+        "variable_name": "password",
+        "wait_before_ms": 250,
+        "wait_after_ms": 300,
+        "timeout_ms": 10000,
+        "optional": false,
+        "highlight": true
+      },
+      {
+        "id": "step_4",
+        "step_number": 4,
+        "title": "Sign In To Portal Button",
+        "action_type": "click",
+        "target_description": "Sign In to Portal Button",
+        "selector": "#submit-btn",
+        "fallback_selectors": [
+          "button[type='submit']"
+        ],
+        "value_mode": "fixed",
+        "value": "",
+        "variable_name": "",
+        "wait_before_ms": 300,
+        "wait_after_ms": 800,
+        "timeout_ms": 10000,
+        "optional": false,
+        "highlight": true
+      }
+    ],
+    "branching": {
+      "enabled": true,
+      "check_type": "url_or_element",
+      "failure_selector": "#error-message",
+      "success_url_contains": "dashboard",
+      "success_selector": "",
+      "failure_branch": {
+        "title": "Login Failed return error",
+        "subtitle": "End of the RPA BOT task",
+        "outcome": "error",
+        "message": "Invalid authentication credentials.",
+        "status_code": 401
+      },
+      "success_branch": {
+        "title": "Login Successful",
+        "subtitle": "End of the RPA BOT task",
+        "outcome": "success",
+        "message": "Workflow reached target success state.",
+        "status_code": 200
+      }
+    },
+    "created_at": "2026-09-07T21:59:01.058001",
+    "updated_at": "2026-09-07T21:59:01.058001"
+  },
+  {
+    "id": "bot_rec_1788798571",
+    "name": "Extension Recorded Test Journey",
+    "description": "Workflow automatically generated from Chrome Extension path trace on http://127.0.0.1:5000/demo-target",
+    "initial_url": "http://127.0.0.1:5000/demo-target",
+    "variables": [
+      {
+        "name": "username",
+        "default_value": "gov_citizen",
+        "type": "string",
+        "description": "Input for username",
+        "required": true
+      },
+      {
+        "name": "password",
+        "default_value": "GovPass@2026",
+        "type": "password",
+        "description": "Input for password",
+        "required": true
+      }
+    ],
+    "steps": [
+      {
+        "id": "step_1",
+        "step_number": 1,
+        "title": "Extension initiated on 127.0.0.1:5000",
+        "action_type": "navigate",
+        "target_description": "Initial URL",
+        "selector": "",
+        "fallback_selectors": [],
+        "value_mode": "fixed",
+        "value": "http://127.0.0.1:5000/demo-target",
+        "variable_name": "",
+        "wait_before_ms": 200,
+        "wait_after_ms": 500,
+        "timeout_ms": 15000,
+        "optional": false,
+        "highlight": true
+      },
+      {
+        "id": "step_2",
+        "step_number": 2,
+        "title": "Input in Username field",
+        "action_type": "type",
+        "target_description": "username field",
+        "selector": "#username",
+        "fallback_selectors": [
+          "input[name='username']"
+        ],
+        "value_mode": "variable",
+        "value": "gov_citizen",
+        "variable_name": "username",
+        "wait_before_ms": 250,
+        "wait_after_ms": 300,
+        "timeout_ms": 10000,
+        "optional": false,
+        "highlight": true
+      },
+      {
+        "id": "step_3",
+        "step_number": 3,
+        "title": "Input in Password field",
+        "action_type": "type",
+        "target_description": "password field",
+        "selector": "#password",
+        "fallback_selectors": [
+          "input[name='password']"
+        ],
+        "value_mode": "variable",
+        "value": "GovPass@2026",
+        "variable_name": "password",
+        "wait_before_ms": 250,
+        "wait_after_ms": 300,
+        "timeout_ms": 10000,
+        "optional": false,
+        "highlight": true
+      },
+      {
+        "id": "step_4",
+        "step_number": 4,
+        "title": "Sign In To Portal Button",
+        "action_type": "click",
+        "target_description": "Sign In to Portal Button",
+        "selector": "#submit-btn",
+        "fallback_selectors": [
+          "button[type='submit']"
+        ],
+        "value_mode": "fixed",
+        "value": "",
+        "variable_name": "",
+        "wait_before_ms": 300,
+        "wait_after_ms": 800,
+        "timeout_ms": 10000,
+        "optional": false,
+        "highlight": true
+      }
+    ],
+    "branching": {
+      "enabled": true,
+      "check_type": "url_or_element",
+      "failure_selector": "#error-message",
+      "success_url_contains": "dashboard",
+      "success_selector": "",
+      "failure_branch": {
+        "title": "Login Failed return error",
+        "subtitle": "End of the RPA BOT task",
+        "outcome": "error",
+        "message": "Invalid authentication credentials.",
+        "status_code": 401
+      },
+      "success_branch": {
+        "title": "Login Successful",
+        "subtitle": "End of the RPA BOT task",
+        "outcome": "success",
+        "message": "Workflow reached target success state.",
+        "status_code": 200
+      }
+    },
+    "created_at": "2026-09-07T21:59:31.193235",
+    "updated_at": "2026-09-07T21:59:31.193235"
+  },
+  {
+    "id": "bot_rec_1788799098",
+    "name": "Recorded Path - 10:08:18 PM",
+    "description": "Workflow automatically generated from Chrome Extension path trace on https://www.medhavikalyan.mp.gov.in/Public/InfoPage.aspx?rrTy=Mg==",
+    "initial_url": "https://www.medhavikalyan.mp.gov.in/Public/InfoPage.aspx?rrTy=Mg==",
+    "variables": [
+      {
+        "name": "username",
+        "default_value": "Hello",
+        "type": "string",
+        "description": "Input for ctl00$dpPH$txtUserName",
+        "required": true
+      },
+      {
+        "name": "password",
+        "default_value": "Justs ti otedh",
+        "type": "password",
+        "description": "Input for ctl00$dpPH$txtPassword",
+        "required": true
+      },
+      {
+        "name": "var_ctl00$dpph$t",
+        "default_value": "anything",
+        "type": "string",
+        "description": "Input for ctl00$dpPH$txtVerificationCode",
+        "required": true
+      }
+    ],
+    "steps": [
+      {
+        "id": "step_1",
+        "step_number": 1,
+        "title": "Extension initiated on www.medhavikalyan.mp.gov.in",
+        "action_type": "navigate",
+        "target_description": "Initial URL",
+        "selector": "",
+        "fallback_selectors": [],
+        "value_mode": "fixed",
+        "value": "https://www.medhavikalyan.mp.gov.in/Public/InfoPage.aspx?rrTy=Mg==",
+        "variable_name": "",
+        "wait_before_ms": 200,
+        "wait_after_ms": 500,
+        "timeout_ms": 15000,
+        "optional": false,
+        "highlight": true
+      },
+      {
+        "id": "step_2",
+        "step_number": 2,
+        "title": "Button Button",
+        "action_type": "click",
+        "target_description": "button Button",
+        "selector": "#btnClose",
+        "fallback_selectors": [
+          "//*[@id=\"btnClose\"]"
+        ],
+        "value_mode": "fixed",
+        "value": "",
+        "variable_name": "",
+        "wait_before_ms": 300,
+        "wait_after_ms": 800,
+        "timeout_ms": 10000,
+        "optional": false,
+        "highlight": true
+      },
+      {
+        "id": "step_3",
+        "step_number": 3,
+        "title": "Login Button",
+        "action_type": "click",
+        "target_description": "Login Button",
+        "selector": "div#navbar-collapse > ul > li:nth-of-type(2) > a",
+        "fallback_selectors": [
+          "//*[@id=\"navbar-collapse\"]/ul[1]/li[2]/a[1]"
+        ],
+        "value_mode": "fixed",
+        "value": "",
+        "variable_name": "",
+        "wait_before_ms": 300,
+        "wait_after_ms": 800,
+        "timeout_ms": 10000,
+        "optional": false,
+        "highlight": true
+      },
+      {
+        "id": "step_4",
+        "step_number": 4,
+        "title": "Input in Ctl00$Dpph$Txtusername field",
+        "action_type": "type",
+        "target_description": "ctl00$dpPH$txtUserName field",
+        "selector": "#ctl00_dpPH_txtUserName",
+        "fallback_selectors": [
+          "input[name=\"ctl00$dpPH$txtUserName\"]",
+          "input[placeholder=\"--Your User Name--\"]",
+          "//*[@id=\"ctl00_dpPH_txtUserName\"]"
+        ],
+        "value_mode": "variable",
+        "value": "Hello",
+        "variable_name": "username",
+        "wait_before_ms": 250,
+        "wait_after_ms": 300,
+        "timeout_ms": 10000,
+        "optional": false,
+        "highlight": true
+      },
+      {
+        "id": "step_5",
+        "step_number": 5,
+        "title": "Input in Ctl00$Dpph$Txtpassword field",
+        "action_type": "type",
+        "target_description": "ctl00$dpPH$txtPassword field",
+        "selector": "#ctl00_dpPH_txtPassword",
+        "fallback_selectors": [
+          "input[name=\"ctl00$dpPH$txtPassword\"]",
+          "input[placeholder=\"--Your Password--\"]",
+          "//*[@id=\"ctl00_dpPH_txtPassword\"]"
+        ],
+        "value_mode": "variable",
+        "value": "Justs ti otedh",
+        "variable_name": "password",
+        "wait_before_ms": 250,
+        "wait_after_ms": 300,
+        "timeout_ms": 10000,
+        "optional": false,
+        "highlight": true
+      },
+      {
+        "id": "step_6",
+        "step_number": 6,
+        "title": "Input in Ctl00$Dpph$Txtverificationcode field",
+        "action_type": "type",
+        "target_description": "ctl00$dpPH$txtVerificationCode field",
+        "selector": "#ctl00_dpPH_txtVerificationCode",
+        "fallback_selectors": [
+          "input[name=\"ctl00$dpPH$txtVerificationCode\"]",
+          "//*[@id=\"ctl00_dpPH_txtVerificationCode\"]"
+        ],
+        "value_mode": "variable",
+        "value": "anything",
+        "variable_name": "var_ctl00$dpph$t",
+        "wait_before_ms": 250,
+        "wait_after_ms": 300,
+        "timeout_ms": 10000,
+        "optional": false,
+        "highlight": true
+      },
+      {
+        "id": "step_7",
+        "step_number": 7,
+        "title": "Ctl00$Dpph$Btnlogin Button",
+        "action_type": "click",
+        "target_description": "ctl00$dpPH$btnLogin Button",
+        "selector": "#ctl00_dpPH_btnLogin",
+        "fallback_selectors": [
+          "input[name=\"ctl00$dpPH$btnLogin\"]",
+          "//*[@id=\"ctl00_dpPH_btnLogin\"]"
+        ],
+        "value_mode": "fixed",
+        "value": "",
+        "variable_name": "",
+        "wait_before_ms": 300,
+        "wait_after_ms": 800,
+        "timeout_ms": 10000,
+        "optional": false,
+        "highlight": true
+      }
+    ],
+    "branching": {
+      "enabled": true,
+      "check_type": "url_or_element",
+      "failure_selector": "#error-message",
+      "success_url_contains": "dashboard",
+      "success_selector": "",
+      "failure_branch": {
+        "title": "Login Failed return error",
+        "subtitle": "End of the RPA BOT task",
+        "outcome": "error",
+        "message": "Invalid authentication credentials.",
+        "status_code": 401
+      },
+      "success_branch": {
+        "title": "Login Successful",
+        "subtitle": "End of the RPA BOT task",
+        "outcome": "success",
+        "message": "Workflow reached target success state.",
+        "status_code": 200
+      }
+    },
+    "created_at": "2026-09-07T22:08:18.572528",
+    "updated_at": "2026-09-07T22:08:18.572528"
+  },
+  {
+    "id": "bot_rec_1788800581",
+    "name": "Recorded Path - 10:33:01 PM",
+    "description": "Workflow automatically generated from Chrome Extension path trace on https://www.apnacollege.in/",
+    "initial_url": "https://www.apnacollege.in/",
+    "variables": [],
+    "steps": [
+      {
+        "id": "step_1",
+        "step_number": 1,
+        "title": "Extension initiated on www.apnacollege.in",
+        "action_type": "navigate",
+        "target_description": "Initial URL",
+        "selector": "",
+        "fallback_selectors": [],
+        "value_mode": "fixed",
+        "value": "https://www.apnacollege.in/",
+        "variable_name": "",
+        "wait_before_ms": 200,
+        "wait_after_ms": 500,
+        "timeout_ms": 15000,
+        "optional": false,
+        "highlight": true
+      },
+      {
+        "id": "step_2",
+        "step_number": 2,
+        "title": "New Prime 3.0\nNew Courses\nOur Results\nDsa Sheet\nLog In\nLearn & Become The \nTop 1% Software Developer\n|\nUltimate Placement Solution\nIndia'S Most Loved Coding Community ❤️\n7,000,000+\nHappy Learners \n2 Crore+\nMonthly Views\n100,000+\nNew Monthly Subscribers\nNew Placement Prep Batch🔥\nSigmax : Ai Powered 10X Software Engineer\nStart Your Placement Preparation Today!\nExplore More\n\nThousands Of Students Achieved Their Dream Job At\n\n+ Many More\n\nOur Selected Students\nSee More\nOn A Mission To Teach Millions\nBe A Part Of The Apna College Community!\nYoutube\nLinkedin\nInstagram\nTelegram\nWhatsapp\nWhere Education Meets Real-World Needs.\nHelpful Links\nCourses\nPrivacy Policy\nRefund Policy\nTerms & Conditions\nGet In Touch\nAlpha@Apnacollege.In\nDelta@Apnacollege.In\nSigma@Apnacollege.In\nSupport Team : 10Am-6Pm\nConnect With Us\nFacebook  \nTwitter  \nYoutube  \nInstagram  \nLinkedin  \nCopyright © 2026\nRec\n00:13\n1 Steps\n+ Wait 1S\n⏹ Stop & Send To Govbridge Button",
+        "action_type": "click",
+        "target_description": "New Prime 3.0\nNew Courses\nOur Results\nDSA Sheet\nLog in\nLearn & become the \nTop 1% software developer\n|\nUltimate Placement Solution\nINDIA'S MOST LOVED CODING COMMUNITY ❤️\n7,000,000+\nHAPPY LEARNERS \n2 CRORE+\nMONTHLY VIEWS\n100,000+\nNEW MONTHLY SUBSCRIBERS\nNEW PLACEMENT PREP BATCH🔥\nSIGMAX : AI POWERED 10X SOFTWARE ENGINEER\nStart your placement preparation today!\nExplore more\n\nThousands of students achieved their dream job at\n\n+ many more\n\nOur Selected Students\nSee more\nON A MISSION TO TEACH MILLIONS\nBE A PART OF THE APNA COLLEGE COMMUNITY!\nYoutube\nLinkedin\nInstagram\nTelegram\nWhatsApp\nWhere education meets real-world needs.\nHELPFUL LINKS\nCourses\nPrivacy policy\nRefund Policy\nTerms & Conditions\nGET IN TOUCH\nalpha@apnacollege.in\ndelta@apnacollege.in\nsigma@apnacollege.in\nSupport Team : 10am-6pm\nCONNECT WITH US\nFacebook  \nTwitter  \nYoutube  \nInstagram  \nLinkedin  \nCopyright © 2026\nREC\n00:13\n1 steps\n+ Wait 1s\n⏹ Stop & Send to GovBridge Button",
+        "selector": "html > body",
+        "fallback_selectors": [
+          "/html/body"
+        ],
+        "value_mode": "fixed",
+        "value": "",
+        "variable_name": "",
+        "wait_before_ms": 300,
+        "wait_after_ms": 800,
+        "timeout_ms": 10000,
+        "optional": false,
+        "highlight": true
+      },
+      {
+        "id": "step_3",
+        "step_number": 3,
+        "title": "New Prime 3.0\nNew Courses\nOur Results\nDsa Sheet\nLog In\nLearn & Become The \nTop 1% Software Developer\nAlpha Plus - Dsa (Java|\nUltimate Placement Solution\nIndia'S Most Loved Coding Community ❤️\n7,000,000+\nHappy Learners \n2 Crore+\nMonthly Views\n100,000+\nNew Monthly Subscribers\nNew Placement Prep Batch🔥\nSigmax : Ai Powered 10X Software Engineer\nStart Your Placement Preparation Today!\nExplore More\n\nThousands Of Students Achieved Their Dream Job At\n\n+ Many More\n\nOur Selected Students\nSee More\nOn A Mission To Teach Millions\nBe A Part Of The Apna College Community!\nYoutube\nLinkedin\nInstagram\nTelegram\nWhatsapp\nWhere Education Meets Real-World Needs.\nHelpful Links\nCourses\nPrivacy Policy\nRefund Policy\nTerms & Conditions\nGet In Touch\nAlpha@Apnacollege.In\nDelta@Apnacollege.In\nSigma@Apnacollege.In\nSupport Team : 10Am-6Pm\nConnect With Us\nFacebook  \nTwitter  \nYoutube  \nInstagram  \nLinkedin  \nCopyright © 2026\nRec\n00:14\n2 Steps\n+ Wait 1S\n⏹ Stop & Send To Govbridge Button",
+        "action_type": "click",
+        "target_description": "New Prime 3.0\nNew Courses\nOur Results\nDSA Sheet\nLog in\nLearn & become the \nTop 1% software developer\nAlpha Plus - DSA (Java|\nUltimate Placement Solution\nINDIA'S MOST LOVED CODING COMMUNITY ❤️\n7,000,000+\nHAPPY LEARNERS \n2 CRORE+\nMONTHLY VIEWS\n100,000+\nNEW MONTHLY SUBSCRIBERS\nNEW PLACEMENT PREP BATCH🔥\nSIGMAX : AI POWERED 10X SOFTWARE ENGINEER\nStart your placement preparation today!\nExplore more\n\nThousands of students achieved their dream job at\n\n+ many more\n\nOur Selected Students\nSee more\nON A MISSION TO TEACH MILLIONS\nBE A PART OF THE APNA COLLEGE COMMUNITY!\nYoutube\nLinkedin\nInstagram\nTelegram\nWhatsApp\nWhere education meets real-world needs.\nHELPFUL LINKS\nCourses\nPrivacy policy\nRefund Policy\nTerms & Conditions\nGET IN TOUCH\nalpha@apnacollege.in\ndelta@apnacollege.in\nsigma@apnacollege.in\nSupport Team : 10am-6pm\nCONNECT WITH US\nFacebook  \nTwitter  \nYoutube  \nInstagram  \nLinkedin  \nCopyright © 2026\nREC\n00:14\n2 steps\n+ Wait 1s\n⏹ Stop & Send to GovBridge Button",
+        "selector": "html > body",
+        "fallback_selectors": [
+          "/html/body"
+        ],
+        "value_mode": "fixed",
+        "value": "",
+        "variable_name": "",
+        "wait_before_ms": 300,
+        "wait_after_ms": 800,
+        "timeout_ms": 10000,
+        "optional": false,
+        "highlight": true
+      },
+      {
+        "id": "step_4",
+        "step_number": 4,
+        "title": "New Prime 3.0\nNew Courses\nOur Results\nDsa Sheet\nLog In\nLearn & Become The \nTop 1% Software Developer\nAlpha Plus - Dsa (Java/C++)|\nUltimate Placement Solution\nIndia'S Most Loved Coding Community ❤️\n7,000,000+\nHappy Learners \n2 Crore+\nMonthly Views\n100,000+\nNew Monthly Subscribers\nNew Placement Prep Batch🔥\nSigmax : Ai Powered 10X Software Engineer\nStart Your Placement Preparation Today!\nExplore More\n\nThousands Of Students Achieved Their Dream Job At\n\n+ Many More\n\nOur Selected Students\nSee More\nOn A Mission To Teach Millions\nBe A Part Of The Apna College Community!\nYoutube\nLinkedin\nInstagram\nTelegram\nWhatsapp\nWhere Education Meets Real-World Needs.\nHelpful Links\nCourses\nPrivacy Policy\nRefund Policy\nTerms & Conditions\nGet In Touch\nAlpha@Apnacollege.In\nDelta@Apnacollege.In\nSigma@Apnacollege.In\nSupport Team : 10Am-6Pm\nConnect With Us\nFacebook  \nTwitter  \nYoutube  \nInstagram  \nLinkedin  \nCopyright © 2026\nRec\n00:15\n3 Steps\n+ Wait 1S\n⏹ Stop & Send To Govbridge Button",
+        "action_type": "click",
+        "target_description": "New Prime 3.0\nNew Courses\nOur Results\nDSA Sheet\nLog in\nLearn & become the \nTop 1% software developer\nAlpha Plus - DSA (Java/C++)|\nUltimate Placement Solution\nINDIA'S MOST LOVED CODING COMMUNITY ❤️\n7,000,000+\nHAPPY LEARNERS \n2 CRORE+\nMONTHLY VIEWS\n100,000+\nNEW MONTHLY SUBSCRIBERS\nNEW PLACEMENT PREP BATCH🔥\nSIGMAX : AI POWERED 10X SOFTWARE ENGINEER\nStart your placement preparation today!\nExplore more\n\nThousands of students achieved their dream job at\n\n+ many more\n\nOur Selected Students\nSee more\nON A MISSION TO TEACH MILLIONS\nBE A PART OF THE APNA COLLEGE COMMUNITY!\nYoutube\nLinkedin\nInstagram\nTelegram\nWhatsApp\nWhere education meets real-world needs.\nHELPFUL LINKS\nCourses\nPrivacy policy\nRefund Policy\nTerms & Conditions\nGET IN TOUCH\nalpha@apnacollege.in\ndelta@apnacollege.in\nsigma@apnacollege.in\nSupport Team : 10am-6pm\nCONNECT WITH US\nFacebook  \nTwitter  \nYoutube  \nInstagram  \nLinkedin  \nCopyright © 2026\nREC\n00:15\n3 steps\n+ Wait 1s\n⏹ Stop & Send to GovBridge Button",
+        "selector": "html > body",
+        "fallback_selectors": [
+          "/html/body"
+        ],
+        "value_mode": "fixed",
+        "value": "",
+        "variable_name": "",
+        "wait_before_ms": 300,
+        "wait_after_ms": 800,
+        "timeout_ms": 10000,
+        "optional": false,
+        "highlight": true
+      }
+    ],
+    "branching": {
+      "enabled": true,
+      "check_type": "url_or_element",
+      "failure_selector": "#error-message",
+      "success_url_contains": "dashboard",
+      "success_selector": "",
+      "failure_branch": {
+        "title": "Login Failed return error",
+        "subtitle": "End of the RPA BOT task",
+        "outcome": "error",
+        "message": "Invalid authentication credentials.",
+        "status_code": 401
+      },
+      "success_branch": {
+        "title": "Login Successful",
+        "subtitle": "End of the RPA BOT task",
+        "outcome": "success",
+        "message": "Workflow reached target success state.",
+        "status_code": 200
+      }
+    },
+    "created_at": "2026-09-07T22:33:01.505296",
+    "updated_at": "2026-09-07T22:33:01.505296"
+  },
+  {
+    "id": "bot_rec_1788801308",
+    "name": "Recorded Path - 10:45:08 PM",
+    "description": "Workflow automatically generated from Chrome Extension path trace on https://www.apnacollege.in/",
+    "initial_url": "https://www.apnacollege.in/",
+    "variables": [],
+    "steps": [
+      {
+        "id": "step_1",
+        "step_number": 1,
+        "title": "Extension initiated on www.apnacollege.in",
+        "action_type": "navigate",
+        "target_description": "Initial URL",
+        "selector": "",
+        "fallback_selectors": [],
+        "value_mode": "fixed",
+        "value": "https://www.apnacollege.in/",
+        "variable_name": "",
+        "wait_before_ms": 200,
+        "wait_after_ms": 500,
+        "timeout_ms": 15000,
+        "optional": false,
+        "highlight": true
+      },
+      {
+        "id": "step_2",
+        "step_number": 2,
+        "title": "New Prime 3.0\nNew Courses\nOur Results\nDsa Sheet\nLog In\nLearn & Become The \nTop 1% Software Developer\nSigmax - Dsa + Ai|\nUltimate Placement Solution\nIndia'S Most Loved Coding Community ❤️\n7,000,000+\nHappy Learners \n2 Crore+\nMonthly Views\n100,000+\nNew Monthly Subscribers\nNew Placement Prep Batch🔥\nSigmax : Ai Powered 10X Software Engineer\nStart Your Placement Preparation Today!\nExplore More\n\nThousands Of Students Achieved Their Dream Job At\n\n+ Many More\n\nOur Selected Students\nSee More\nOn A Mission To Teach Millions\nBe A Part Of The Apna College Community!\nYoutube\nLinkedin\nInstagram\nTelegram\nWhatsapp\nWhere Education Meets Real-World Needs.\nHelpful Links\nCourses\nPrivacy Policy\nRefund Policy\nTerms & Conditions\nGet In Touch\nAlpha@Apnacollege.In\nDelta@Apnacollege.In\nSigma@Apnacollege.In\nSupport Team : 10Am-6Pm\nConnect With Us\nFacebook  \nTwitter  \nYoutube  \nInstagram  \nLinkedin  \nCopyright © 2026\nRec\n00:03\n1 Steps\n+ Wait 1S\n⏹ Stop & Send To Govbridge Button",
+        "action_type": "click",
+        "target_description": "New Prime 3.0\nNew Courses\nOur Results\nDSA Sheet\nLog in\nLearn & become the \nTop 1% software developer\nSigmaX - DSA + AI|\nUltimate Placement Solution\nINDIA'S MOST LOVED CODING COMMUNITY ❤️\n7,000,000+\nHAPPY LEARNERS \n2 CRORE+\nMONTHLY VIEWS\n100,000+\nNEW MONTHLY SUBSCRIBERS\nNEW PLACEMENT PREP BATCH🔥\nSIGMAX : AI POWERED 10X SOFTWARE ENGINEER\nStart your placement preparation today!\nExplore more\n\nThousands of students achieved their dream job at\n\n+ many more\n\nOur Selected Students\nSee more\nON A MISSION TO TEACH MILLIONS\nBE A PART OF THE APNA COLLEGE COMMUNITY!\nYoutube\nLinkedin\nInstagram\nTelegram\nWhatsApp\nWhere education meets real-world needs.\nHELPFUL LINKS\nCourses\nPrivacy policy\nRefund Policy\nTerms & Conditions\nGET IN TOUCH\nalpha@apnacollege.in\ndelta@apnacollege.in\nsigma@apnacollege.in\nSupport Team : 10am-6pm\nCONNECT WITH US\nFacebook  \nTwitter  \nYoutube  \nInstagram  \nLinkedin  \nCopyright © 2026\nREC\n00:03\n1 steps\n+ Wait 1s\n⏹ Stop & Send to GovBridge Button",
+        "selector": "html > body",
+        "fallback_selectors": [
+          "/html/body"
+        ],
+        "value_mode": "fixed",
+        "value": "",
+        "variable_name": "",
+        "wait_before_ms": 300,
+        "wait_after_ms": 800,
+        "timeout_ms": 10000,
+        "optional": false,
+        "highlight": true
+      },
+      {
+        "id": "step_3",
+        "step_number": 3,
+        "title": "New Prime 3.0\nNew Courses\nOur Results\nDsa Sheet\nLog In\nLearn & Become The \nTop 1% Software Developer\nSigmax - Dsa + Ai Full Stack Web|\nUltimate Placement Solution\nIndia'S Most Loved Coding Community ❤️\n7,000,000+\nHappy Learners \n2 Crore+\nMonthly Views\n100,000+\nNew Monthly Subscribers\nNew Placement Prep Batch🔥\nSigmax : Ai Powered 10X Software Engineer\nStart Your Placement Preparation Today!\nExplore More\n\nThousands Of Students Achieved Their Dream Job At\n\n+ Many More\n\nOur Selected Students\nSee More\nOn A Mission To Teach Millions\nBe A Part Of The Apna College Community!\nYoutube\nLinkedin\nInstagram\nTelegram\nWhatsapp\nWhere Education Meets Real-World Needs.\nHelpful Links\nCourses\nPrivacy Policy\nRefund Policy\nTerms & Conditions\nGet In Touch\nAlpha@Apnacollege.In\nDelta@Apnacollege.In\nSigma@Apnacollege.In\nSupport Team : 10Am-6Pm\nConnect With Us\nFacebook  \nTwitter  \nYoutube  \nInstagram  \nLinkedin  \nCopyright © 2026\nRec\n00:04\n2 Steps\n+ Wait 1S\n⏹ Stop & Send To Govbridge Button",
+        "action_type": "click",
+        "target_description": "New Prime 3.0\nNew Courses\nOur Results\nDSA Sheet\nLog in\nLearn & become the \nTop 1% software developer\nSigmaX - DSA + AI Full Stack Web|\nUltimate Placement Solution\nINDIA'S MOST LOVED CODING COMMUNITY ❤️\n7,000,000+\nHAPPY LEARNERS \n2 CRORE+\nMONTHLY VIEWS\n100,000+\nNEW MONTHLY SUBSCRIBERS\nNEW PLACEMENT PREP BATCH🔥\nSIGMAX : AI POWERED 10X SOFTWARE ENGINEER\nStart your placement preparation today!\nExplore more\n\nThousands of students achieved their dream job at\n\n+ many more\n\nOur Selected Students\nSee more\nON A MISSION TO TEACH MILLIONS\nBE A PART OF THE APNA COLLEGE COMMUNITY!\nYoutube\nLinkedin\nInstagram\nTelegram\nWhatsApp\nWhere education meets real-world needs.\nHELPFUL LINKS\nCourses\nPrivacy policy\nRefund Policy\nTerms & Conditions\nGET IN TOUCH\nalpha@apnacollege.in\ndelta@apnacollege.in\nsigma@apnacollege.in\nSupport Team : 10am-6pm\nCONNECT WITH US\nFacebook  \nTwitter  \nYoutube  \nInstagram  \nLinkedin  \nCopyright © 2026\nREC\n00:04\n2 steps\n+ Wait 1s\n⏹ Stop & Send to GovBridge Button",
+        "selector": "html > body",
+        "fallback_selectors": [
+          "/html/body"
+        ],
+        "value_mode": "fixed",
+        "value": "",
+        "variable_name": "",
+        "wait_before_ms": 300,
+        "wait_after_ms": 800,
+        "timeout_ms": 10000,
+        "optional": false,
+        "highlight": true
+      },
+      {
+        "id": "step_4",
+        "step_number": 4,
+        "title": "New Prime 3.0\nNew Courses\nOur Results\nDsa Sheet\nLog In\nLearn & Become The \nTop 1% Software Developer\nSigmax - Dsa + Ai Full Stack Web Developm|\nUltimate Placement Solution\nIndia'S Most Loved Coding Community ❤️\n7,000,000+\nHappy Learners \n2 Crore+\nMonthly Views\n100,000+\nNew Monthly Subscribers\nNew Placement Prep Batch🔥\nSigmax : Ai Powered 10X Software Engineer\nStart Your Placement Preparation Today!\nExplore More\n\nThousands Of Students Achieved Their Dream Job At\n\n+ Many More\n\nOur Selected Students\nSee More\nOn A Mission To Teach Millions\nBe A Part Of The Apna College Community!\nYoutube\nLinkedin\nInstagram\nTelegram\nWhatsapp\nWhere Education Meets Real-World Needs.\nHelpful Links\nCourses\nPrivacy Policy\nRefund Policy\nTerms & Conditions\nGet In Touch\nAlpha@Apnacollege.In\nDelta@Apnacollege.In\nSigma@Apnacollege.In\nSupport Team : 10Am-6Pm\nConnect With Us\nFacebook  \nTwitter  \nYoutube  \nInstagram  \nLinkedin  \nCopyright © 2026\nRec\n00:05\n3 Steps\n+ Wait 1S\n⏹ Stop & Send To Govbridge Button",
+        "action_type": "click",
+        "target_description": "New Prime 3.0\nNew Courses\nOur Results\nDSA Sheet\nLog in\nLearn & become the \nTop 1% software developer\nSigmaX - DSA + AI Full Stack Web Developm|\nUltimate Placement Solution\nINDIA'S MOST LOVED CODING COMMUNITY ❤️\n7,000,000+\nHAPPY LEARNERS \n2 CRORE+\nMONTHLY VIEWS\n100,000+\nNEW MONTHLY SUBSCRIBERS\nNEW PLACEMENT PREP BATCH🔥\nSIGMAX : AI POWERED 10X SOFTWARE ENGINEER\nStart your placement preparation today!\nExplore more\n\nThousands of students achieved their dream job at\n\n+ many more\n\nOur Selected Students\nSee more\nON A MISSION TO TEACH MILLIONS\nBE A PART OF THE APNA COLLEGE COMMUNITY!\nYoutube\nLinkedin\nInstagram\nTelegram\nWhatsApp\nWhere education meets real-world needs.\nHELPFUL LINKS\nCourses\nPrivacy policy\nRefund Policy\nTerms & Conditions\nGET IN TOUCH\nalpha@apnacollege.in\ndelta@apnacollege.in\nsigma@apnacollege.in\nSupport Team : 10am-6pm\nCONNECT WITH US\nFacebook  \nTwitter  \nYoutube  \nInstagram  \nLinkedin  \nCopyright © 2026\nREC\n00:05\n3 steps\n+ Wait 1s\n⏹ Stop & Send to GovBridge Button",
+        "selector": "html > body",
+        "fallback_selectors": [
+          "/html/body"
+        ],
+        "value_mode": "fixed",
+        "value": "",
+        "variable_name": "",
+        "wait_before_ms": 300,
+        "wait_after_ms": 800,
+        "timeout_ms": 10000,
+        "optional": false,
+        "highlight": true
+      }
+    ],
+    "branching": {
+      "enabled": true,
+      "check_type": "url_or_element",
+      "failure_selector": "#error-message",
+      "success_url_contains": "dashboard",
+      "success_selector": "",
+      "failure_branch": {
+        "title": "Login Failed return error",
+        "subtitle": "End of the RPA BOT task",
+        "outcome": "error",
+        "message": "Invalid authentication credentials.",
+        "status_code": 401
+      },
+      "success_branch": {
+        "title": "Login Successful",
+        "subtitle": "End of the RPA BOT task",
+        "outcome": "success",
+        "message": "Workflow reached target success state.",
+        "status_code": 200
+      }
+    },
+    "created_at": "2026-09-07T22:45:08.104607",
+    "updated_at": "2026-09-07T22:45:08.104607"
+  },
+  {
+    "id": "bot_rec_1788801504",
+    "name": "Extension Recorded Test Journey",
+    "description": "Workflow automatically generated from Chrome Extension path trace on http://127.0.0.1:5000/demo-target",
+    "initial_url": "http://127.0.0.1:5000/demo-target",
+    "variables": [
+      {
+        "name": "username",
+        "default_value": "gov_citizen",
+        "type": "string",
+        "description": "Input for username",
+        "required": true
+      },
+      {
+        "name": "password",
+        "default_value": "GovPass@2026",
+        "type": "password",
+        "description": "Input for password",
+        "required": true
+      }
+    ],
+    "steps": [
+      {
+        "id": "step_1",
+        "step_number": 1,
+        "title": "Extension initiated on 127.0.0.1:5000",
+        "action_type": "navigate",
+        "target_description": "Initial URL",
+        "selector": "",
+        "fallback_selectors": [],
+        "value_mode": "fixed",
+        "value": "http://127.0.0.1:5000/demo-target",
+        "variable_name": "",
+        "wait_before_ms": 200,
+        "wait_after_ms": 500,
+        "timeout_ms": 15000,
+        "optional": false,
+        "highlight": true
+      },
+      {
+        "id": "step_2",
+        "step_number": 2,
+        "title": "Input in Username field",
+        "action_type": "type",
+        "target_description": "username field",
+        "selector": "#username",
+        "fallback_selectors": [
+          "input[name='username']"
+        ],
+        "value_mode": "variable",
+        "value": "gov_citizen",
+        "variable_name": "username",
+        "wait_before_ms": 250,
+        "wait_after_ms": 300,
+        "timeout_ms": 10000,
+        "optional": false,
+        "highlight": true
+      },
+      {
+        "id": "step_3",
+        "step_number": 3,
+        "title": "Input in Password field",
+        "action_type": "type",
+        "target_description": "password field",
+        "selector": "#password",
+        "fallback_selectors": [
+          "input[name='password']"
+        ],
+        "value_mode": "variable",
+        "value": "GovPass@2026",
+        "variable_name": "password",
+        "wait_before_ms": 250,
+        "wait_after_ms": 300,
+        "timeout_ms": 10000,
+        "optional": false,
+        "highlight": true
+      },
+      {
+        "id": "step_4",
+        "step_number": 4,
+        "title": "Sign In To Portal Button",
+        "action_type": "click",
+        "target_description": "Sign In to Portal Button",
+        "selector": "#submit-btn",
+        "fallback_selectors": [
+          "button[type='submit']"
+        ],
+        "value_mode": "fixed",
+        "value": "",
+        "variable_name": "",
+        "wait_before_ms": 300,
+        "wait_after_ms": 800,
+        "timeout_ms": 10000,
+        "optional": false,
+        "highlight": true
+      }
+    ],
+    "branching": {
+      "enabled": true,
+      "check_type": "url_or_element",
+      "failure_selector": "#error-message",
+      "success_url_contains": "dashboard",
+      "success_selector": "",
+      "failure_branch": {
+        "title": "Login Failed return error",
+        "subtitle": "End of the RPA BOT task",
+        "outcome": "error",
+        "message": "Invalid authentication credentials.",
+        "status_code": 401
+      },
+      "success_branch": {
+        "title": "Login Successful",
+        "subtitle": "End of the RPA BOT task",
+        "outcome": "success",
+        "message": "Workflow reached target success state.",
+        "status_code": 200
+      }
+    },
+    "created_at": "2026-09-07T22:48:24.676958",
+    "updated_at": "2026-09-07T22:48:24.676958"
+  },
+  {
+    "id": "bot_rec_1788802036",
+    "name": "Recorded Path - 10:57:16 PM",
+    "description": "Workflow automatically generated from Chrome Extension path trace on http://127.0.0.1:5000/demo-target",
+    "initial_url": "http://127.0.0.1:5000/demo-target",
+    "variables": [],
+    "steps": [
+      {
+        "id": "step_1",
+        "step_number": 1,
+        "title": "Extension initiated on 127.0.0.1:5000",
+        "action_type": "navigate",
+        "target_description": "Initial URL",
+        "selector": "",
+        "fallback_selectors": [],
+        "value_mode": "fixed",
+        "value": "http://127.0.0.1:5000/demo-target",
+        "variable_name": "",
+        "wait_before_ms": 200,
+        "wait_after_ms": 500,
+        "timeout_ms": 15000,
+        "optional": false,
+        "highlight": true
+      }
+    ],
+    "branching": {
+      "enabled": true,
+      "check_type": "url_or_element",
+      "failure_selector": "#error-message",
+      "success_url_contains": "dashboard",
+      "success_selector": "",
+      "failure_branch": {
+        "title": "Login Failed return error",
+        "subtitle": "End of the RPA BOT task",
+        "outcome": "error",
+        "message": "Invalid authentication credentials.",
+        "status_code": 401
+      },
+      "success_branch": {
+        "title": "Login Successful",
+        "subtitle": "End of the RPA BOT task",
+        "outcome": "success",
+        "message": "Workflow reached target success state.",
+        "status_code": 200
+      }
+    },
+    "created_at": "2026-09-07T22:57:16.185747",
+    "updated_at": "2026-09-07T22:57:16.185747"
+  },
+  {
+    "id": "bot_rec_1788802124",
+    "name": "Recorded Path - 10:58:44 PM",
+    "description": "Workflow automatically generated from Chrome Extension path trace on https://www.apnacollege.in/path-player?courseid=prime-ai&unit=69186c530df0d996f70910e5Unit",
+    "initial_url": "https://www.apnacollege.in/path-player?courseid=prime-ai&unit=69186c530df0d996f70910e5Unit",
+    "variables": [
+      {
+        "name": "var_email",
+        "default_value": "patidar.jayesh2006@gmail.com",
+        "type": "string",
+        "description": "Input for email",
+        "required": true
+      },
+      {
+        "name": "password",
+        "default_value": "Jayesh@20062251",
+        "type": "password",
+        "description": "Input for password",
+        "required": true
+      }
+    ],
+    "steps": [
+      {
+        "id": "step_1",
+        "step_number": 1,
+        "title": "Extension initiated on www.apnacollege.in",
+        "action_type": "navigate",
+        "target_description": "Initial URL",
+        "selector": "",
+        "fallback_selectors": [],
+        "value_mode": "fixed",
+        "value": "https://www.apnacollege.in/path-player?courseid=prime-ai&unit=69186c530df0d996f70910e5Unit",
+        "variable_name": "",
+        "wait_before_ms": 200,
+        "wait_after_ms": 500,
+        "timeout_ms": 15000,
+        "optional": false,
+        "highlight": true
+      },
+      {
+        "id": "step_2",
+        "step_number": 2,
+        "title": "Apna College\n\nApna College\nHttps://Www.Apnacollege.In Button",
+        "action_type": "click",
+        "target_description": "Apna College\n\nApna College\nhttps://www.apnacollege.in Button",
+        "selector": "div#rso > div > div > div > div > div > div > div > div > div > div > span > a",
+        "fallback_selectors": [
+          "//*[@id=\"rso\"]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/span[1]/a[1]"
+        ],
+        "value_mode": "fixed",
+        "value": "",
+        "variable_name": "",
+        "wait_before_ms": 300,
+        "wait_after_ms": 800,
+        "timeout_ms": 10000,
+        "optional": false,
+        "highlight": true
+      },
+      {
+        "id": "step_3",
+        "step_number": 3,
+        "title": "Log In Button",
+        "action_type": "click",
+        "target_description": "Log in Button",
+        "selector": "#menuItem5",
+        "fallback_selectors": [
+          "//*[@id=\"menuItem5\"]"
+        ],
+        "value_mode": "fixed",
+        "value": "",
+        "variable_name": "",
+        "wait_before_ms": 300,
+        "wait_after_ms": 800,
+        "timeout_ms": 10000,
+        "optional": false,
+        "highlight": true
+      },
+      {
+        "id": "step_4",
+        "step_number": 4,
+        "title": "Input in Email field",
+        "action_type": "type",
+        "target_description": "email field",
+        "selector": "#signin-email",
+        "fallback_selectors": [
+          "input[name=\"email\"]",
+          "input[placeholder=\"E-mail\"]",
+          "//*[@id=\"signin-email\"]"
+        ],
+        "value_mode": "variable",
+        "value": "patidar.jayesh2006@gmail.com",
+        "variable_name": "var_email",
+        "wait_before_ms": 250,
+        "wait_after_ms": 300,
+        "timeout_ms": 10000,
+        "optional": false,
+        "highlight": true
+      },
+      {
+        "id": "step_5",
+        "step_number": 5,
+        "title": "Input in Password field",
+        "action_type": "type",
+        "target_description": "password field",
+        "selector": "#signin-password",
+        "fallback_selectors": [
+          "input[name=\"password\"]",
+          "input[placeholder=\"Password\"]",
+          "//*[@id=\"signin-password\"]"
+        ],
+        "value_mode": "variable",
+        "value": "Jayesh@20062251",
+        "variable_name": "password",
+        "wait_before_ms": 250,
+        "wait_after_ms": 300,
+        "timeout_ms": 10000,
+        "optional": false,
+        "highlight": true
+      },
+      {
+        "id": "step_6",
+        "step_number": 6,
+        "title": "Login Button",
+        "action_type": "click",
+        "target_description": "Login Button",
+        "selector": "#submitLogin",
+        "fallback_selectors": [
+          "//*[@id=\"submitLogin\"]"
+        ],
+        "value_mode": "fixed",
+        "value": "",
+        "variable_name": "",
+        "wait_before_ms": 300,
+        "wait_after_ms": 800,
+        "timeout_ms": 10000,
+        "optional": false,
+        "highlight": true
+      },
+      {
+        "id": "step_7",
+        "step_number": 7,
+        "title": "Continue Button",
+        "action_type": "click",
+        "target_description": "Continue Button",
+        "selector": "div#68fa2613fee728b2260037c5 > div:nth-of-type(2) > div > div:nth-of-type(2) > div > div > button",
+        "fallback_selectors": [
+          "//*[@id=\"68fa2613fee728b2260037c5\"]/div[2]/div[1]/div[2]/div[1]/div[1]/button[1]"
+        ],
+        "value_mode": "fixed",
+        "value": "",
+        "variable_name": "",
+        "wait_before_ms": 300,
+        "wait_after_ms": 800,
+        "timeout_ms": 10000,
+        "optional": false,
+        "highlight": true
+      },
+      {
+        "id": "step_8",
+        "step_number": 8,
+        "title": "Wait Delay",
+        "action_type": "wait",
+        "target_description": "Wait Timer",
+        "selector": "",
+        "fallback_selectors": [],
+        "value_mode": "fixed",
+        "value": 1000,
+        "variable_name": "",
+        "wait_before_ms": 0,
+        "wait_after_ms": 0,
+        "timeout_ms": 5000,
+        "optional": true,
+        "highlight": false
+      },
+      {
+        "id": "step_9",
+        "step_number": 9,
+        "title": "4.\nPython Fundamentals (Part 1) Button",
+        "action_type": "click",
+        "target_description": "4.\nPython Fundamentals (Part 1) Button",
+        "selector": "h2#lrn-sec-title-prime_python_fundamentals_part_1 > button",
+        "fallback_selectors": [
+          "//*[@id=\"lrn-sec-title-prime_python_fundamentals_part_1\"]/button[1]"
+        ],
+        "value_mode": "fixed",
+        "value": "",
+        "variable_name": "",
+        "wait_before_ms": 300,
+        "wait_after_ms": 800,
+        "timeout_ms": 10000,
+        "optional": false,
+        "highlight": true
+      },
+      {
+        "id": "step_10",
+        "step_number": 10,
+        "title": "Lecture Notes Button",
+        "action_type": "click",
+        "target_description": "Lecture Notes Button",
+        "selector": "ul#lrn-sec-units-prime_python_fundamentals_part_1 > li:nth-of-type(14) > div > a",
+        "fallback_selectors": [
+          "//*[@id=\"lrn-sec-units-prime_python_fundamentals_part_1\"]/li[14]/div[1]/a[1]"
+        ],
+        "value_mode": "fixed",
+        "value": "",
+        "variable_name": "",
+        "wait_before_ms": 300,
+        "wait_after_ms": 800,
+        "timeout_ms": 10000,
+        "optional": false,
+        "highlight": true
+      }
+    ],
+    "branching": {
+      "enabled": true,
+      "check_type": "url_or_element",
+      "failure_selector": "#error-message",
+      "success_url_contains": "dashboard",
+      "success_selector": "",
+      "failure_branch": {
+        "title": "Login Failed return error",
+        "subtitle": "End of the RPA BOT task",
+        "outcome": "error",
+        "message": "Invalid authentication credentials.",
+        "status_code": 401
+      },
+      "success_branch": {
+        "title": "Login Successful",
+        "subtitle": "End of the RPA BOT task",
+        "outcome": "success",
+        "message": "Workflow reached target success state.",
+        "status_code": 200
+      }
+    },
+    "created_at": "2026-09-07T22:58:44.042907",
+    "updated_at": "2026-09-07T22:58:44.042907"
+  },
+  {
+    "id": "bot_rec_1788802351",
+    "name": "Recorded Path - 11:02:31 PM",
+    "description": "Workflow automatically generated from Chrome Extension path trace on https://www.apnacollege.in/path-player?courseid=prime-ai&unit=69186c530df0d996f70910e5Unit",
+    "initial_url": "https://www.apnacollege.in/path-player?courseid=prime-ai&unit=69186c530df0d996f70910e5Unit",
+    "variables": [
+      {
+        "name": "var_email",
+        "default_value": "patidar.jayesh2006@gmail.com",
+        "type": "string",
+        "description": "Input for email",
+        "required": true
+      },
+      {
+        "name": "password",
+        "default_value": "Jayesh@20062251",
+        "type": "password",
+        "description": "Input for password",
+        "required": true
+      }
+    ],
+    "steps": [
+      {
+        "id": "step_1",
+        "step_number": 1,
+        "title": "Extension initiated on www.apnacollege.in",
+        "action_type": "navigate",
+        "target_description": "Initial URL",
+        "selector": "",
+        "fallback_selectors": [],
+        "value_mode": "fixed",
+        "value": "https://www.apnacollege.in/path-player?courseid=prime-ai&unit=69186c530df0d996f70910e5Unit",
+        "variable_name": "",
+        "wait_before_ms": 200,
+        "wait_after_ms": 500,
+        "timeout_ms": 15000,
+        "optional": false,
+        "highlight": true
+      },
+      {
+        "id": "step_2",
+        "step_number": 2,
+        "title": "Log In Button",
+        "action_type": "click",
+        "target_description": "Log in Button",
+        "selector": "#menuItem5",
+        "fallback_selectors": [
+          "//*[@id=\"menuItem5\"]"
+        ],
+        "value_mode": "fixed",
+        "value": "",
+        "variable_name": "",
+        "wait_before_ms": 300,
+        "wait_after_ms": 800,
+        "timeout_ms": 10000,
+        "optional": false,
+        "highlight": true
+      },
+      {
+        "id": "step_3",
+        "step_number": 3,
+        "title": "Input in Email field",
+        "action_type": "type",
+        "target_description": "email field",
+        "selector": "#signin-email",
+        "fallback_selectors": [
+          "input[name=\"email\"]",
+          "input[placeholder=\"E-mail\"]",
+          "//*[@id=\"signin-email\"]"
+        ],
+        "value_mode": "variable",
+        "value": "patidar.jayesh2006@gmail.com",
+        "variable_name": "var_email",
+        "wait_before_ms": 250,
+        "wait_after_ms": 300,
+        "timeout_ms": 10000,
+        "optional": false,
+        "highlight": true
+      },
+      {
+        "id": "step_4",
+        "step_number": 4,
+        "title": "Input in Password field",
+        "action_type": "type",
+        "target_description": "password field",
+        "selector": "#signin-password",
+        "fallback_selectors": [
+          "input[name=\"password\"]",
+          "input[placeholder=\"Password\"]",
+          "//*[@id=\"signin-password\"]"
+        ],
+        "value_mode": "variable",
+        "value": "Jayesh@20062251",
+        "variable_name": "password",
+        "wait_before_ms": 250,
+        "wait_after_ms": 300,
+        "timeout_ms": 10000,
+        "optional": false,
+        "highlight": true
+      },
+      {
+        "id": "step_5",
+        "step_number": 5,
+        "title": "Login Button",
+        "action_type": "click",
+        "target_description": "Login Button",
+        "selector": "#submitLogin",
+        "fallback_selectors": [
+          "//*[@id=\"submitLogin\"]"
+        ],
+        "value_mode": "fixed",
+        "value": "",
+        "variable_name": "",
+        "wait_before_ms": 300,
+        "wait_after_ms": 800,
+        "timeout_ms": 10000,
+        "optional": false,
+        "highlight": true
+      },
+      {
+        "id": "step_6",
+        "step_number": 6,
+        "title": "Continue Button",
+        "action_type": "click",
+        "target_description": "Continue Button",
+        "selector": "div#68fa2613fee728b2260037c5 > div:nth-of-type(2) > div > div:nth-of-type(2) > div > div > button",
+        "fallback_selectors": [
+          "//*[@id=\"68fa2613fee728b2260037c5\"]/div[2]/div[1]/div[2]/div[1]/div[1]/button[1]"
+        ],
+        "value_mode": "fixed",
+        "value": "",
+        "variable_name": "",
+        "wait_before_ms": 300,
+        "wait_after_ms": 800,
+        "timeout_ms": 10000,
+        "optional": false,
+        "highlight": true
+      }
+    ],
+    "branching": {
+      "enabled": true,
+      "check_type": "url_or_element",
+      "failure_selector": "#error-message",
+      "success_url_contains": "dashboard",
+      "success_selector": "",
+      "failure_branch": {
+        "title": "Login Failed return error",
+        "subtitle": "End of the RPA BOT task",
+        "outcome": "error",
+        "message": "Invalid authentication credentials.",
+        "status_code": 401
+      },
+      "success_branch": {
+        "title": "Login Successful",
+        "subtitle": "End of the RPA BOT task",
+        "outcome": "success",
+        "message": "Workflow reached target success state.",
+        "status_code": 200
+      }
+    },
+    "created_at": "2026-09-07T23:02:31.432481",
+    "updated_at": "2026-09-07T23:02:31.432481"
+  },
+  {
+    "id": "bot_rec_1788804350",
+    "name": "Extension Recorded Test Journey",
+    "description": "Workflow automatically generated from Chrome Extension path trace on http://127.0.0.1:5000/demo-target",
+    "initial_url": "http://127.0.0.1:5000/demo-target",
+    "variables": [
+      {
+        "name": "username",
+        "default_value": "gov_citizen",
+        "type": "string",
+        "description": "Input for username",
+        "required": true
+      },
+      {
+        "name": "password",
+        "default_value": "GovPass@2026",
+        "type": "password",
+        "description": "Input for password",
+        "required": true
+      }
+    ],
+    "steps": [
+      {
+        "id": "step_1",
+        "step_number": 1,
+        "title": "Extension initiated on 127.0.0.1:5000",
+        "action_type": "navigate",
+        "target_description": "Initial URL",
+        "selector": "",
+        "fallback_selectors": [],
+        "value_mode": "fixed",
+        "value": "http://127.0.0.1:5000/demo-target",
+        "variable_name": "",
+        "wait_before_ms": 200,
+        "wait_after_ms": 500,
+        "timeout_ms": 15000,
+        "optional": false,
+        "highlight": true
+      },
+      {
+        "id": "step_2",
+        "step_number": 2,
+        "title": "Input in Username field",
+        "action_type": "type",
+        "target_description": "username field",
+        "selector": "#username",
+        "fallback_selectors": [
+          "input[name='username']"
+        ],
+        "value_mode": "variable",
+        "value": "gov_citizen",
+        "variable_name": "username",
+        "wait_before_ms": 250,
+        "wait_after_ms": 300,
+        "timeout_ms": 10000,
+        "optional": false,
+        "highlight": true
+      },
+      {
+        "id": "step_3",
+        "step_number": 3,
+        "title": "Input in Password field",
+        "action_type": "type",
+        "target_description": "password field",
+        "selector": "#password",
+        "fallback_selectors": [
+          "input[name='password']"
+        ],
+        "value_mode": "variable",
+        "value": "GovPass@2026",
+        "variable_name": "password",
+        "wait_before_ms": 250,
+        "wait_after_ms": 300,
+        "timeout_ms": 10000,
+        "optional": false,
+        "highlight": true
+      },
+      {
+        "id": "step_4",
+        "step_number": 4,
+        "title": "Sign In To Portal Button",
+        "action_type": "click",
+        "target_description": "Sign In to Portal Button",
+        "selector": "#submit-btn",
+        "fallback_selectors": [
+          "button[type='submit']"
+        ],
+        "value_mode": "fixed",
+        "value": "",
+        "variable_name": "",
+        "wait_before_ms": 300,
+        "wait_after_ms": 800,
+        "timeout_ms": 10000,
+        "optional": false,
+        "highlight": true
+      }
+    ],
+    "branching": {
+      "enabled": true,
+      "check_type": "url_or_element",
+      "failure_selector": "#error-message",
+      "success_url_contains": "dashboard",
+      "success_selector": "",
+      "failure_branch": {
+        "title": "Login Failed return error",
+        "subtitle": "End of the RPA BOT task",
+        "outcome": "error",
+        "message": "Invalid authentication credentials.",
+        "status_code": 401
+      },
+      "success_branch": {
+        "title": "Login Successful",
+        "subtitle": "End of the RPA BOT task",
+        "outcome": "success",
+        "message": "Workflow reached target success state.",
+        "status_code": 200
+      }
+    },
+    "created_at": "2026-09-07T23:35:50.726994",
+    "updated_at": "2026-09-07T23:35:50.726994"
+  },
+  {
+    "id": "bot_rec_1788804382",
+    "name": "Extension Recorded Test Journey",
+    "description": "Workflow automatically generated from Chrome Extension path trace on http://127.0.0.1:5000/demo-target",
+    "initial_url": "http://127.0.0.1:5000/demo-target",
+    "variables": [
+      {
+        "name": "username",
+        "default_value": "gov_citizen",
+        "type": "string",
+        "description": "Input for username",
+        "required": true
+      },
+      {
+        "name": "password",
+        "default_value": "GovPass@2026",
+        "type": "password",
+        "description": "Input for password",
+        "required": true
+      }
+    ],
+    "steps": [
+      {
+        "id": "step_1",
+        "step_number": 1,
+        "title": "Extension initiated on 127.0.0.1:5000",
+        "action_type": "navigate",
+        "target_description": "Initial URL",
+        "selector": "",
+        "fallback_selectors": [],
+        "value_mode": "fixed",
+        "value": "http://127.0.0.1:5000/demo-target",
+        "variable_name": "",
+        "wait_before_ms": 200,
+        "wait_after_ms": 500,
+        "timeout_ms": 15000,
+        "optional": false,
+        "highlight": true
+      },
+      {
+        "id": "step_2",
+        "step_number": 2,
+        "title": "Input in Username field",
+        "action_type": "type",
+        "target_description": "username field",
+        "selector": "#username",
+        "fallback_selectors": [
+          "input[name='username']"
+        ],
+        "value_mode": "variable",
+        "value": "gov_citizen",
+        "variable_name": "username",
+        "wait_before_ms": 250,
+        "wait_after_ms": 300,
+        "timeout_ms": 10000,
+        "optional": false,
+        "highlight": true
+      },
+      {
+        "id": "step_3",
+        "step_number": 3,
+        "title": "Input in Password field",
+        "action_type": "type",
+        "target_description": "password field",
+        "selector": "#password",
+        "fallback_selectors": [
+          "input[name='password']"
+        ],
+        "value_mode": "variable",
+        "value": "GovPass@2026",
+        "variable_name": "password",
+        "wait_before_ms": 250,
+        "wait_after_ms": 300,
+        "timeout_ms": 10000,
+        "optional": false,
+        "highlight": true
+      },
+      {
+        "id": "step_4",
+        "step_number": 4,
+        "title": "Sign In To Portal Button",
+        "action_type": "click",
+        "target_description": "Sign In to Portal Button",
+        "selector": "#submit-btn",
+        "fallback_selectors": [
+          "button[type='submit']"
+        ],
+        "value_mode": "fixed",
+        "value": "",
+        "variable_name": "",
+        "wait_before_ms": 300,
+        "wait_after_ms": 800,
+        "timeout_ms": 10000,
+        "optional": false,
+        "highlight": true
+      }
+    ],
+    "branching": {
+      "enabled": true,
+      "check_type": "url_or_element",
+      "failure_selector": "#error-message",
+      "success_url_contains": "dashboard",
+      "success_selector": "",
+      "failure_branch": {
+        "title": "Login Failed return error",
+        "subtitle": "End of the RPA BOT task",
+        "outcome": "error",
+        "message": "Invalid authentication credentials.",
+        "status_code": 401
+      },
+      "success_branch": {
+        "title": "Login Successful",
+        "subtitle": "End of the RPA BOT task",
+        "outcome": "success",
+        "message": "Workflow reached target success state.",
+        "status_code": 200
+      }
+    },
+    "created_at": "2026-09-07T23:36:22.599625",
+    "updated_at": "2026-09-07T23:36:22.599625"
+  },
+  {
+    "branching": {
+      "check_type": "url_or_element",
+      "enabled": true,
+      "failure_branch": {
+        "message": "Invalid authentication credentials.",
+        "outcome": "error",
+        "status_code": 401,
+        "subtitle": "End of the RPA BOT task",
+        "title": "Login Failed return error"
+      },
+      "failure_selector": "#error-message",
+      "success_branch": {
+        "message": "Workflow reached target success state.",
+        "outcome": "success",
+        "status_code": 200,
+        "subtitle": "End of the RPA BOT task",
+        "title": "Login Successful"
+      },
+      "success_selector": "",
+      "success_url_contains": "dashboard"
+    },
+    "created_at": "2026-09-08T00:16:44.099693",
+    "description": "Workflow automatically generated from Chrome Extension path trace on https://excalidraw.com/",
+    "id": "bot_rec_1788806804",
+    "initial_url": "https://excalidraw.com/",
+    "name": "Recorded Path - 12:16:44 AM",
+    "steps": [
+      {
+        "action_type": "navigate",
+        "fallback_selectors": [],
+        "highlight": true,
+        "id": "step_1",
+        "optional": false,
+        "selector": "",
+        "step_number": 1,
+        "target_description": "Initial URL",
+        "timeout_ms": 15000,
+        "title": "Extension initiated on excalidraw.com",
+        "value": "https://excalidraw.com/",
+        "value_mode": "fixed",
+        "variable_name": "",
+        "wait_after_ms": 500,
+        "wait_before_ms": 200
+      },
+      {
+        "action_type": "click",
+        "fallback_selectors": [
+          "//*[@id=\"root\"]/div[1]/div[1]/div[1]/div[2]/div[1]/section[1]/div[1]/div[2]/div[1]/div[1]/div[2]/button[4]"
+        ],
+        "highlight": true,
+        "id": "step_2",
+        "optional": false,
+        "selector": "[data-testid=\"toolbar-rectangle\"]",
+        "step_number": 2,
+        "target_description": "2 Button",
+        "timeout_ms": 10000,
+        "title": "2 Button",
+        "value": "",
+        "value_mode": "fixed",
+        "variable_name": "",
+        "wait_after_ms": 800,
+        "wait_before_ms": 300
+      },
+      {
+        "action_type": "click",
+        "fallback_selectors": [
+          "//*[@id=\"root\"]/div[1]/div[1]/canvas[1]"
+        ],
+        "highlight": true,
+        "id": "step_3",
+        "optional": false,
+        "selector": "div#root > div > div > canvas",
+        "step_number": 3,
+        "target_description": "canvas Button",
+        "timeout_ms": 10000,
+        "title": "Canvas Button",
+        "value": "",
+        "value_mode": "fixed",
+        "variable_name": "",
+        "wait_after_ms": 800,
+        "wait_before_ms": 300
+      },
+      {
+        "action_type": "click",
+        "fallback_selectors": [
+          "//*[@id=\"root\"]/div[1]/div[1]/div[1]/div[1]/div[1]/section[1]/div[1]/div[1]/div[1]/div[1]/div[2]/button[10]"
+        ],
+        "highlight": true,
+        "id": "step_4",
+        "optional": false,
+        "selector": "[data-testid=\"toolbar-text\"]",
+        "step_number": 4,
+        "target_description": "8 Button",
+        "timeout_ms": 10000,
+        "title": "8 Button",
+        "value": "",
+        "value_mode": "fixed",
+        "variable_name": "",
+        "wait_after_ms": 800,
+        "wait_before_ms": 300
+      },
+      {
+        "action_type": "click",
+        "fallback_selectors": [
+          "//*[@id=\"root\"]/div[1]/div[1]/canvas[1]"
+        ],
+        "highlight": true,
+        "id": "step_5",
+        "optional": false,
+        "selector": "div#root > div > div > canvas",
+        "step_number": 5,
+        "target_description": "canvas Button",
+        "timeout_ms": 10000,
+        "title": "Canvas Button",
+        "value": "",
+        "value_mode": "fixed",
+        "variable_name": "",
+        "wait_after_ms": 800,
+        "wait_before_ms": 300
+      },
+      {
+        "action_type": "type",
+        "fallback_selectors": [
+          "//*[@id=\"root\"]/div[1]/div[1]/div[2]/textarea[1]"
+        ],
+        "highlight": true,
+        "id": "step_6",
+        "optional": false,
+        "selector": "div#root > div > div > div:nth-of-type(2) > textarea",
+        "step_number": 6,
+        "target_description": "textarea field",
+        "timeout_ms": 10000,
+        "title": "Input in Textarea field",
+        "value": "Hello Ji its just the testing part",
+        "value_mode": "variable",
+        "variable_name": "var_textarea",
+        "wait_after_ms": 300,
+        "wait_before_ms": 250
+      },
+      {
+        "action_type": "click",
+        "fallback_selectors": [
+          "//*[@id=\"root\"]/div[1]/div[1]/canvas[1]"
+        ],
+        "highlight": true,
+        "id": "step_7",
+        "optional": false,
+        "selector": "div#root > div > div > canvas",
+        "step_number": 7,
+        "target_description": "canvas Button",
+        "timeout_ms": 10000,
+        "title": "Canvas Button",
+        "value": "",
+        "value_mode": "fixed",
+        "variable_name": "",
+        "wait_after_ms": 800,
+        "wait_before_ms": 300
+      },
+      {
+        "action_type": "click",
+        "fallback_selectors": [
+          "//*[@id=\"root\"]/div[1]/div[1]/div[1]/div[1]/div[1]/section[1]/div[1]/div[1]/div[1]/div[1]/div[2]/button[5]"
+        ],
+        "highlight": true,
+        "id": "step_8",
+        "optional": false,
+        "selector": "[data-testid=\"toolbar-diamond\"]",
+        "step_number": 8,
+        "target_description": "3 Button",
+        "timeout_ms": 10000,
+        "title": "3 Button",
+        "value": "",
+        "value_mode": "fixed",
+        "variable_name": "",
+        "wait_after_ms": 800,
+        "wait_before_ms": 300
+      },
+      {
+        "action_type": "click",
+        "fallback_selectors": [
+          "//*[@id=\"root\"]/div[1]/div[1]/canvas[1]"
+        ],
+        "highlight": true,
+        "id": "step_9",
+        "optional": false,
+        "selector": "div#root > div > div > canvas",
+        "step_number": 9,
+        "target_description": "canvas Button",
+        "timeout_ms": 10000,
+        "title": "Canvas Button",
+        "value": "",
+        "value_mode": "fixed",
+        "variable_name": "",
+        "wait_after_ms": 800,
+        "wait_before_ms": 300
+      },
+      {
+        "action_type": "click",
+        "fallback_selectors": [
+          "//*[@id=\"root\"]/div[1]/div[1]/canvas[1]"
+        ],
+        "highlight": true,
+        "id": "step_10",
+        "optional": false,
+        "selector": "div#root > div > div > canvas",
+        "step_number": 10,
+        "target_description": "canvas Button",
+        "timeout_ms": 10000,
+        "title": "Canvas Button",
+        "value": "",
+        "value_mode": "fixed",
+        "variable_name": "",
+        "wait_after_ms": 800,
+        "wait_before_ms": 300
+      },
+      {
+        "action_type": "click",
+        "fallback_selectors": [
+          "//*[@id=\"root\"]/div[1]/div[1]/canvas[1]"
+        ],
+        "highlight": true,
+        "id": "step_11",
+        "optional": false,
+        "selector": "div#root > div > div > canvas",
+        "step_number": 11,
+        "target_description": "canvas Button",
+        "timeout_ms": 10000,
+        "title": "Canvas Button",
+        "value": "",
+        "value_mode": "fixed",
+        "variable_name": "",
+        "wait_after_ms": 800,
+        "wait_before_ms": 300
+      },
+      {
+        "action_type": "click",
+        "fallback_selectors": [
+          "[data-testid=\"main-menu-trigger\"]",
+          "//*[@id=\"radix-:r2:\"]"
+        ],
+        "highlight": true,
+        "id": "step_12",
+        "optional": false,
+        "selector": "#radix-:r2:",
+        "step_number": 12,
+        "target_description": "button Button",
+        "timeout_ms": 10000,
+        "title": "Button Button",
+        "value": "",
+        "value_mode": "fixed",
+        "variable_name": "",
+        "wait_after_ms": 800,
+        "wait_before_ms": 300
+      },
+      {
+        "action_type": "click",
+        "fallback_selectors": [
+          "//*[@id=\"radix-:r3:\"]/div[1]/button[3]"
+        ],
+        "highlight": true,
+        "id": "step_13",
+        "optional": false,
+        "selector": "[data-testid=\"image-export-button\"]",
+        "step_number": 13,
+        "target_description": "Export image...\nCtrl+Shift+E Button",
+        "timeout_ms": 10000,
+        "title": "Export Image...\nCtrl+Shift+E Button",
+        "value": "",
+        "value_mode": "fixed",
+        "variable_name": "",
+        "wait_after_ms": 800,
+        "wait_before_ms": 300
+      },
+      {
+        "action_type": "click",
+        "fallback_selectors": [
+          "/html/body/div[3]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[5]/button[1]"
+        ],
+        "highlight": true,
+        "id": "step_14",
+        "optional": false,
+        "selector": "html > body > div:nth-of-type(3) > div > div:nth-of-type(2) > div > div > div > div:nth-of-type(2) > div:nth-of-type(5) > button",
+        "step_number": 14,
+        "target_description": "PNG Button",
+        "timeout_ms": 10000,
+        "title": "Png Button",
+        "value": "",
+        "value_mode": "fixed",
+        "variable_name": "",
+        "wait_after_ms": 800,
+        "wait_before_ms": 300
+      }
+    ],
+    "updated_at": "2026-09-08T00:16:53.131004",
+    "variables": [
+      {
+        "default_value": "Hello Ji its just the testing part",
+        "description": "Input for textarea",
+        "name": "var_textarea",
+        "required": true,
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "branching": {
+      "check_type": "url_or_element",
+      "enabled": true,
+      "failure_branch": {
+        "message": "Invalid authentication credentials.",
+        "outcome": "error",
+        "status_code": 401,
+        "subtitle": "End of the RPA BOT task",
+        "title": "Login Failed return error"
+      },
+      "failure_selector": "#error-message",
+      "success_branch": {
+        "message": "Workflow reached target success state.",
+        "outcome": "success",
+        "status_code": 200,
+        "subtitle": "End of the RPA BOT task",
+        "title": "Login Successful"
+      },
+      "success_selector": "",
+      "success_url_contains": "dashboard"
+    },
+    "created_at": "2026-09-08T00:26:18.953301",
+    "description": "Workflow automatically generated from Chrome Extension path trace on https://excalidraw.com/",
+    "id": "bot_rec_1788807378",
+    "initial_url": "https://excalidraw.com/",
+    "name": "Recorded Path - 12:26:18 AM",
+    "steps": [
+      {
+        "action_type": "navigate",
+        "fallback_selectors": [],
+        "highlight": true,
+        "id": "step_1",
+        "optional": false,
+        "selector": "",
+        "step_number": 1,
+        "target_description": "Initial URL",
+        "timeout_ms": 15000,
+        "title": "Extension initiated on excalidraw.com",
+        "value": "https://excalidraw.com/",
+        "value_mode": "fixed",
+        "variable_name": "",
+        "wait_after_ms": 500,
+        "wait_before_ms": 200
+      },
+      {
+        "action_type": "click",
+        "fallback_selectors": [
+          "//*[@id=\"root\"]/div[1]/div[1]/div[1]/div[1]/div[1]/section[1]/div[1]/div[1]/div[1]/div[1]/div[2]/button[4]"
+        ],
+        "highlight": true,
+        "id": "step_2",
+        "optional": false,
+        "selector": "[data-testid=\"toolbar-rectangle\"]",
+        "step_number": 2,
+        "target_description": "2 Button",
+        "timeout_ms": 10000,
+        "title": "2 Button",
+        "value": "",
+        "value_mode": "fixed",
+        "variable_name": "",
+        "wait_after_ms": 800,
+        "wait_before_ms": 300
+      },
+      {
+        "action_type": "click",
+        "fallback_selectors": [
+          "//*[@id=\"root\"]/div[1]/div[1]/div[1]/div[1]/div[1]/section[1]/div[1]/div[1]/div[1]/div[1]/div[1]/button[10]"
+        ],
+        "highlight": true,
+        "id": "step_3",
+        "optional": false,
+        "selector": "[data-testid=\"toolbar-text\"]",
+        "step_number": 3,
+        "target_description": "8 Button",
+        "timeout_ms": 10000,
+        "title": "8 Button",
+        "value": "",
+        "value_mode": "fixed",
+        "variable_name": "",
+        "wait_after_ms": 800,
+        "wait_before_ms": 300
+      },
+      {
+        "action_type": "click",
+        "fallback_selectors": [
+          "//*[@id=\"root\"]/div[1]/div[1]/canvas[1]"
+        ],
+        "highlight": true,
+        "id": "step_4",
+        "optional": false,
+        "selector": "div#root > div > div > canvas",
+        "step_number": 4,
+        "target_description": "canvas Button",
+        "timeout_ms": 10000,
+        "title": "Canvas Button",
+        "value": "",
+        "value_mode": "fixed",
+        "variable_name": "",
+        "wait_after_ms": 800,
+        "wait_before_ms": 300
+      },
+      {
+        "action_type": "click",
+        "fallback_selectors": [
+          "[data-testid=\"main-menu-trigger\"]",
+          "//*[@id=\"radix-:r2:\"]"
+        ],
+        "highlight": true,
+        "id": "step_5",
+        "optional": false,
+        "selector": "#radix-:r2:",
+        "step_number": 5,
+        "target_description": "button Button",
+        "timeout_ms": 10000,
+        "title": "Button Button",
+        "value": "",
+        "value_mode": "fixed",
+        "variable_name": "",
+        "wait_after_ms": 800,
+        "wait_before_ms": 300
+      },
+      {
+        "action_type": "type",
+        "fallback_selectors": [
+          "//*[@id=\"root\"]/div[1]/div[1]/div[2]/textarea[1]"
+        ],
+        "highlight": true,
+        "id": "step_6",
+        "optional": false,
+        "selector": "div#root > div > div > div:nth-of-type(2) > textarea",
+        "step_number": 6,
+        "target_description": "textarea field",
+        "timeout_ms": 10000,
+        "title": "Input in Textarea field",
+        "value": "testing",
+        "value_mode": "variable",
+        "variable_name": "var_textarea",
+        "wait_after_ms": 300,
+        "wait_before_ms": 250
+      },
+      {
+        "action_type": "click",
+        "fallback_selectors": [
+          "//*[@id=\"radix-:r3:\"]/div[1]/button[3]"
+        ],
+        "highlight": true,
+        "id": "step_7",
+        "optional": false,
+        "selector": "[data-testid=\"image-export-button\"]",
+        "step_number": 7,
+        "target_description": "Export image...\nCtrl+Shift+E Button",
+        "timeout_ms": 10000,
+        "title": "Export Image...\nCtrl+Shift+E Button",
+        "value": "",
+        "value_mode": "fixed",
+        "variable_name": "",
+        "wait_after_ms": 800,
+        "wait_before_ms": 300
+      },
+      {
+        "action_type": "click",
+        "fallback_selectors": [
+          "/html/body/div[4]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[6]/button[1]"
+        ],
+        "highlight": true,
+        "id": "step_8",
+        "optional": false,
+        "selector": "html > body > div:nth-of-type(4) > div > div:nth-of-type(2) > div > div > div > div:nth-of-type(2) > div:nth-of-type(6) > button",
+        "step_number": 8,
+        "target_description": "PNG Button",
+        "timeout_ms": 10000,
+        "title": "Png Button",
+        "value": "",
+        "value_mode": "fixed",
+        "variable_name": "",
+        "wait_after_ms": 800,
+        "wait_before_ms": 300
+      }
+    ],
+    "updated_at": "2026-09-08T00:26:32.481786",
+    "variables": [
+      {
+        "default_value": "testing",
+        "description": "Input for textarea",
+        "name": "var_textarea",
+        "required": true,
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "branching": {
+      "check_type": "url_or_element",
+      "enabled": true,
+      "failure_branch": {
+        "message": "Invalid authentication credentials.",
+        "outcome": "error",
+        "status_code": 401,
+        "subtitle": "End of the RPA BOT task",
+        "title": "Login Failed return error"
+      },
+      "failure_selector": "#error-message",
+      "success_branch": {
+        "message": "Workflow reached target success state.",
+        "outcome": "success",
+        "status_code": 200,
+        "subtitle": "End of the RPA BOT task",
+        "title": "Login Successful"
+      },
+      "success_selector": "",
+      "success_url_contains": "dashboard"
+    },
+    "created_at": "2026-09-08T00:36:15.794353",
+    "description": "Workflow automatically generated from Chrome Extension path trace on https://excalidraw.com/",
+    "id": "bot_rec_1788807975",
+    "initial_url": "https://excalidraw.com/",
+    "name": "Recorded Path - 12:36:15 AM",
+    "steps": [
+      {
+        "action_type": "navigate",
+        "fallback_selectors": [],
+        "highlight": true,
+        "id": "step_1",
+        "optional": false,
+        "selector": "",
+        "step_number": 1,
+        "target_description": "Initial URL",
+        "timeout_ms": 15000,
+        "title": "Extension initiated on excalidraw.com",
+        "value": "https://excalidraw.com/",
+        "value_mode": "fixed",
+        "variable_name": "",
+        "wait_after_ms": 500,
+        "wait_before_ms": 200
+      },
+      {
+        "action_type": "click",
+        "fallback_selectors": [
+          "//*[@id=\"root\"]/div[1]/div[1]/div[1]/div[1]/div[1]/section[1]/div[1]/div[1]/div[1]/div[1]/div[2]/button[10]"
+        ],
+        "highlight": true,
+        "id": "step_2",
+        "optional": false,
+        "selector": "[data-testid=\"toolbar-text\"]",
+        "step_number": 2,
+        "target_description": "8 Button",
+        "timeout_ms": 10000,
+        "title": "8 Button",
+        "value": "",
+        "value_mode": "fixed",
+        "variable_name": "",
+        "wait_after_ms": 800,
+        "wait_before_ms": 300
+      },
+      {
+        "action_type": "click",
+        "fallback_selectors": [
+          "//*[@id=\"root\"]/div[1]/div[1]/canvas[1]"
+        ],
+        "highlight": true,
+        "id": "step_3",
+        "optional": false,
+        "selector": "div#root > div > div > canvas",
+        "step_number": 3,
+        "target_description": "canvas Button",
+        "timeout_ms": 10000,
+        "title": "Canvas Button",
+        "value": "",
+        "value_mode": "fixed",
+        "variable_name": "",
+        "wait_after_ms": 800,
+        "wait_before_ms": 300
+      },
+      {
+        "action_type": "type",
+        "fallback_selectors": [
+          "//*[@id=\"root\"]/div[1]/div[1]/div[2]/textarea[1]"
+        ],
+        "highlight": true,
+        "id": "step_4",
+        "optional": false,
+        "selector": "div#root > div > div > div:nth-of-type(2) > textarea",
+        "step_number": 4,
+        "target_description": "textarea field",
+        "timeout_ms": 10000,
+        "title": "Input in Textarea field",
+        "value": "testing hai ji",
+        "value_mode": "variable",
+        "variable_name": "var_textarea",
+        "wait_after_ms": 300,
+        "wait_before_ms": 250
+      },
+      {
+        "action_type": "click",
+        "fallback_selectors": [
+          "//*[@id=\"root\"]/div[1]/div[1]/canvas[1]"
+        ],
+        "highlight": true,
+        "id": "step_5",
+        "optional": false,
+        "selector": "div#root > div > div > canvas",
+        "step_number": 5,
+        "target_description": "canvas Button",
+        "timeout_ms": 10000,
+        "title": "Canvas Button",
+        "value": "",
+        "value_mode": "fixed",
+        "variable_name": "",
+        "wait_after_ms": 800,
+        "wait_before_ms": 300
+      },
+      {
+        "action_type": "click",
+        "fallback_selectors": [
+          "[data-testid=\"main-menu-trigger\"]",
+          "//*[@id=\"radix-:r2:\"]"
+        ],
+        "highlight": true,
+        "id": "step_6",
+        "optional": false,
+        "selector": "#radix-:r2:",
+        "step_number": 6,
+        "target_description": "button Button",
+        "timeout_ms": 10000,
+        "title": "Button Button",
+        "value": "",
+        "value_mode": "fixed",
+        "variable_name": "",
+        "wait_after_ms": 800,
+        "wait_before_ms": 300
+      },
+      {
+        "action_type": "click",
+        "fallback_selectors": [
+          "//*[@id=\"radix-:r3:\"]/div[1]/button[3]"
+        ],
+        "highlight": true,
+        "id": "step_7",
+        "optional": false,
+        "selector": "[data-testid=\"image-export-button\"]",
+        "step_number": 7,
+        "target_description": "Export image...\nCtrl+Shift+E Button",
+        "timeout_ms": 10000,
+        "title": "Export Image...\nCtrl+Shift+E Button",
+        "value": "",
+        "value_mode": "fixed",
+        "variable_name": "",
+        "wait_after_ms": 800,
+        "wait_before_ms": 300
+      },
+      {
+        "action_type": "click",
+        "fallback_selectors": [
+          "/html/body/div[3]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[5]/button[1]"
+        ],
+        "highlight": true,
+        "id": "step_8",
+        "optional": false,
+        "selector": "html > body > div:nth-of-type(3) > div > div:nth-of-type(2) > div > div > div > div:nth-of-type(2) > div:nth-of-type(5) > button",
+        "step_number": 8,
+        "target_description": "PNG Button",
+        "timeout_ms": 10000,
+        "title": "Png Button",
+        "value": "",
+        "value_mode": "fixed",
+        "variable_name": "",
+        "wait_after_ms": 800,
+        "wait_before_ms": 300
+      }
+    ],
+    "updated_at": "2026-09-08T00:36:24.152647",
+    "variables": [
+      {
+        "default_value": "testing hai ji",
+        "description": "Input for textarea",
+        "name": "var_textarea",
+        "required": true,
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "id": "bot_rec_1788808665",
+    "name": "Extension Recorded Test Journey",
+    "description": "Workflow automatically generated from Chrome Extension path trace on http://127.0.0.1:5000/demo-target",
+    "initial_url": "http://127.0.0.1:5000/demo-target",
+    "variables": [
+      {
+        "name": "username",
+        "default_value": "gov_citizen",
+        "type": "string",
+        "description": "Input for username",
+        "required": true
+      },
+      {
+        "name": "password",
+        "default_value": "GovPass@2026",
+        "type": "password",
+        "description": "Input for password",
+        "required": true
+      }
+    ],
+    "steps": [
+      {
+        "id": "step_1",
+        "step_number": 1,
+        "title": "Extension initiated on 127.0.0.1:5000",
+        "action_type": "navigate",
+        "target_description": "Initial URL",
+        "selector": "",
+        "fallback_selectors": [],
+        "value_mode": "fixed",
+        "value": "http://127.0.0.1:5000/demo-target",
+        "variable_name": "",
+        "wait_before_ms": 200,
+        "wait_after_ms": 500,
+        "timeout_ms": 15000,
+        "optional": false,
+        "highlight": true
+      },
+      {
+        "id": "step_2",
+        "step_number": 2,
+        "title": "Input in Username field",
+        "action_type": "type",
+        "target_description": "username field",
+        "selector": "#username",
+        "fallback_selectors": [
+          "input[name='username']"
+        ],
+        "value_mode": "variable",
+        "value": "gov_citizen",
+        "variable_name": "username",
+        "wait_before_ms": 250,
+        "wait_after_ms": 300,
+        "timeout_ms": 10000,
+        "optional": false,
+        "highlight": true
+      },
+      {
+        "id": "step_3",
+        "step_number": 3,
+        "title": "Input in Password field",
+        "action_type": "type",
+        "target_description": "password field",
+        "selector": "#password",
+        "fallback_selectors": [
+          "input[name='password']"
+        ],
+        "value_mode": "variable",
+        "value": "GovPass@2026",
+        "variable_name": "password",
+        "wait_before_ms": 250,
+        "wait_after_ms": 300,
+        "timeout_ms": 10000,
+        "optional": false,
+        "highlight": true
+      },
+      {
+        "id": "step_4",
+        "step_number": 4,
+        "title": "Sign In To Portal Button",
+        "action_type": "click",
+        "target_description": "Sign In to Portal Button",
+        "selector": "#submit-btn",
+        "fallback_selectors": [
+          "button[type='submit']"
+        ],
+        "value_mode": "fixed",
+        "value": "",
+        "variable_name": "",
+        "wait_before_ms": 300,
+        "wait_after_ms": 800,
+        "timeout_ms": 10000,
+        "optional": false,
+        "highlight": true
+      }
+    ],
+    "branching": {
+      "enabled": true,
+      "check_type": "url_or_element",
+      "failure_selector": "#error-message",
+      "success_url_contains": "dashboard",
+      "success_selector": "",
+      "failure_branch": {
+        "title": "Login Failed return error",
+        "subtitle": "End of the RPA BOT task",
+        "outcome": "error",
+        "message": "Invalid authentication credentials.",
+        "status_code": 401
+      },
+      "success_branch": {
+        "title": "Login Successful",
+        "subtitle": "End of the RPA BOT task",
+        "outcome": "success",
+        "message": "Workflow reached target success state.",
+        "status_code": 200
+      }
+    },
+    "created_at": "2026-09-08T00:47:45.944975",
+    "updated_at": "2026-09-08T00:47:45.944975"
+  },
+  {
+    "id": "bot_rec_1788808706",
+    "name": "Extension Recorded Test Journey",
+    "description": "Workflow automatically generated from Chrome Extension path trace on http://127.0.0.1:5000/demo-target",
+    "initial_url": "http://127.0.0.1:5000/demo-target",
+    "variables": [
+      {
+        "name": "username",
+        "default_value": "gov_citizen",
+        "type": "string",
+        "description": "Input for username",
+        "required": true
+      },
+      {
+        "name": "password",
+        "default_value": "GovPass@2026",
+        "type": "password",
+        "description": "Input for password",
+        "required": true
+      }
+    ],
+    "steps": [
+      {
+        "id": "step_1",
+        "step_number": 1,
+        "title": "Extension initiated on 127.0.0.1:5000",
+        "action_type": "navigate",
+        "target_description": "Initial URL",
+        "selector": "",
+        "fallback_selectors": [],
+        "value_mode": "fixed",
+        "value": "http://127.0.0.1:5000/demo-target",
+        "variable_name": "",
+        "wait_before_ms": 200,
+        "wait_after_ms": 500,
+        "timeout_ms": 15000,
+        "optional": false,
+        "highlight": true
+      },
+      {
+        "id": "step_2",
+        "step_number": 2,
+        "title": "Input in Username field",
+        "action_type": "type",
+        "target_description": "username field",
+        "selector": "#username",
+        "fallback_selectors": [
+          "input[name='username']"
+        ],
+        "value_mode": "variable",
+        "value": "gov_citizen",
+        "variable_name": "username",
+        "wait_before_ms": 250,
+        "wait_after_ms": 300,
+        "timeout_ms": 10000,
+        "optional": false,
+        "highlight": true
+      },
+      {
+        "id": "step_3",
+        "step_number": 3,
+        "title": "Input in Password field",
+        "action_type": "type",
+        "target_description": "password field",
+        "selector": "#password",
+        "fallback_selectors": [
+          "input[name='password']"
+        ],
+        "value_mode": "variable",
+        "value": "GovPass@2026",
+        "variable_name": "password",
+        "wait_before_ms": 250,
+        "wait_after_ms": 300,
+        "timeout_ms": 10000,
+        "optional": false,
+        "highlight": true
+      },
+      {
+        "id": "step_4",
+        "step_number": 4,
+        "title": "Sign In To Portal Button",
+        "action_type": "click",
+        "target_description": "Sign In to Portal Button",
+        "selector": "#submit-btn",
+        "fallback_selectors": [
+          "button[type='submit']"
+        ],
+        "value_mode": "fixed",
+        "value": "",
+        "variable_name": "",
+        "wait_before_ms": 300,
+        "wait_after_ms": 800,
+        "timeout_ms": 10000,
+        "optional": false,
+        "highlight": true
+      }
+    ],
+    "branching": {
+      "enabled": true,
+      "check_type": "url_or_element",
+      "failure_selector": "#error-message",
+      "success_url_contains": "dashboard",
+      "success_selector": "",
+      "failure_branch": {
+        "title": "Login Failed return error",
+        "subtitle": "End of the RPA BOT task",
+        "outcome": "error",
+        "message": "Invalid authentication credentials.",
+        "status_code": 401
+      },
+      "success_branch": {
+        "title": "Login Successful",
+        "subtitle": "End of the RPA BOT task",
+        "outcome": "success",
+        "message": "Workflow reached target success state.",
+        "status_code": 200
+      }
+    },
+    "created_at": "2026-09-08T00:48:26.080844",
+    "updated_at": "2026-09-08T00:48:26.080844"
+  },
+  {
+    "id": "bot_rec_1788808920",
+    "name": "Canvas Rectangle Drawing Bot",
+    "description": "Workflow automatically generated from Chrome Extension path trace on http://127.0.0.1:5000/demo-canvas",
+    "initial_url": "http://127.0.0.1:5000/demo-canvas",
+    "variables": [],
+    "steps": [
+      {
+        "id": "step_1",
+        "step_number": 1,
+        "title": "Extension initiated on 127.0.0.1:5000",
+        "action_type": "navigate",
+        "target_description": "Initial URL",
+        "selector": "",
+        "fallback_selectors": [],
+        "value_mode": "fixed",
+        "value": "http://127.0.0.1:5000/demo-canvas",
+        "variable_name": "",
+        "wait_before_ms": 200,
+        "wait_after_ms": 500,
+        "timeout_ms": 15000,
+        "optional": false,
+        "highlight": true
+      },
+      {
+        "id": "step_2",
+        "step_number": 2,
+        "title": "Draw Rectangle on Canvas",
+        "action_type": "canvas_draw",
+        "target_description": "Canvas Gesture (20%, 25% → 60%, 70%)",
+        "selector": "#drawing-board",
+        "fallback_selectors": [
+          "canvas",
+          "//canvas"
+        ],
+        "value_mode": "fixed",
+        "value": "{\"start_percent_x\": 0.2, \"start_percent_y\": 0.25, \"end_percent_x\": 0.6, \"end_percent_y\": 0.7, \"start_x\": 136, \"start_y\": 95, \"end_x\": 408, \"end_y\": 266, \"steps\": 20}",
+        "start_percent_x": 0.2,
+        "start_percent_y": 0.25,
+        "end_percent_x": 0.6,
+        "end_percent_y": 0.7,
+        "variable_name": "",
+        "wait_before_ms": 300,
+        "wait_after_ms": 600,
+        "timeout_ms": 10000,
+        "optional": false,
+        "highlight": true
+      },
+      {
+        "id": "step_3",
+        "step_number": 3,
+        "title": "Click Canvas Point (80%, 80%)",
+        "action_type": "canvas_click",
+        "target_description": "Canvas Point (80%, 80%)",
+        "selector": "#drawing-board",
+        "fallback_selectors": [
+          "canvas"
+        ],
+        "value_mode": "fixed",
+        "value": "{\"percent_x\": 0.8, \"percent_y\": 0.8, \"offset_x\": 544, \"offset_y\": 304}",
+        "percent_x": 0.8,
+        "percent_y": 0.8,
+        "variable_name": "",
+        "wait_before_ms": 300,
+        "wait_after_ms": 500,
+        "timeout_ms": 10000,
+        "optional": false,
+        "highlight": true
+      },
+      {
+        "id": "step_4",
+        "step_number": 4,
+        "title": "Export Canvas Drawing Button",
+        "action_type": "click",
+        "target_description": "Export Canvas Drawing Button",
+        "selector": "[data-testid=\"smart-export-btn\"]",
+        "fallback_selectors": [
+          "#radix-:r5:",
+          "button:has-text('Export Canvas Drawing')"
+        ],
+        "value_mode": "fixed",
+        "value": "",
+        "variable_name": "",
+        "wait_before_ms": 300,
+        "wait_after_ms": 800,
+        "timeout_ms": 10000,
+        "optional": false,
+        "highlight": true
+      }
+    ],
+    "branching": {
+      "enabled": true,
+      "check_type": "url_or_element",
+      "failure_selector": "#error-message",
+      "success_url_contains": "dashboard",
+      "success_selector": "",
+      "failure_branch": {
+        "title": "Login Failed return error",
+        "subtitle": "End of the RPA BOT task",
+        "outcome": "error",
+        "message": "Invalid authentication credentials.",
+        "status_code": 401
+      },
+      "success_branch": {
+        "title": "Login Successful",
+        "subtitle": "End of the RPA BOT task",
+        "outcome": "success",
+        "message": "Workflow reached target success state.",
+        "status_code": 200
+      }
+    },
+    "created_at": "2026-09-08T00:52:00.188258",
+    "updated_at": "2026-09-08T00:52:00.188258"
+  },
+  {
+    "branching": {
+      "check_type": "url_or_element",
+      "enabled": true,
+      "failure_branch": {
+        "message": "Invalid authentication credentials.",
+        "outcome": "error",
+        "status_code": 401,
+        "subtitle": "End of the RPA BOT task",
+        "title": "Login Failed return error"
+      },
+      "failure_selector": "#error-message",
+      "success_branch": {
+        "message": "Workflow reached target success state.",
+        "outcome": "success",
+        "status_code": 200,
+        "subtitle": "End of the RPA BOT task",
+        "title": "Login Successful"
+      },
+      "success_selector": "",
+      "success_url_contains": "dashboard"
+    },
+    "created_at": "2026-09-08T00:52:20.223109",
+    "description": "Workflow automatically generated from Chrome Extension path trace on http://127.0.0.1:5000/demo-canvas",
+    "id": "bot_rec_1788808940",
+    "initial_url": "http://127.0.0.1:5000/demo-canvas",
+    "name": "Canvas Rectangle Drawing Bot",
+    "steps": [
+      {
+        "action_type": "navigate",
+        "fallback_selectors": [],
+        "highlight": true,
+        "id": "step_1",
+        "optional": false,
+        "selector": "",
+        "step_number": 1,
+        "target_description": "Initial URL",
+        "timeout_ms": 15000,
+        "title": "Extension initiated on 127.0.0.1:5000",
+        "value": "http://127.0.0.1:5000/demo-canvas",
+        "value_mode": "fixed",
+        "variable_name": "",
+        "wait_after_ms": 500,
+        "wait_before_ms": 200
+      },
+      {
+        "action_type": "canvas_draw",
+        "end_percent_x": 0.6,
+        "end_percent_y": 0.7,
+        "fallback_selectors": [
+          "canvas",
+          "//canvas"
+        ],
+        "highlight": true,
+        "id": "step_2",
+        "optional": false,
+        "selector": "#drawing-board",
+        "start_percent_x": 0.2,
+        "start_percent_y": 0.25,
+        "step_number": 2,
+        "target_description": "Canvas Gesture (20%, 25% → 60%, 70%)",
+        "timeout_ms": 10000,
+        "title": "Draw Rectangle on Canvas",
+        "value": "{\"start_percent_x\": 0.2, \"start_percent_y\": 0.25, \"end_percent_x\": 0.6, \"end_percent_y\": 0.7, \"start_x\": 136, \"start_y\": 95, \"end_x\": 408, \"end_y\": 266, \"steps\": 20}",
+        "value_mode": "fixed",
+        "variable_name": "",
+        "wait_after_ms": 600,
+        "wait_before_ms": 300
+      },
+      {
+        "action_type": "canvas_click",
+        "fallback_selectors": [
+          "canvas"
+        ],
+        "highlight": true,
+        "id": "step_3",
+        "optional": false,
+        "percent_x": 0.8,
+        "percent_y": 0.8,
+        "selector": "#drawing-board",
+        "step_number": 3,
+        "target_description": "Canvas Point (80%, 80%)",
+        "timeout_ms": 10000,
+        "title": "Click Canvas Point (80%, 80%)",
+        "value": "{\"percent_x\": 0.8, \"percent_y\": 0.8, \"offset_x\": 544, \"offset_y\": 304}",
+        "value_mode": "fixed",
+        "variable_name": "",
+        "wait_after_ms": 500,
+        "wait_before_ms": 300
+      },
+      {
+        "action_type": "click",
+        "fallback_selectors": [
+          "#radix-:r5:",
+          "button:has-text('Export Canvas Drawing')"
+        ],
+        "highlight": true,
+        "id": "step_4",
+        "optional": false,
+        "selector": "[data-testid=\"smart-export-btn\"]",
+        "step_number": 4,
+        "target_description": "Export Canvas Drawing Button",
+        "timeout_ms": 10000,
+        "title": "Export Canvas Drawing Button",
+        "value": "",
+        "value_mode": "fixed",
+        "variable_name": "",
+        "wait_after_ms": 800,
+        "wait_before_ms": 300
+      }
+    ],
+    "updated_at": "2026-09-08T00:54:20.358130",
+    "variables": []
+  },
+  {
+    "id": "bot_rec_1788808958",
+    "name": "Extension Recorded Test Journey",
+    "description": "Workflow automatically generated from Chrome Extension path trace on http://127.0.0.1:5000/demo-target",
+    "initial_url": "http://127.0.0.1:5000/demo-target",
+    "variables": [
+      {
+        "name": "username",
+        "default_value": "gov_citizen",
+        "type": "string",
+        "description": "Input for username",
+        "required": true
+      },
+      {
+        "name": "password",
+        "default_value": "GovPass@2026",
+        "type": "password",
+        "description": "Input for password",
+        "required": true
+      }
+    ],
+    "steps": [
+      {
+        "id": "step_1",
+        "step_number": 1,
+        "title": "Extension initiated on 127.0.0.1:5000",
+        "action_type": "navigate",
+        "target_description": "Initial URL",
+        "selector": "",
+        "fallback_selectors": [],
+        "value_mode": "fixed",
+        "value": "http://127.0.0.1:5000/demo-target",
+        "variable_name": "",
+        "wait_before_ms": 200,
+        "wait_after_ms": 500,
+        "timeout_ms": 15000,
+        "optional": false,
+        "highlight": true
+      },
+      {
+        "id": "step_2",
+        "step_number": 2,
+        "title": "Input in Username field",
+        "action_type": "type",
+        "target_description": "username field",
+        "selector": "#username",
+        "fallback_selectors": [
+          "input[name='username']"
+        ],
+        "value_mode": "variable",
+        "value": "gov_citizen",
+        "variable_name": "username",
+        "wait_before_ms": 250,
+        "wait_after_ms": 300,
+        "timeout_ms": 10000,
+        "optional": false,
+        "highlight": true
+      },
+      {
+        "id": "step_3",
+        "step_number": 3,
+        "title": "Input in Password field",
+        "action_type": "type",
+        "target_description": "password field",
+        "selector": "#password",
+        "fallback_selectors": [
+          "input[name='password']"
+        ],
+        "value_mode": "variable",
+        "value": "GovPass@2026",
+        "variable_name": "password",
+        "wait_before_ms": 250,
+        "wait_after_ms": 300,
+        "timeout_ms": 10000,
+        "optional": false,
+        "highlight": true
+      },
+      {
+        "id": "step_4",
+        "step_number": 4,
+        "title": "Sign In To Portal Button",
+        "action_type": "click",
+        "target_description": "Sign In to Portal Button",
+        "selector": "#submit-btn",
+        "fallback_selectors": [
+          "button[type='submit']"
+        ],
+        "value_mode": "fixed",
+        "value": "",
+        "variable_name": "",
+        "wait_before_ms": 300,
+        "wait_after_ms": 800,
+        "timeout_ms": 10000,
+        "optional": false,
+        "highlight": true
+      }
+    ],
+    "branching": {
+      "enabled": true,
+      "check_type": "url_or_element",
+      "failure_selector": "#error-message",
+      "success_url_contains": "dashboard",
+      "success_selector": "",
+      "failure_branch": {
+        "title": "Login Failed return error",
+        "subtitle": "End of the RPA BOT task",
+        "outcome": "error",
+        "message": "Invalid authentication credentials.",
+        "status_code": 401
+      },
+      "success_branch": {
+        "title": "Login Successful",
+        "subtitle": "End of the RPA BOT task",
+        "outcome": "success",
+        "message": "Workflow reached target success state.",
+        "status_code": 200
+      }
+    },
+    "created_at": "2026-09-08T00:52:38.416296",
+    "updated_at": "2026-09-08T00:52:38.416296"
+  },
+  {
+    "branching": {
+      "check_type": "url_or_element",
+      "enabled": true,
+      "failure_branch": {
+        "message": "Invalid authentication credentials.",
+        "outcome": "error",
+        "status_code": 401,
+        "subtitle": "End of the RPA BOT task",
+        "title": "Login Failed return error"
+      },
+      "failure_selector": "#error-message",
+      "success_branch": {
+        "message": "Workflow reached target success state.",
+        "outcome": "success",
+        "status_code": 200,
+        "subtitle": "End of the RPA BOT task",
+        "title": "Login Successful"
+      },
+      "success_selector": "",
+      "success_url_contains": "dashboard"
+    },
+    "created_at": "2026-09-08T01:06:09.087988",
+    "description": "Workflow automatically generated from Chrome Extension path trace on https://excalidraw.com/",
+    "id": "bot_rec_1788809769",
+    "initial_url": "https://excalidraw.com/",
+    "name": "Recorded Path - 1:06:09 AM",
+    "steps": [
+      {
+        "action_type": "navigate",
+        "fallback_selectors": [],
+        "highlight": true,
+        "id": "step_1",
+        "optional": false,
+        "selector": "",
+        "step_number": 1,
+        "target_description": "Initial URL",
+        "timeout_ms": 15000,
+        "title": "Extension initiated on excalidraw.com",
+        "value": "https://excalidraw.com/",
+        "value_mode": "fixed",
+        "variable_name": "",
+        "wait_after_ms": 500,
+        "wait_before_ms": 200
+      },
+      {
+        "action_type": "click",
+        "fallback_selectors": [
+          "button[aria-label=\"Text\"]",
+          "button[title=\"Text — T or 8\"]",
+          "[data-testid=\"toolbar-text\"]",
+          "//button[contains(normalize-space(), \"8\")]"
+        ],
+        "highlight": true,
+        "id": "step_2",
+        "optional": false,
+        "selector": "[data-testid=\"toolbar-text\"]",
+        "step_number": 2,
+        "target_description": "8 Button",
+        "timeout_ms": 10000,
+        "title": "8 Button",
+        "value": "",
+        "value_mode": "fixed",
+        "variable_name": "",
+        "wait_after_ms": 800,
+        "wait_before_ms": 300
+      },
+      {
+        "action_type": "canvas_click",
+        "fallback_selectors": [
+          "//canvas"
+        ],
+        "highlight": true,
+        "id": "step_3",
+        "optional": false,
+        "percent_x": 0.5771,
+        "percent_y": 0.297,
+        "selector": "div#root > div > div > canvas:nth-of-type(2)",
+        "step_number": 3,
+        "target_description": "Canvas Point (58%, 30%)",
+        "timeout_ms": 10000,
+        "title": "Click Canvas Point (58%, 30%)",
+        "value": "{\"percent_x\": 0.5771, \"percent_y\": 0.297, \"offset_x\": 1108, \"offset_y\": 283}",
+        "value_mode": "fixed",
+        "variable_name": "",
+        "wait_after_ms": 500,
+        "wait_before_ms": 300
+      },
+      {
+        "action_type": "type",
+        "fallback_selectors": [],
+        "highlight": true,
+        "id": "step_4",
+        "optional": false,
+        "selector": "div > div > div:nth-of-type(2) > textarea",
+        "step_number": 4,
+        "target_description": "textarea field",
+        "timeout_ms": 10000,
+        "title": "Input in Textarea field",
+        "value": "hello ji",
+        "value_mode": "variable",
+        "variable_name": "var_textarea",
+        "wait_after_ms": 300,
+        "wait_before_ms": 250
+      },
+      {
+        "action_type": "click",
+        "fallback_selectors": [
+          "button[aria-label=\"Rectangle\"]",
+          "button[title=\"Rectangle — R or 2\"]",
+          "[data-testid=\"toolbar-rectangle\"]",
+          "//button[contains(normalize-space(), \"2\")]"
+        ],
+        "highlight": true,
+        "id": "step_5",
+        "optional": false,
+        "selector": "[data-testid=\"toolbar-rectangle\"]",
+        "step_number": 5,
+        "target_description": "2 Button",
+        "timeout_ms": 10000,
+        "title": "2 Button",
+        "value": "",
+        "value_mode": "fixed",
+        "variable_name": "",
+        "wait_after_ms": 800,
+        "wait_before_ms": 300
+      },
+      {
+        "action_type": "canvas_draw",
+        "end_percent_x": 0.625,
+        "end_percent_y": 0.3242,
+        "fallback_selectors": [
+          "//canvas"
+        ],
+        "highlight": true,
+        "id": "step_6",
+        "optional": false,
+        "selector": "div#root > div > div > canvas:nth-of-type(2)",
+        "start_percent_x": 0.5672,
+        "start_percent_y": 0.2749,
+        "step_number": 6,
+        "target_description": "Canvas Gesture (57%, 27% → 62%, 32%)",
+        "timeout_ms": 10000,
+        "title": "Draw Rectangle on Canvas",
+        "value": "{\"start_percent_x\": 0.5672, \"start_percent_y\": 0.2749, \"end_percent_x\": 0.625, \"end_percent_y\": 0.3242, \"start_x\": 1089, \"start_y\": 262, \"end_x\": 1200, \"end_y\": 309, \"steps\": 20}",
+        "value_mode": "fixed",
+        "variable_name": "",
+        "wait_after_ms": 600,
+        "wait_before_ms": 300
+      },
+      {
+        "action_type": "canvas_click",
+        "fallback_selectors": [
+          "//canvas"
+        ],
+        "highlight": true,
+        "id": "step_7",
+        "optional": false,
+        "percent_x": 0.4823,
+        "percent_y": 0.1794,
+        "selector": "div#root > div > div > canvas",
+        "step_number": 7,
+        "target_description": "Canvas Point (48%, 18%)",
+        "timeout_ms": 10000,
+        "title": "Click Canvas Point (48%, 18%)",
+        "value": "{\"percent_x\": 0.4823, \"percent_y\": 0.1794, \"offset_x\": 926, \"offset_y\": 171}",
+        "value_mode": "fixed",
+        "variable_name": "",
+        "wait_after_ms": 500,
+        "wait_before_ms": 300
+      },
+      {
+        "action_type": "click",
+        "fallback_selectors": [
+          "[data-testid=\"main-menu-trigger\"]"
+        ],
+        "highlight": true,
+        "id": "step_8",
+        "optional": false,
+        "selector": "[data-testid=\"main-menu-trigger\"]",
+        "step_number": 8,
+        "target_description": "main-menu-trigger Button",
+        "timeout_ms": 10000,
+        "title": "Main-Menu-Trigger Button",
+        "value": "",
+        "value_mode": "fixed",
+        "variable_name": "",
+        "wait_after_ms": 800,
+        "wait_before_ms": 300
+      },
+      {
+        "action_type": "click",
+        "fallback_selectors": [
+          "button[aria-label=\"Export image...\"]",
+          "button:has-text(\"Export image...\")",
+          "button[title=\"Export image...\"]",
+          "[data-testid=\"image-export-button\"]",
+          "//button[contains(normalize-space(), \"Export image...\")]"
+        ],
+        "highlight": true,
+        "id": "step_9",
+        "optional": false,
+        "selector": "[data-testid=\"image-export-button\"]",
+        "step_number": 9,
+        "target_description": "Export image... Button",
+        "timeout_ms": 10000,
+        "title": "Export Image... Button",
+        "value": "",
+        "value_mode": "fixed",
+        "variable_name": "",
+        "wait_after_ms": 800,
+        "wait_before_ms": 300
+      },
+      {
+        "action_type": "click",
+        "fallback_selectors": [
+          "button:has-text(\"Copy to clipboard\")",
+          "div > div:nth-of-type(2) > div:nth-of-type(5) > button:nth-of-type(3)",
+          "//button[contains(normalize-space(), \"Copy to clipboard\")]"
+        ],
+        "highlight": true,
+        "id": "step_10",
+        "optional": false,
+        "selector": "button[aria-label=\"Copy PNG to clipboard\"]",
+        "step_number": 10,
+        "target_description": "Copy to clipboard Button",
+        "timeout_ms": 10000,
+        "title": "Copy To Clipboard Button",
+        "value": "",
+        "value_mode": "fixed",
+        "variable_name": "",
+        "wait_after_ms": 800,
+        "wait_before_ms": 300
+      }
+    ],
+    "updated_at": "2026-09-08T01:06:19.183084",
+    "variables": [
+      {
+        "default_value": "hello ji",
+        "description": "Input for textarea",
+        "name": "var_textarea",
+        "required": true,
+        "type": "string"
+      }
+    ]
+  },
+  {
+    "id": "bot_rec_1788971238",
+    "name": "Recorded Path - 9:57:18 PM",
+    "description": "Workflow automatically generated from Chrome Extension path trace on https://meet.google.com/hwd-akzv-wqu",
+    "initial_url": "https://meet.google.com/hwd-akzv-wqu",
+    "variables": [],
+    "steps": [
+      {
+        "id": "step_1",
+        "step_number": 1,
+        "title": "Extension initiated on meet.google.com",
+        "action_type": "navigate",
+        "target_description": "Initial URL",
+        "selector": "",
+        "fallback_selectors": [],
+        "value_mode": "fixed",
+        "value": "https://meet.google.com/hwd-akzv-wqu",
+        "variable_name": "",
+        "wait_before_ms": 200,
+        "wait_after_ms": 500,
+        "timeout_ms": 15000,
+        "optional": false,
+        "highlight": true
+      },
+      {
+        "id": "step_2",
+        "step_number": 2,
+        "title": "Excalidraw Whiteboard Button",
+        "action_type": "click",
+        "target_description": "Excalidraw Whiteboard Button",
+        "selector": "div > div > span > a",
+        "fallback_selectors": [
+          "a:has-text(\"Excalidraw Whiteboard\")",
+          "//a[contains(normalize-space(), \"Excalidraw Whiteboard\")]"
+        ],
+        "value_mode": "fixed",
+        "value": "",
+        "variable_name": "",
+        "wait_before_ms": 300,
+        "wait_after_ms": 800,
+        "timeout_ms": 10000,
+        "optional": false,
+        "highlight": true
+      },
+      {
+        "id": "step_3",
+        "step_number": 3,
+        "title": "Draw Rectangle on Canvas",
+        "action_type": "canvas_draw",
+        "target_description": "Canvas Gesture (50%, 37% → 62%, 31%)",
+        "selector": "div#root > div > div > canvas",
+        "fallback_selectors": [
+          "//canvas"
+        ],
+        "value_mode": "fixed",
+        "value": "{\"start_percent_x\": 0.4984, \"start_percent_y\": 0.3683, \"end_percent_x\": 0.6188, \"end_percent_y\": 0.3054, \"start_x\": 1196, \"start_y\": 439, \"end_x\": 1485, \"end_y\": 364, \"steps\": 20}",
+        "start_percent_x": 0.4984,
+        "start_percent_y": 0.3683,
+        "end_percent_x": 0.6188,
+        "end_percent_y": 0.3054,
+        "variable_name": "",
+        "wait_before_ms": 300,
+        "wait_after_ms": 600,
+        "timeout_ms": 10000,
+        "optional": false,
+        "highlight": true
+      },
+      {
+        "id": "step_4",
+        "step_number": 4,
+        "title": "Draw Rectangle on Canvas",
+        "action_type": "canvas_draw",
+        "target_description": "Canvas Gesture (62%, 31% → 52%, 30%)",
+        "selector": "div#root > div > div > canvas",
+        "fallback_selectors": [
+          "//canvas"
+        ],
+        "value_mode": "fixed",
+        "value": "{\"start_percent_x\": 0.6188, \"start_percent_y\": 0.3054, \"end_percent_x\": 0.5224, \"end_percent_y\": 0.3043, \"start_x\": 1485, \"start_y\": 364, \"end_x\": 1254, \"end_y\": 363, \"steps\": 20}",
+        "start_percent_x": 0.6188,
+        "start_percent_y": 0.3054,
+        "end_percent_x": 0.5224,
+        "end_percent_y": 0.3043,
+        "variable_name": "",
+        "wait_before_ms": 300,
+        "wait_after_ms": 600,
+        "timeout_ms": 10000,
+        "optional": false,
+        "highlight": true
+      }
+    ],
+    "branching": {
+      "enabled": true,
+      "check_type": "url_or_element",
+      "failure_selector": "#error-message",
+      "success_url_contains": "dashboard",
+      "success_selector": "",
+      "failure_branch": {
+        "title": "Login Failed return error",
+        "subtitle": "End of the RPA BOT task",
+        "outcome": "error",
+        "message": "Invalid authentication credentials.",
+        "status_code": 401
+      },
+      "success_branch": {
+        "title": "Login Successful",
+        "subtitle": "End of the RPA BOT task",
+        "outcome": "success",
+        "message": "Workflow reached target success state.",
+        "status_code": 200
+      }
+    },
+    "created_at": "2026-09-09T21:57:18.407081",
+    "updated_at": "2026-09-09T21:57:18.407081"
+  },
+  {
+    "id": "bot_rec_1788971784",
+    "name": "Recorded Path - 10:06:24 PM",
+    "description": "Workflow automatically generated from Chrome Extension path trace on https://timetable.ietonline.in/pdf/166?session=2026-2027&semester=ODD",
+    "initial_url": "https://timetable.ietonline.in/pdf/166?session=2026-2027&semester=ODD",
+    "variables": [],
+    "steps": [
+      {
+        "id": "step_1",
+        "step_number": 1,
+        "title": "Extension initiated on timetable.ietonline.in",
+        "action_type": "navigate",
+        "target_description": "Initial URL",
+        "selector": "",
+        "fallback_selectors": [],
+        "value_mode": "fixed",
+        "value": "https://timetable.ietonline.in/pdf/166?session=2026-2027&semester=ODD",
+        "variable_name": "",
+        "wait_before_ms": 200,
+        "wait_after_ms": 500,
+        "timeout_ms": 15000,
+        "optional": false,
+        "highlight": true
+      },
+      {
+        "id": "step_2",
+        "step_number": 2,
+        "title": "All Sessions Button",
+        "action_type": "click",
+        "target_description": "All Sessions Button",
+        "selector": "select[name=\"session\"]",
+        "fallback_selectors": [
+          "form#filterForm > div > div > select"
+        ],
+        "value_mode": "fixed",
+        "value": "",
+        "variable_name": "",
+        "wait_before_ms": 300,
+        "wait_after_ms": 800,
+        "timeout_ms": 10000,
+        "optional": false,
+        "highlight": true
+      },
+      {
+        "id": "step_3",
+        "step_number": 3,
+        "title": "All Sessions Button",
+        "action_type": "click",
+        "target_description": "All Sessions Button",
+        "selector": "select[name=\"session\"]",
+        "fallback_selectors": [
+          "form#filterForm > div > div > select"
+        ],
+        "value_mode": "fixed",
+        "value": "",
+        "variable_name": "",
+        "wait_before_ms": 300,
+        "wait_after_ms": 800,
+        "timeout_ms": 10000,
+        "optional": false,
+        "highlight": true
+      },
+      {
+        "id": "step_4",
+        "step_number": 4,
+        "title": "All Semesters Button",
+        "action_type": "click",
+        "target_description": "All Semesters Button",
+        "selector": "select[name=\"semester\"]",
+        "fallback_selectors": [
+          "form#filterForm > div > div:nth-of-type(2) > select"
+        ],
+        "value_mode": "fixed",
+        "value": "",
+        "variable_name": "",
+        "wait_before_ms": 300,
+        "wait_after_ms": 800,
+        "timeout_ms": 10000,
+        "optional": false,
+        "highlight": true
+      },
+      {
+        "id": "step_5",
+        "step_number": 5,
+        "title": "Select 'ODD'",
+        "action_type": "select",
+        "target_description": "semester option",
+        "selector": "select[name=\"semester\"]",
+        "fallback_selectors": [
+          "form#filterForm > div > div:nth-of-type(2) > select"
+        ],
+        "value_mode": "fixed",
+        "value": "ODD",
+        "variable_name": "",
+        "wait_before_ms": 250,
+        "wait_after_ms": 400,
+        "timeout_ms": 10000,
+        "optional": false,
+        "highlight": true
+      },
+      {
+        "id": "step_6",
+        "step_number": 6,
+        "title": "All Semesters Button",
+        "action_type": "click",
+        "target_description": "All Semesters Button",
+        "selector": "select[name=\"semester\"]",
+        "fallback_selectors": [
+          "form#filterForm > div > div:nth-of-type(2) > select"
+        ],
+        "value_mode": "fixed",
+        "value": "",
+        "variable_name": "",
+        "wait_before_ms": 300,
+        "wait_after_ms": 800,
+        "timeout_ms": 10000,
+        "optional": false,
+        "highlight": true
+      },
+      {
+        "id": "step_7",
+        "step_number": 7,
+        "title": "All Programs Button",
+        "action_type": "click",
+        "target_description": "All Programs Button",
+        "selector": "select[name=\"course\"]",
+        "fallback_selectors": [
+          "form#filterForm > div > div:nth-of-type(3) > select"
+        ],
+        "value_mode": "fixed",
+        "value": "",
+        "variable_name": "",
+        "wait_before_ms": 300,
+        "wait_after_ms": 800,
+        "timeout_ms": 10000,
+        "optional": false,
+        "highlight": true
+      },
+      {
+        "id": "step_8",
+        "step_number": 8,
+        "title": "All Programs Button",
+        "action_type": "click",
+        "target_description": "All Programs Button",
+        "selector": "select[name=\"course\"]",
+        "fallback_selectors": [
+          "form#filterForm > div > div:nth-of-type(3) > select"
+        ],
+        "value_mode": "fixed",
+        "value": "",
+        "variable_name": "",
+        "wait_before_ms": 300,
+        "wait_after_ms": 800,
+        "timeout_ms": 10000,
+        "optional": false,
+        "highlight": true
+      },
+      {
+        "id": "step_9",
+        "step_number": 9,
+        "title": "All Branches Button",
+        "action_type": "click",
+        "target_description": "All Branches Button",
+        "selector": "select[name=\"branch\"]",
+        "fallback_selectors": [
+          "form#filterForm > div > div:nth-of-type(4) > select"
+        ],
+        "value_mode": "fixed",
+        "value": "",
+        "variable_name": "",
+        "wait_before_ms": 300,
+        "wait_after_ms": 800,
+        "timeout_ms": 10000,
+        "optional": false,
+        "highlight": true
+      },
+      {
+        "id": "step_10",
+        "step_number": 10,
+        "title": "All Branches Button",
+        "action_type": "click",
+        "target_description": "All Branches Button",
+        "selector": "select[name=\"branch\"]",
+        "fallback_selectors": [
+          "form#filterForm > div > div:nth-of-type(4) > select"
+        ],
+        "value_mode": "fixed",
+        "value": "",
+        "variable_name": "",
+        "wait_before_ms": 300,
+        "wait_after_ms": 800,
+        "timeout_ms": 10000,
+        "optional": false,
+        "highlight": true
+      },
+      {
+        "id": "step_11",
+        "step_number": 11,
+        "title": "All Button",
+        "action_type": "click",
+        "target_description": "All Button",
+        "selector": "select[name=\"year\"]",
+        "fallback_selectors": [
+          "form#filterForm > div > div:nth-of-type(5) > select"
+        ],
+        "value_mode": "fixed",
+        "value": "",
+        "variable_name": "",
+        "wait_before_ms": 300,
+        "wait_after_ms": 800,
+        "timeout_ms": 10000,
+        "optional": false,
+        "highlight": true
+      },
+      {
+        "id": "step_12",
+        "step_number": 12,
+        "title": "All Button",
+        "action_type": "click",
+        "target_description": "All Button",
+        "selector": "select[name=\"year\"]",
+        "fallback_selectors": [
+          "form#filterForm > div > div:nth-of-type(5) > select"
+        ],
+        "value_mode": "fixed",
+        "value": "",
+        "variable_name": "",
+        "wait_before_ms": 300,
+        "wait_after_ms": 800,
+        "timeout_ms": 10000,
+        "optional": false,
+        "highlight": true
+      },
+      {
+        "id": "step_13",
+        "step_number": 13,
+        "title": "Apply Button",
+        "action_type": "click",
+        "target_description": "Apply Button",
+        "selector": "button:has-text(\"Apply\")",
+        "fallback_selectors": [
+          "form#filterForm > div > div:nth-of-type(8) > button",
+          "//button[contains(normalize-space(), \"Apply\")]"
+        ],
+        "value_mode": "fixed",
+        "value": "",
+        "variable_name": "",
+        "wait_before_ms": 300,
+        "wait_after_ms": 800,
+        "timeout_ms": 10000,
+        "optional": false,
+        "highlight": true
+      },
+      {
+        "id": "step_14",
+        "step_number": 14,
+        "title": "View / Print Pdf Button",
+        "action_type": "click",
+        "target_description": "View / Print PDF Button",
+        "selector": "div:nth-of-type(4) > div:nth-of-type(3) > div:nth-of-type(3) > a",
+        "fallback_selectors": [
+          "a:has-text(\"View / Print PDF\")",
+          "//a[contains(normalize-space(), \"View / Print PDF\")]"
+        ],
+        "value_mode": "fixed",
+        "value": "",
+        "variable_name": "",
+        "wait_before_ms": 300,
+        "wait_after_ms": 800,
+        "timeout_ms": 10000,
+        "optional": false,
+        "highlight": true
+      }
+    ],
+    "branching": {
+      "enabled": true,
+      "check_type": "url_or_element",
+      "failure_selector": "#error-message",
+      "success_url_contains": "dashboard",
+      "success_selector": "",
+      "failure_branch": {
+        "title": "Login Failed return error",
+        "subtitle": "End of the RPA BOT task",
+        "outcome": "error",
+        "message": "Invalid authentication credentials.",
+        "status_code": 401
+      },
+      "success_branch": {
+        "title": "Login Successful",
+        "subtitle": "End of the RPA BOT task",
+        "outcome": "success",
+        "message": "Workflow reached target success state.",
+        "status_code": 200
+      }
+    },
+    "created_at": "2026-09-09T22:06:24.576861",
+    "updated_at": "2026-09-09T22:06:24.576861"
+  },
+  {
+    "branching": {
+      "check_type": "url_or_element",
+      "enabled": true,
+      "failure_branch": {
+        "message": "Invalid authentication credentials.",
+        "outcome": "error",
+        "status_code": 401,
+        "subtitle": "End of the RPA BOT task",
+        "title": "Login Failed return error"
+      },
+      "failure_selector": "#error-message",
+      "success_branch": {
+        "message": "Workflow reached target success state.",
+        "outcome": "success",
+        "status_code": 200,
+        "subtitle": "End of the RPA BOT task",
+        "title": "Login Successful"
+      },
+      "success_selector": "",
+      "success_url_contains": "dashboard"
+    },
+    "created_at": "2026-09-09T22:07:51.785416",
+    "description": "Workflow automatically generated from Chrome Extension path trace on https://timetable.ietonline.in/pdf/166?session=2026-2027&semester=ODD",
+    "id": "bot_rec_1788971871",
+    "initial_url": "https://timetable.ietonline.in/pdf/166?session=2026-2027&semester=ODD",
+    "name": "Recorded Path - 10:07:51 PM",
+    "steps": [
+      {
+        "action_type": "navigate",
+        "fallback_selectors": [],
+        "highlight": true,
+        "id": "step_1",
+        "optional": false,
+        "selector": "",
+        "step_number": 1,
+        "target_description": "Initial URL",
+        "timeout_ms": 15000,
+        "title": "Extension initiated on timetable.ietonline.in",
+        "value": "https://timetable.ietonline.in/pdf/166?session=2026-2027&semester=ODD",
+        "value_mode": "fixed",
+        "variable_name": "",
+        "wait_after_ms": 500,
+        "wait_before_ms": 200
+      },
+      {
+        "action_type": "click",
+        "fallback_selectors": [
+          "form#filterForm > div > div > select"
+        ],
+        "highlight": true,
+        "id": "step_2",
+        "optional": false,
+        "selector": "select[name=\"session\"]",
+        "step_number": 2,
+        "target_description": "All Sessions Button",
+        "timeout_ms": 10000,
+        "title": "All Sessions Button",
+        "value": "",
+        "value_mode": "fixed",
+        "variable_name": "",
+        "wait_after_ms": 800,
+        "wait_before_ms": 300
+      },
+      {
+        "action_type": "click",
+        "fallback_selectors": [
+          "form#filterForm > div > div > select"
+        ],
+        "highlight": true,
+        "id": "step_3",
+        "optional": false,
+        "selector": "select[name=\"session\"]",
+        "step_number": 3,
+        "target_description": "All Sessions Button",
+        "timeout_ms": 10000,
+        "title": "All Sessions Button",
+        "value": "",
+        "value_mode": "fixed",
+        "variable_name": "",
+        "wait_after_ms": 800,
+        "wait_before_ms": 300
+      },
+      {
+        "action_type": "click",
+        "fallback_selectors": [
+          "form#filterForm > div > div:nth-of-type(2) > select"
+        ],
+        "highlight": true,
+        "id": "step_4",
+        "optional": false,
+        "selector": "select[name=\"semester\"]",
+        "step_number": 4,
+        "target_description": "All Semesters Button",
+        "timeout_ms": 10000,
+        "title": "All Semesters Button",
+        "value": "",
+        "value_mode": "fixed",
+        "variable_name": "",
+        "wait_after_ms": 800,
+        "wait_before_ms": 300
+      },
+      {
+        "action_type": "click",
+        "fallback_selectors": [
+          "form#filterForm > div > div:nth-of-type(2) > select"
+        ],
+        "highlight": true,
+        "id": "step_5",
+        "optional": false,
+        "selector": "select[name=\"semester\"]",
+        "step_number": 5,
+        "target_description": "All Semesters Button",
+        "timeout_ms": 10000,
+        "title": "All Semesters Button",
+        "value": "",
+        "value_mode": "fixed",
+        "variable_name": "",
+        "wait_after_ms": 800,
+        "wait_before_ms": 300
+      },
+      {
+        "action_type": "click",
+        "fallback_selectors": [
+          "form#filterForm > div > div:nth-of-type(3) > select"
+        ],
+        "highlight": true,
+        "id": "step_6",
+        "optional": false,
+        "selector": "select[name=\"course\"]",
+        "step_number": 6,
+        "target_description": "All Programs Button",
+        "timeout_ms": 10000,
+        "title": "All Programs Button",
+        "value": "",
+        "value_mode": "fixed",
+        "variable_name": "",
+        "wait_after_ms": 800,
+        "wait_before_ms": 300
+      },
+      {
+        "action_type": "click",
+        "fallback_selectors": [
+          "form#filterForm > div > div:nth-of-type(3) > select"
+        ],
+        "highlight": true,
+        "id": "step_7",
+        "optional": false,
+        "selector": "select[name=\"course\"]",
+        "step_number": 7,
+        "target_description": "All Programs Button",
+        "timeout_ms": 10000,
+        "title": "All Programs Button",
+        "value": "",
+        "value_mode": "fixed",
+        "variable_name": "",
+        "wait_after_ms": 800,
+        "wait_before_ms": 300
+      },
+      {
+        "action_type": "click",
+        "fallback_selectors": [
+          "form#filterForm > div > div:nth-of-type(4) > select"
+        ],
+        "highlight": true,
+        "id": "step_8",
+        "optional": false,
+        "selector": "select[name=\"branch\"]",
+        "step_number": 8,
+        "target_description": "All Branches Button",
+        "timeout_ms": 10000,
+        "title": "All Branches Button",
+        "value": "",
+        "value_mode": "fixed",
+        "variable_name": "",
+        "wait_after_ms": 800,
+        "wait_before_ms": 300
+      },
+      {
+        "action_type": "click",
+        "fallback_selectors": [
+          "form#filterForm > div > div:nth-of-type(4) > select"
+        ],
+        "highlight": true,
+        "id": "step_9",
+        "optional": false,
+        "selector": "select[name=\"branch\"]",
+        "step_number": 9,
+        "target_description": "All Branches Button",
+        "timeout_ms": 10000,
+        "title": "All Branches Button",
+        "value": "",
+        "value_mode": "fixed",
+        "variable_name": "",
+        "wait_after_ms": 800,
+        "wait_before_ms": 300
+      },
+      {
+        "action_type": "click",
+        "fallback_selectors": [
+          "form#filterForm > div > div:nth-of-type(5) > select"
+        ],
+        "highlight": true,
+        "id": "step_10",
+        "optional": false,
+        "selector": "select[name=\"year\"]",
+        "step_number": 10,
+        "target_description": "All Button",
+        "timeout_ms": 10000,
+        "title": "All Button",
+        "value": "",
+        "value_mode": "fixed",
+        "variable_name": "",
+        "wait_after_ms": 800,
+        "wait_before_ms": 300
+      },
+      {
+        "action_type": "click",
+        "fallback_selectors": [
+          "form#filterForm > div > div:nth-of-type(5) > select"
+        ],
+        "highlight": true,
+        "id": "step_11",
+        "optional": false,
+        "selector": "select[name=\"year\"]",
+        "step_number": 11,
+        "target_description": "All Button",
+        "timeout_ms": 10000,
+        "title": "All Button",
+        "value": "",
+        "value_mode": "fixed",
+        "variable_name": "",
+        "wait_after_ms": 800,
+        "wait_before_ms": 300
+      },
+      {
+        "action_type": "click",
+        "fallback_selectors": [
+          "form#filterForm > div > div:nth-of-type(8) > button",
+          "//button[contains(normalize-space(), \"Apply\")]"
+        ],
+        "highlight": true,
+        "id": "step_12",
+        "optional": false,
+        "selector": "button:has-text(\"Apply\")",
+        "step_number": 12,
+        "target_description": "Apply Button",
+        "timeout_ms": 10000,
+        "title": "Apply Button",
+        "value": "",
+        "value_mode": "fixed",
+        "variable_name": "",
+        "wait_after_ms": 800,
+        "wait_before_ms": 300
+      },
+      {
+        "action_type": "click",
+        "fallback_selectors": [
+          "a:has-text(\"View / Print PDF\")",
+          "//a[contains(normalize-space(), \"View / Print PDF\")]"
+        ],
+        "highlight": true,
+        "id": "step_13",
+        "optional": false,
+        "selector": "div:nth-of-type(4) > div:nth-of-type(3) > div:nth-of-type(3) > a",
+        "step_number": 13,
+        "target_description": "View / Print PDF Button",
+        "timeout_ms": 10000,
+        "title": "View / Print Pdf Button",
+        "value": "",
+        "value_mode": "fixed",
+        "variable_name": "",
+        "wait_after_ms": 800,
+        "wait_before_ms": 300
+      }
+    ],
+    "updated_at": "2026-09-09T22:11:16.561833",
+    "variables": []
+  },
+  {
+    "id": "bot_rec_1789094389",
+    "name": "Recorded Path - 8:09:49 AM",
+    "description": "Workflow automatically generated from Chrome Extension path trace on https://www.youtube.com/results?search_query=Namate",
+    "initial_url": "https://www.youtube.com/results?search_query=Namate",
+    "variables": [
+      {
+        "name": "var_search_query",
+        "default_value": "",
+        "type": "string",
+        "description": "Input for search_query",
+        "required": true
+      }
+    ],
+    "steps": [
+      {
+        "id": "step_1",
+        "step_number": 1,
+        "title": "Extension initiated on www.youtube.com",
+        "action_type": "navigate",
+        "target_description": "Initial URL",
+        "selector": "",
+        "fallback_selectors": [],
+        "value_mode": "fixed",
+        "value": "https://www.youtube.com/results?search_query=Namate",
+        "variable_name": "",
+        "wait_before_ms": 200,
+        "wait_after_ms": 500,
+        "timeout_ms": 15000,
+        "optional": false,
+        "highlight": true
+      },
+      {
+        "id": "step_2",
+        "step_number": 2,
+        "title": "Input in Search_Query field",
+        "action_type": "type",
+        "target_description": "search_query field",
+        "selector": "input[name=\"search_query\"]",
+        "fallback_selectors": [
+          "input[placeholder=\"Search\"]",
+          "div > div > form > input"
+        ],
+        "value_mode": "variable",
+        "value": "Namate",
+        "variable_name": "var_search_query",
+        "wait_before_ms": 250,
+        "wait_after_ms": 300,
+        "timeout_ms": 10000,
+        "optional": false,
+        "highlight": true
+      },
+      {
+        "id": "step_3",
+        "step_number": 3,
+        "title": "Namaste Button",
+        "action_type": "click",
+        "target_description": "namaste Button",
+        "selector": "#center",
+        "fallback_selectors": [
+          "div:has-text(\"namaste\")",
+          "div#center",
+          "//*[@id=\"center\"]"
+        ],
+        "value_mode": "fixed",
+        "value": "",
+        "variable_name": "",
+        "wait_before_ms": 300,
+        "wait_after_ms": 800,
+        "timeout_ms": 10000,
+        "optional": false,
+        "highlight": true
+      },
+      {
+        "id": "step_4",
+        "step_number": 4,
+        "title": "Input in Search_Query field",
+        "action_type": "type",
+        "target_description": "search_query field",
+        "selector": "input[name=\"search_query\"]",
+        "fallback_selectors": [
+          "input[placeholder=\"Search\"]",
+          "div > div > form > input"
+        ],
+        "value_mode": "variable",
+        "value": "",
+        "variable_name": "var_search_query",
+        "wait_before_ms": 250,
+        "wait_after_ms": 300,
+        "timeout_ms": 10000,
+        "optional": false,
+        "highlight": true
+      }
+    ],
+    "branching": {
+      "enabled": true,
+      "check_type": "url_or_element",
+      "failure_selector": "#error-message",
+      "success_url_contains": "dashboard",
+      "success_selector": "",
+      "failure_branch": {
+        "title": "Login Failed return error",
+        "subtitle": "End of the RPA BOT task",
+        "outcome": "error",
+        "message": "Invalid authentication credentials.",
+        "status_code": 401
+      },
+      "success_branch": {
+        "title": "Login Successful",
+        "subtitle": "End of the RPA BOT task",
+        "outcome": "success",
+        "message": "Workflow reached target success state.",
+        "status_code": 200
+      }
+    },
+    "created_at": "2026-09-11T08:09:49.038317",
+    "updated_at": "2026-09-11T08:09:49.038317"
+  },
+  {
+    "id": "bot_rec_1789139865",
+    "name": "Extension Recorded Test Journey",
+    "description": "Workflow automatically generated from Chrome Extension path trace on http://127.0.0.1:5000/demo-target",
+    "initial_url": "http://127.0.0.1:5000/demo-target",
+    "variables": [
+      {
+        "name": "username",
+        "default_value": "gov_citizen",
+        "type": "string",
+        "description": "Input for username",
+        "required": true
+      },
+      {
+        "name": "password",
+        "default_value": "GovPass@2026",
+        "type": "password",
+        "description": "Input for password",
+        "required": true
+      }
+    ],
+    "steps": [
+      {
+        "id": "step_1",
+        "step_number": 1,
+        "title": "Extension initiated on 127.0.0.1:5000",
+        "action_type": "navigate",
+        "target_description": "Initial URL",
+        "selector": "",
+        "fallback_selectors": [],
+        "value_mode": "fixed",
+        "value": "http://127.0.0.1:5000/demo-target",
+        "variable_name": "",
+        "wait_before_ms": 200,
+        "wait_after_ms": 500,
+        "timeout_ms": 15000,
+        "optional": false,
+        "highlight": true
+      },
+      {
+        "id": "step_2",
+        "step_number": 2,
+        "title": "Input in Username field",
+        "action_type": "type",
+        "target_description": "username field",
+        "selector": "#username",
+        "fallback_selectors": [
+          "input[name='username']"
+        ],
+        "value_mode": "variable",
+        "value": "gov_citizen",
+        "variable_name": "username",
+        "wait_before_ms": 250,
+        "wait_after_ms": 300,
+        "timeout_ms": 10000,
+        "optional": false,
+        "highlight": true
+      },
+      {
+        "id": "step_3",
+        "step_number": 3,
+        "title": "Input in Password field",
+        "action_type": "type",
+        "target_description": "password field",
+        "selector": "#password",
+        "fallback_selectors": [
+          "input[name='password']"
+        ],
+        "value_mode": "variable",
+        "value": "GovPass@2026",
+        "variable_name": "password",
+        "wait_before_ms": 250,
+        "wait_after_ms": 300,
+        "timeout_ms": 10000,
+        "optional": false,
+        "highlight": true
+      },
+      {
+        "id": "step_4",
+        "step_number": 4,
+        "title": "Sign In To Portal Button",
+        "action_type": "click",
+        "target_description": "Sign In to Portal Button",
+        "selector": "#submit-btn",
+        "fallback_selectors": [
+          "button[type='submit']"
+        ],
+        "value_mode": "fixed",
+        "value": "",
+        "variable_name": "",
+        "wait_before_ms": 300,
+        "wait_after_ms": 800,
+        "timeout_ms": 10000,
+        "optional": false,
+        "highlight": true
+      }
+    ],
+    "branching": {
+      "enabled": true,
+      "check_type": "url_or_element",
+      "failure_selector": "#error-message",
+      "success_url_contains": "dashboard",
+      "success_selector": "",
+      "failure_branch": {
+        "title": "Login Failed return error",
+        "subtitle": "End of the RPA BOT task",
+        "outcome": "error",
+        "message": "Invalid authentication credentials.",
+        "status_code": 401
+      },
+      "success_branch": {
+        "title": "Login Successful",
+        "subtitle": "End of the RPA BOT task",
+        "outcome": "success",
+        "message": "Workflow reached target success state.",
+        "status_code": 200
+      }
+    },
+    "created_at": "2026-09-11T20:47:45.995638",
+    "updated_at": "2026-09-11T20:47:45.995638"
+  },
+  {
+    "id": "bot_rec_1789140226",
+    "name": "Deployment Verification Bot Path",
+    "description": "Workflow automatically generated from Chrome Extension path trace on http://127.0.0.1:5000/demo-target",
+    "initial_url": "http://127.0.0.1:5000/demo-target",
+    "variables": [
+      {
+        "name": "username",
+        "default_value": "gov_citizen",
+        "type": "string",
+        "description": "Input for username",
+        "required": true
+      },
+      {
+        "name": "password",
+        "default_value": "GovPass@2026",
+        "type": "password",
+        "description": "Input for password",
+        "required": true
+      }
+    ],
+    "steps": [
+      {
+        "id": "step_1",
+        "step_number": 1,
+        "title": "Extension initiated on 127.0.0.1:5000",
+        "action_type": "navigate",
+        "target_description": "Initial URL",
+        "selector": "",
+        "fallback_selectors": [],
+        "value_mode": "fixed",
+        "value": "http://127.0.0.1:5000/demo-target",
+        "variable_name": "",
+        "wait_before_ms": 200,
+        "wait_after_ms": 500,
+        "timeout_ms": 15000,
+        "optional": false,
+        "highlight": true
+      },
+      {
+        "id": "step_2",
+        "step_number": 2,
+        "title": "Input in Username field",
+        "action_type": "type",
+        "target_description": "username field",
+        "selector": "#username",
+        "fallback_selectors": [
+          "input[name='username']"
+        ],
+        "value_mode": "variable",
+        "value": "gov_citizen",
+        "variable_name": "username",
+        "wait_before_ms": 250,
+        "wait_after_ms": 300,
+        "timeout_ms": 10000,
+        "optional": false,
+        "highlight": true
+      },
+      {
+        "id": "step_3",
+        "step_number": 3,
+        "title": "Input in Password field",
+        "action_type": "type",
+        "target_description": "password field",
+        "selector": "#password",
+        "fallback_selectors": [
+          "input[name='password']"
+        ],
+        "value_mode": "variable",
+        "value": "GovPass@2026",
+        "variable_name": "password",
+        "wait_before_ms": 250,
+        "wait_after_ms": 300,
+        "timeout_ms": 10000,
+        "optional": false,
+        "highlight": true
+      },
+      {
+        "id": "step_4",
+        "step_number": 4,
+        "title": "Sign In To Portal Button",
+        "action_type": "click",
+        "target_description": "Sign In to Portal Button",
+        "selector": "#submit-btn",
+        "fallback_selectors": [
+          "button[type='submit']"
+        ],
+        "value_mode": "fixed",
+        "value": "",
+        "variable_name": "",
+        "wait_before_ms": 300,
+        "wait_after_ms": 800,
+        "timeout_ms": 10000,
+        "optional": false,
+        "highlight": true
+      }
+    ],
+    "branching": {
+      "enabled": true,
+      "check_type": "url_or_element",
+      "failure_selector": "#error-message",
+      "success_url_contains": "dashboard",
+      "success_selector": "",
+      "failure_branch": {
+        "title": "Login Failed return error",
+        "subtitle": "End of the RPA BOT task",
+        "outcome": "error",
+        "message": "Invalid authentication credentials.",
+        "status_code": 401
+      },
+      "success_branch": {
+        "title": "Login Successful",
+        "subtitle": "End of the RPA BOT task",
+        "outcome": "success",
+        "message": "Workflow reached target success state.",
+        "status_code": 200
+      }
+    },
+    "created_at": "2026-09-11T20:53:46.061298",
+    "updated_at": "2026-09-11T20:53:46.061298"
+  },
+  {
+    "id": "bot_rec_1789140243",
+    "name": "Extension Recorded Test Journey",
+    "description": "Workflow automatically generated from Chrome Extension path trace on http://127.0.0.1:5000/demo-target",
+    "initial_url": "http://127.0.0.1:5000/demo-target",
+    "variables": [
+      {
+        "name": "username",
+        "default_value": "gov_citizen",
+        "type": "string",
+        "description": "Input for username",
+        "required": true
+      },
+      {
+        "name": "password",
+        "default_value": "GovPass@2026",
+        "type": "password",
+        "description": "Input for password",
+        "required": true
+      }
+    ],
+    "steps": [
+      {
+        "id": "step_1",
+        "step_number": 1,
+        "title": "Extension initiated on 127.0.0.1:5000",
+        "action_type": "navigate",
+        "target_description": "Initial URL",
+        "selector": "",
+        "fallback_selectors": [],
+        "value_mode": "fixed",
+        "value": "http://127.0.0.1:5000/demo-target",
+        "variable_name": "",
+        "wait_before_ms": 200,
+        "wait_after_ms": 500,
+        "timeout_ms": 15000,
+        "optional": false,
+        "highlight": true
+      },
+      {
+        "id": "step_2",
+        "step_number": 2,
+        "title": "Input in Username field",
+        "action_type": "type",
+        "target_description": "username field",
+        "selector": "#username",
+        "fallback_selectors": [
+          "input[name='username']"
+        ],
+        "value_mode": "variable",
+        "value": "gov_citizen",
+        "variable_name": "username",
+        "wait_before_ms": 250,
+        "wait_after_ms": 300,
+        "timeout_ms": 10000,
+        "optional": false,
+        "highlight": true
+      },
+      {
+        "id": "step_3",
+        "step_number": 3,
+        "title": "Input in Password field",
+        "action_type": "type",
+        "target_description": "password field",
+        "selector": "#password",
+        "fallback_selectors": [
+          "input[name='password']"
+        ],
+        "value_mode": "variable",
+        "value": "GovPass@2026",
+        "variable_name": "password",
+        "wait_before_ms": 250,
+        "wait_after_ms": 300,
+        "timeout_ms": 10000,
+        "optional": false,
+        "highlight": true
+      },
+      {
+        "id": "step_4",
+        "step_number": 4,
+        "title": "Sign In To Portal Button",
+        "action_type": "click",
+        "target_description": "Sign In to Portal Button",
+        "selector": "#submit-btn",
+        "fallback_selectors": [
+          "button[type='submit']"
+        ],
+        "value_mode": "fixed",
+        "value": "",
+        "variable_name": "",
+        "wait_before_ms": 300,
+        "wait_after_ms": 800,
+        "timeout_ms": 10000,
+        "optional": false,
+        "highlight": true
+      }
+    ],
+    "branching": {
+      "enabled": true,
+      "check_type": "url_or_element",
+      "failure_selector": "#error-message",
+      "success_url_contains": "dashboard",
+      "success_selector": "",
+      "failure_branch": {
+        "title": "Login Failed return error",
+        "subtitle": "End of the RPA BOT task",
+        "outcome": "error",
+        "message": "Invalid authentication credentials.",
+        "status_code": 401
+      },
+      "success_branch": {
+        "title": "Login Successful",
+        "subtitle": "End of the RPA BOT task",
+        "outcome": "success",
+        "message": "Workflow reached target success state.",
+        "status_code": 200
+      }
+    },
+    "created_at": "2026-09-11T20:54:03.278072",
+    "updated_at": "2026-09-11T20:54:03.278072"
+  },
+  {
+    "id": "bot_rec_1789140269",
+    "name": "Canvas Rectangle Drawing Bot",
+    "description": "Workflow automatically generated from Chrome Extension path trace on http://127.0.0.1:5000/demo-canvas",
+    "initial_url": "http://127.0.0.1:5000/demo-canvas",
+    "variables": [],
+    "steps": [
+      {
+        "id": "step_1",
+        "step_number": 1,
+        "title": "Extension initiated on 127.0.0.1:5000",
+        "action_type": "navigate",
+        "target_description": "Initial URL",
+        "selector": "",
+        "fallback_selectors": [],
+        "value_mode": "fixed",
+        "value": "http://127.0.0.1:5000/demo-canvas",
+        "variable_name": "",
+        "wait_before_ms": 200,
+        "wait_after_ms": 500,
+        "timeout_ms": 15000,
+        "optional": false,
+        "highlight": true
+      },
+      {
+        "id": "step_2",
+        "step_number": 2,
+        "title": "Draw Rectangle on Canvas",
+        "action_type": "canvas_draw",
+        "target_description": "Canvas Gesture (20%, 25% → 60%, 70%)",
+        "selector": "#drawing-board",
+        "fallback_selectors": [
+          "canvas",
+          "//canvas"
+        ],
+        "value_mode": "fixed",
+        "value": "{\"start_percent_x\": 0.2, \"start_percent_y\": 0.25, \"end_percent_x\": 0.6, \"end_percent_y\": 0.7, \"start_x\": 136, \"start_y\": 95, \"end_x\": 408, \"end_y\": 266, \"steps\": 20}",
+        "start_percent_x": 0.2,
+        "start_percent_y": 0.25,
+        "end_percent_x": 0.6,
+        "end_percent_y": 0.7,
+        "variable_name": "",
+        "wait_before_ms": 300,
+        "wait_after_ms": 600,
+        "timeout_ms": 10000,
+        "optional": false,
+        "highlight": true
+      },
+      {
+        "id": "step_3",
+        "step_number": 3,
+        "title": "Click Canvas Point (80%, 80%)",
+        "action_type": "canvas_click",
+        "target_description": "Canvas Point (80%, 80%)",
+        "selector": "#drawing-board",
+        "fallback_selectors": [
+          "canvas"
+        ],
+        "value_mode": "fixed",
+        "value": "{\"percent_x\": 0.8, \"percent_y\": 0.8, \"offset_x\": 544, \"offset_y\": 304}",
+        "percent_x": 0.8,
+        "percent_y": 0.8,
+        "variable_name": "",
+        "wait_before_ms": 300,
+        "wait_after_ms": 500,
+        "timeout_ms": 10000,
+        "optional": false,
+        "highlight": true
+      },
+      {
+        "id": "step_4",
+        "step_number": 4,
+        "title": "Export Canvas Drawing Button",
+        "action_type": "click",
+        "target_description": "Export Canvas Drawing Button",
+        "selector": "[data-testid=\"smart-export-btn\"]",
+        "fallback_selectors": [
+          "#radix-:r5:",
+          "button:has-text('Export Canvas Drawing')"
+        ],
+        "value_mode": "fixed",
+        "value": "",
+        "variable_name": "",
+        "wait_before_ms": 300,
+        "wait_after_ms": 800,
+        "timeout_ms": 10000,
+        "optional": false,
+        "highlight": true
+      }
+    ],
+    "branching": {
+      "enabled": true,
+      "check_type": "url_or_element",
+      "failure_selector": "#error-message",
+      "success_url_contains": "dashboard",
+      "success_selector": "",
+      "failure_branch": {
+        "title": "Login Failed return error",
+        "subtitle": "End of the RPA BOT task",
+        "outcome": "error",
+        "message": "Invalid authentication credentials.",
+        "status_code": 401
+      },
+      "success_branch": {
+        "title": "Login Successful",
+        "subtitle": "End of the RPA BOT task",
+        "outcome": "success",
+        "message": "Workflow reached target success state.",
+        "status_code": 200
+      }
+    },
+    "created_at": "2026-09-11T20:54:29.595696",
+    "updated_at": "2026-09-11T20:54:29.595696"
+  }
+]

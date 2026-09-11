@@ -1,0 +1,260 @@
+{
+  "recording_id": "bot_rec_1788799098",
+  "raw_actions": [
+    {
+      "fallbacks": [
+        "//*[@id=\"btnClose\"]"
+      ],
+      "selector": "#btnClose",
+      "target_name": "button",
+      "text": "",
+      "type": "click"
+    },
+    {
+      "fallbacks": [
+        "//*[@id=\"navbar-collapse\"]/ul[1]/li[2]/a[1]"
+      ],
+      "selector": "div#navbar-collapse > ul > li:nth-of-type(2) > a",
+      "target_name": "Login",
+      "text": "Login",
+      "type": "click"
+    },
+    {
+      "fallbacks": [
+        "input[name=\"ctl00$dpPH$txtUserName\"]",
+        "input[placeholder=\"--Your User Name--\"]",
+        "//*[@id=\"ctl00_dpPH_txtUserName\"]"
+      ],
+      "input_type": "text",
+      "selector": "#ctl00_dpPH_txtUserName",
+      "target_name": "ctl00$dpPH$txtUserName",
+      "type": "input",
+      "value": "Hello"
+    },
+    {
+      "fallbacks": [
+        "input[name=\"ctl00$dpPH$txtPassword\"]",
+        "input[placeholder=\"--Your Password--\"]",
+        "//*[@id=\"ctl00_dpPH_txtPassword\"]"
+      ],
+      "input_type": "password",
+      "selector": "#ctl00_dpPH_txtPassword",
+      "target_name": "ctl00$dpPH$txtPassword",
+      "type": "input",
+      "value": "Justs ti otedh"
+    },
+    {
+      "fallbacks": [
+        "input[name=\"ctl00$dpPH$txtVerificationCode\"]",
+        "//*[@id=\"ctl00_dpPH_txtVerificationCode\"]"
+      ],
+      "input_type": "text",
+      "selector": "#ctl00_dpPH_txtVerificationCode",
+      "target_name": "ctl00$dpPH$txtVerificationCode",
+      "type": "input",
+      "value": "anything"
+    },
+    {
+      "fallbacks": [
+        "input[name=\"ctl00$dpPH$btnLogin\"]",
+        "//*[@id=\"ctl00_dpPH_btnLogin\"]"
+      ],
+      "selector": "#ctl00_dpPH_btnLogin",
+      "target_name": "ctl00$dpPH$btnLogin",
+      "text": "",
+      "type": "click"
+    }
+  ],
+  "bot_data": {
+    "id": "bot_rec_1788799098",
+    "name": "Recorded Path - 10:08:18 PM",
+    "description": "Workflow automatically generated from Chrome Extension path trace on https://www.medhavikalyan.mp.gov.in/Public/InfoPage.aspx?rrTy=Mg==",
+    "initial_url": "https://www.medhavikalyan.mp.gov.in/Public/InfoPage.aspx?rrTy=Mg==",
+    "variables": [
+      {
+        "name": "username",
+        "default_value": "Hello",
+        "type": "string",
+        "description": "Input for ctl00$dpPH$txtUserName",
+        "required": true
+      },
+      {
+        "name": "password",
+        "default_value": "Justs ti otedh",
+        "type": "password",
+        "description": "Input for ctl00$dpPH$txtPassword",
+        "required": true
+      },
+      {
+        "name": "var_ctl00$dpph$t",
+        "default_value": "anything",
+        "type": "string",
+        "description": "Input for ctl00$dpPH$txtVerificationCode",
+        "required": true
+      }
+    ],
+    "steps": [
+      {
+        "id": "step_1",
+        "step_number": 1,
+        "title": "Extension initiated on www.medhavikalyan.mp.gov.in",
+        "action_type": "navigate",
+        "target_description": "Initial URL",
+        "selector": "",
+        "fallback_selectors": [],
+        "value_mode": "fixed",
+        "value": "https://www.medhavikalyan.mp.gov.in/Public/InfoPage.aspx?rrTy=Mg==",
+        "variable_name": "",
+        "wait_before_ms": 200,
+        "wait_after_ms": 500,
+        "timeout_ms": 15000,
+        "optional": false,
+        "highlight": true
+      },
+      {
+        "id": "step_2",
+        "step_number": 2,
+        "title": "Button Button",
+        "action_type": "click",
+        "target_description": "button Button",
+        "selector": "#btnClose",
+        "fallback_selectors": [
+          "//*[@id=\"btnClose\"]"
+        ],
+        "value_mode": "fixed",
+        "value": "",
+        "variable_name": "",
+        "wait_before_ms": 300,
+        "wait_after_ms": 800,
+        "timeout_ms": 10000,
+        "optional": false,
+        "highlight": true
+      },
+      {
+        "id": "step_3",
+        "step_number": 3,
+        "title": "Login Button",
+        "action_type": "click",
+        "target_description": "Login Button",
+        "selector": "div#navbar-collapse > ul > li:nth-of-type(2) > a",
+        "fallback_selectors": [
+          "//*[@id=\"navbar-collapse\"]/ul[1]/li[2]/a[1]"
+        ],
+        "value_mode": "fixed",
+        "value": "",
+        "variable_name": "",
+        "wait_before_ms": 300,
+        "wait_after_ms": 800,
+        "timeout_ms": 10000,
+        "optional": false,
+        "highlight": true
+      },
+      {
+        "id": "step_4",
+        "step_number": 4,
+        "title": "Input in Ctl00$Dpph$Txtusername field",
+        "action_type": "type",
+        "target_description": "ctl00$dpPH$txtUserName field",
+        "selector": "#ctl00_dpPH_txtUserName",
+        "fallback_selectors": [
+          "input[name=\"ctl00$dpPH$txtUserName\"]",
+          "input[placeholder=\"--Your User Name--\"]",
+          "//*[@id=\"ctl00_dpPH_txtUserName\"]"
+        ],
+        "value_mode": "variable",
+        "value": "Hello",
+        "variable_name": "username",
+        "wait_before_ms": 250,
+        "wait_after_ms": 300,
+        "timeout_ms": 10000,
+        "optional": false,
+        "highlight": true
+      },
+      {
+        "id": "step_5",
+        "step_number": 5,
+        "title": "Input in Ctl00$Dpph$Txtpassword field",
+        "action_type": "type",
+        "target_description": "ctl00$dpPH$txtPassword field",
+        "selector": "#ctl00_dpPH_txtPassword",
+        "fallback_selectors": [
+          "input[name=\"ctl00$dpPH$txtPassword\"]",
+          "input[placeholder=\"--Your Password--\"]",
+          "//*[@id=\"ctl00_dpPH_txtPassword\"]"
+        ],
+        "value_mode": "variable",
+        "value": "Justs ti otedh",
+        "variable_name": "password",
+        "wait_before_ms": 250,
+        "wait_after_ms": 300,
+        "timeout_ms": 10000,
+        "optional": false,
+        "highlight": true
+      },
+      {
+        "id": "step_6",
+        "step_number": 6,
+        "title": "Input in Ctl00$Dpph$Txtverificationcode field",
+        "action_type": "type",
+        "target_description": "ctl00$dpPH$txtVerificationCode field",
+        "selector": "#ctl00_dpPH_txtVerificationCode",
+        "fallback_selectors": [
+          "input[name=\"ctl00$dpPH$txtVerificationCode\"]",
+          "//*[@id=\"ctl00_dpPH_txtVerificationCode\"]"
+        ],
+        "value_mode": "variable",
+        "value": "anything",
+        "variable_name": "var_ctl00$dpph$t",
+        "wait_before_ms": 250,
+        "wait_after_ms": 300,
+        "timeout_ms": 10000,
+        "optional": false,
+        "highlight": true
+      },
+      {
+        "id": "step_7",
+        "step_number": 7,
+        "title": "Ctl00$Dpph$Btnlogin Button",
+        "action_type": "click",
+        "target_description": "ctl00$dpPH$btnLogin Button",
+        "selector": "#ctl00_dpPH_btnLogin",
+        "fallback_selectors": [
+          "input[name=\"ctl00$dpPH$btnLogin\"]",
+          "//*[@id=\"ctl00_dpPH_btnLogin\"]"
+        ],
+        "value_mode": "fixed",
+        "value": "",
+        "variable_name": "",
+        "wait_before_ms": 300,
+        "wait_after_ms": 800,
+        "timeout_ms": 10000,
+        "optional": false,
+        "highlight": true
+      }
+    ],
+    "branching": {
+      "enabled": true,
+      "check_type": "url_or_element",
+      "failure_selector": "#error-message",
+      "success_url_contains": "dashboard",
+      "success_selector": "",
+      "failure_branch": {
+        "title": "Login Failed return error",
+        "subtitle": "End of the RPA BOT task",
+        "outcome": "error",
+        "message": "Invalid authentication credentials.",
+        "status_code": 401
+      },
+      "success_branch": {
+        "title": "Login Successful",
+        "subtitle": "End of the RPA BOT task",
+        "outcome": "success",
+        "message": "Workflow reached target success state.",
+        "status_code": 200
+      }
+    },
+    "created_at": "2026-09-07T22:08:18.572528",
+    "updated_at": "2026-09-07T22:08:18.572528"
+  },
+  "saved_at": "2026-09-07T22:08:18.574854"
+}

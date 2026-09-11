@@ -1,0 +1,229 @@
+{% extends "base.html" %}
+
+{% block title %}{{ bot.name if bot else "Workflow Builder" }} - GovBridge RPA{% endblock %}
+
+{% block content %}
+<!-- Builder Subheader / Top Action Bar -->
+<div class="builder-header">
+  <div class="bot-meta">
+    <input type="text" id="bot-title-input" class="bot-title-input" value="{{ bot.name if bot else 'GovBridge Portal Citizen Login' }}" />
+    <span class="badge-status badge-active" id="bot-status-tag">Ready</span>
+    <span id="auto-save-indicator" class="auto-save-badge">✓ Auto-Saved</span>
+    <span id="local-storage-indicator" class="local-storage-pill" title="Workflow path is automatically stored and synced in your browser's localStorage">
+      Saved in Browser
+    </span>
+  </div>
+
+  <div style="display: flex; align-items: center; gap: 0.75rem;">
+    <button id="btn-save-bot" class="btn btn-outline" title="Manually sync and save changes to server">
+      Save Bot
+    </button>
+    <button id="btn-test-bot" class="btn btn-success" title="Run Playwright Bot in live Chrome window">
+      TEST BOT (Live Chrome)
+    </button>
+  </div>
+</div>
+
+<!-- Main Workflow Canvas -->
+<div class="canvas-wrapper">
+  
+  <!-- GovBridge Wireframe Subtitle Banner -->
+  <div class="wireframe-banner">
+    <div>
+      <h2 style="font-size: 1.45rem; font-weight: 700; color: #ffffff; letter-spacing: -0.3px;">
+        Path Traced for RPA Bot by our Extension
+      </h2>
+      <p style="color: var(--text-secondary); font-size: 0.875rem; margin-top: 0.2rem;">
+        Recorded meaningful paths converted into modular execution nodes with dynamic variable binding.
+      </p>
+    </div>
+  </div>
+
+  <!-- Interactive Flowchart Nodes & Connectors Container (Populated by builder.js) -->
+  <div id="flow-container" class="flow-container">
+    <!-- Rendered dynamically matching wireframe sketch:
+         [Node 1: Init] -> (+) -> [Node 2: Username] -> (+) -> [Node 3: Password] -> (+) -> [Node 4: Submit] -> [Branches]
+    -->
+  </div>
+
+</div>
+
+
+<!-- -----------------------------------------------------------------------
+     MODAL 1: Step Inspector Drawer / Modal
+     ----------------------------------------------------------------------- -->
+<div class="modal-overlay" id="step-inspector-modal">
+  <div class="modal-box">
+    <div class="modal-header">
+      <div class="modal-title" id="inspector-modal-title">Edit Workflow Step</div>
+      <button class="btn btn-outline" style="padding: 0.2rem 0.5rem;" onclick="closeStepInspector()">✕</button>
+    </div>
+
+    <div class="form-group">
+      <label class="form-label">Step Title</label>
+      <input type="text" id="edit-step-title" class="form-control" placeholder="e.g. Input in Username field" />
+    </div>
+
+    <div class="form-group">
+      <label class="form-label">Action Type</label>
+      <select id="edit-step-action" class="form-control">
+        <option value="navigate">Navigate to URL</option>
+        <option value="type">Type text / Input</option>
+        <option value="click">Click Element</option>
+        <option value="canvas_draw">Draw on Canvas / Gesture Stroke</option>
+        <option value="canvas_click">Precision Canvas Point Click</option>
+        <option value="select">Select Dropdown Option</option>
+        <option value="wait">Wait Delay (ms)</option>
+        <option value="screenshot">Capture Screenshot</option>
+        <option value="extract_text">Extract Text into Variable</option>
+        <option value="assert_text">Assert Text Contains</option>
+        <option value="assert_url">Assert URL Contains</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label class="form-label">Primary Selector (ID / CSS / XPath)</label>
+      <input type="text" id="edit-step-selector" class="form-control" placeholder="#username or //input[@name='username']" />
+    </div>
+
+    <div class="form-group">
+      <label class="form-label">Fallback Resilient Selectors (1 per line)</label>
+      <textarea id="edit-step-fallbacks" class="form-control" rows="3" placeholder="input[name='username']&#10;//input[@id='username']"></textarea>
+      <span style="font-size: 0.75rem; color: var(--text-muted);">Playwright automatically tries fallbacks if the primary selector changes.</span>
+    </div>
+
+    <div class="form-group">
+      <label class="form-label">Value Mode</label>
+      <select id="edit-step-mode" class="form-control" onchange="toggleInspectorValueFields()">
+        <option value="fixed">Value Entered (Static text)</option>
+        <option value="variable">Set Variable (Dynamic {{var}})</option>
+      </select>
+    </div>
+
+    <div class="form-group" id="group-fixed-val">
+      <label class="form-label">Static Value / URL / Wait Duration</label>
+      <input type="text" id="edit-step-value" class="form-control" />
+    </div>
+
+    <div class="form-group" id="group-variable-name" style="display: none;">
+      <label class="form-label">Variable Name (e.g. <code>username</code>, <code>password</code>)</label>
+      <input type="text" id="edit-step-variable" class="form-control" placeholder="username" />
+      <span style="font-size: 0.75rem; color: var(--text-muted);">Bound as <code>{{variable_name}}</code> supplied dynamically during execution.</span>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+      <div class="form-group">
+        <label class="form-label">Wait Before (ms)</label>
+        <input type="number" id="edit-step-wait-before" class="form-control" value="200" />
+      </div>
+      <div class="form-group">
+        <label class="form-label">Wait After (ms)</label>
+        <input type="number" id="edit-step-wait-after" class="form-control" value="300" />
+      </div>
+    </div>
+
+    <div class="form-group" style="display: flex; align-items: center; gap: 0.5rem; margin-top: 0.5rem;">
+      <input type="checkbox" id="edit-step-optional" style="width: 16px; height: 16px;" />
+      <label for="edit-step-optional" class="form-label" style="margin-bottom: 0; cursor: pointer;">
+        Optional step (continue workflow even if this step fails)
+      </label>
+    </div>
+
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid var(--border-color);">
+      <button class="btn btn-danger-sm" style="padding: 0.5rem 0.9rem; font-size: 0.8rem;" onclick="deleteCurrentInspectedStep()">
+        Delete This Step
+      </button>
+      <div style="display: flex; gap: 0.75rem;">
+        <button class="btn btn-outline" onclick="closeStepInspector()">Cancel</button>
+        <button class="btn btn-primary" onclick="saveStepInspector()">Save Step</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- -----------------------------------------------------------------------
+     MODAL 2: Live TEST BOT Feature (Playwright Headed Window + SSE Stream)
+     ----------------------------------------------------------------------- -->
+<div class="modal-overlay" id="test-bot-modal">
+  <div class="modal-box test-modal-box">
+    <div class="modal-header">
+      <div>
+        <div class="modal-title">Live Playwright Bot Test Runner</div>
+        <div style="font-size: 0.8rem; color: var(--text-secondary); margin-top: 2px;">
+          Opens Google Chrome in a NEW VISIBLE WINDOW and live runs all steps in front of you.
+        </div>
+      </div>
+      <div style="display: flex; align-items: center; gap: 0.75rem;">
+        <span class="badge-status badge-active" id="test-status-badge">READY</span>
+        <button class="btn btn-outline" style="padding: 0.2rem 0.5rem;" onclick="closeTestBotModal()">✕</button>
+      </div>
+    </div>
+
+    <!-- Dynamic Variable Inputs for Test Run -->
+    <div style="background: rgba(255, 255, 255, 0.02); border: 1px solid var(--border-color); border-radius: var(--radius-sm); padding: 1rem; margin-bottom: 1rem;">
+      <div style="font-size: 0.85rem; font-weight: 700; color: #38bdf8; margin-bottom: 0.75rem;">
+        Runtime Variables for this Run:
+      </div>
+      <div id="test-variables-container">
+        <!-- Injected dynamically -->
+      </div>
+
+      <!-- Prominent Live Window & Cache Control -->
+      <div style="margin-top: 1rem; padding: 0.85rem 1rem; background: rgba(16, 185, 129, 0.06); border: 1.5px dashed var(--gov-green); border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
+        <div>
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <strong style="color: #ffffff; font-size: 0.85rem;">Display Mode:</strong>
+            <label style="display: inline-flex; align-items: center; gap: 5px; font-size: 0.85rem; color: #34d399; font-weight: 700; cursor: pointer;">
+              <input type="radio" name="test-window-mode" value="headed" checked />
+              Live Chrome Window (Open in front of me)
+            </label>
+            <label style="display: inline-flex; align-items: center; gap: 5px; font-size: 0.8rem; color: var(--text-muted); cursor: pointer; margin-left: 8px;">
+              <input type="radio" name="test-window-mode" value="headless" />
+              Background (Headless)
+            </label>
+          </div>
+          <div style="font-size: 0.75rem; color: var(--text-secondary); margin-top: 4px;">
+            <strong>100% Clean Session:</strong> All cookies, local storage, and previous session cache are cleared automatically before test.
+          </div>
+        </div>
+
+        <button id="btn-launch-test" class="btn btn-success" onclick="startLiveTestExecution()" style="padding: 0.65rem 1.25rem;">
+          Run Live Chrome Bot
+        </button>
+      </div>
+    </div>
+
+    <!-- Live Execution Console Stream -->
+    <div style="font-size: 0.85rem; font-weight: 700; color: var(--text-secondary); display: flex; justify-content: space-between;">
+      <span>Live Execution Log Stream (SSE)</span>
+      <span style="color: var(--gov-green-light); font-size: 0.75rem;">● Real-time Playwright Feed</span>
+    </div>
+    <div class="terminal-console" id="terminal-output">
+      <div class="log-entry log-info"><span class="log-time">[Ready]</span> Configure variables and click "Launch Live Bot".</div>
+    </div>
+
+    <!-- Live Step Screenshots Preview -->
+    <div style="margin-top: 1rem;">
+      <div style="font-size: 0.8rem; font-weight: 600; color: var(--text-muted); margin-bottom: 0.5rem;">
+        Captured Step Snapshots:
+      </div>
+      <div id="test-screenshots-row" style="display: flex; gap: 0.75rem; overflow-x: auto; padding-bottom: 0.5rem;">
+        <!-- Thumbnails populated live -->
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+{% endblock %}
+
+{% block scripts %}
+<script>
+  // Hydrate initial bot data from Flask server
+  window.INITIAL_BOT_DATA = {{ bot | tojson | safe if bot else "null" }};
+</script>
+<script src="{{ url_for('static', filename='js/builder.js') }}"></script>
+{% endblock %}

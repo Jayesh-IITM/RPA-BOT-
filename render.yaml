@@ -1,0 +1,23 @@
+# ==============================================================================
+# Render.com Blueprint - 1-Click Deployment for MahaSetu RPA Ecosystem
+# ==============================================================================
+services:
+  - type: web
+    name: mahasetu-rpa-service
+    env: docker
+    dockerfilePath: Dockerfile
+    plan: standard
+    healthCheckPath: /api/health
+    envVars:
+      - key: FLASK_ENV
+        value: production
+      - key: CORS_ORIGINS
+        value: "*"
+      - key: PLAYWRIGHT_HEADLESS_DEFAULT
+        value: "true"
+      - key: SECRET_KEY
+        generateValue: true
+    disk:
+      name: mahasetu-data
+      mountPath: /app/backend/data
+      sizeGB: 5

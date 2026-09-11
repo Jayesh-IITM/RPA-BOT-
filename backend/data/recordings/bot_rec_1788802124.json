@@ -1,0 +1,325 @@
+{
+  "recording_id": "bot_rec_1788802124",
+  "raw_actions": [
+    {
+      "fallbacks": [
+        "//*[@id=\"rso\"]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/span[1]/a[1]"
+      ],
+      "selector": "div#rso > div > div > div > div > div > div > div > div > div > div > span > a",
+      "target_name": "Apna College\n\nApna C",
+      "text": "Apna College\n\nApna College\nhttps://www.apnacollege.in",
+      "type": "click"
+    },
+    {
+      "fallbacks": [
+        "//*[@id=\"menuItem5\"]"
+      ],
+      "selector": "#menuItem5",
+      "target_name": "Log in",
+      "text": "Log in",
+      "type": "click"
+    },
+    {
+      "fallbacks": [
+        "input[name=\"email\"]",
+        "input[placeholder=\"E-mail\"]",
+        "//*[@id=\"signin-email\"]"
+      ],
+      "input_type": "email",
+      "selector": "#signin-email",
+      "target_name": "email",
+      "type": "input",
+      "value": "patidar.jayesh2006@gmail.com"
+    },
+    {
+      "fallbacks": [
+        "input[name=\"password\"]",
+        "input[placeholder=\"Password\"]",
+        "//*[@id=\"signin-password\"]"
+      ],
+      "input_type": "password",
+      "selector": "#signin-password",
+      "target_name": "password",
+      "type": "input",
+      "value": "Jayesh@20062251"
+    },
+    {
+      "fallbacks": [
+        "//*[@id=\"submitLogin\"]"
+      ],
+      "selector": "#submitLogin",
+      "target_name": "Login",
+      "text": "Login",
+      "type": "click"
+    },
+    {
+      "fallbacks": [
+        "//*[@id=\"68fa2613fee728b2260037c5\"]/div[2]/div[1]/div[2]/div[1]/div[1]/button[1]"
+      ],
+      "selector": "div#68fa2613fee728b2260037c5 > div:nth-of-type(2) > div > div:nth-of-type(2) > div > div > button",
+      "target_name": "Continue",
+      "text": "Continue",
+      "type": "click"
+    },
+    {
+      "duration": 1000,
+      "type": "wait"
+    },
+    {
+      "fallbacks": [
+        "//*[@id=\"lrn-sec-title-prime_python_fundamentals_part_1\"]/button[1]"
+      ],
+      "selector": "h2#lrn-sec-title-prime_python_fundamentals_part_1 > button",
+      "target_name": "4.\nPython Fundamenta",
+      "text": "4.\nPython Fundamentals (Part 1)",
+      "type": "click"
+    },
+    {
+      "fallbacks": [
+        "//*[@id=\"lrn-sec-units-prime_python_fundamentals_part_1\"]/li[14]/div[1]/a[1]"
+      ],
+      "selector": "ul#lrn-sec-units-prime_python_fundamentals_part_1 > li:nth-of-type(14) > div > a",
+      "target_name": "Lecture Notes",
+      "text": "Lecture Notes",
+      "type": "click"
+    }
+  ],
+  "bot_data": {
+    "id": "bot_rec_1788802124",
+    "name": "Recorded Path - 10:58:44 PM",
+    "description": "Workflow automatically generated from Chrome Extension path trace on https://www.apnacollege.in/path-player?courseid=prime-ai&unit=69186c530df0d996f70910e5Unit",
+    "initial_url": "https://www.apnacollege.in/path-player?courseid=prime-ai&unit=69186c530df0d996f70910e5Unit",
+    "variables": [
+      {
+        "name": "var_email",
+        "default_value": "patidar.jayesh2006@gmail.com",
+        "type": "string",
+        "description": "Input for email",
+        "required": true
+      },
+      {
+        "name": "password",
+        "default_value": "Jayesh@20062251",
+        "type": "password",
+        "description": "Input for password",
+        "required": true
+      }
+    ],
+    "steps": [
+      {
+        "id": "step_1",
+        "step_number": 1,
+        "title": "Extension initiated on www.apnacollege.in",
+        "action_type": "navigate",
+        "target_description": "Initial URL",
+        "selector": "",
+        "fallback_selectors": [],
+        "value_mode": "fixed",
+        "value": "https://www.apnacollege.in/path-player?courseid=prime-ai&unit=69186c530df0d996f70910e5Unit",
+        "variable_name": "",
+        "wait_before_ms": 200,
+        "wait_after_ms": 500,
+        "timeout_ms": 15000,
+        "optional": false,
+        "highlight": true
+      },
+      {
+        "id": "step_2",
+        "step_number": 2,
+        "title": "Apna College\n\nApna College\nHttps://Www.Apnacollege.In Button",
+        "action_type": "click",
+        "target_description": "Apna College\n\nApna College\nhttps://www.apnacollege.in Button",
+        "selector": "div#rso > div > div > div > div > div > div > div > div > div > div > span > a",
+        "fallback_selectors": [
+          "//*[@id=\"rso\"]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/span[1]/a[1]"
+        ],
+        "value_mode": "fixed",
+        "value": "",
+        "variable_name": "",
+        "wait_before_ms": 300,
+        "wait_after_ms": 800,
+        "timeout_ms": 10000,
+        "optional": false,
+        "highlight": true
+      },
+      {
+        "id": "step_3",
+        "step_number": 3,
+        "title": "Log In Button",
+        "action_type": "click",
+        "target_description": "Log in Button",
+        "selector": "#menuItem5",
+        "fallback_selectors": [
+          "//*[@id=\"menuItem5\"]"
+        ],
+        "value_mode": "fixed",
+        "value": "",
+        "variable_name": "",
+        "wait_before_ms": 300,
+        "wait_after_ms": 800,
+        "timeout_ms": 10000,
+        "optional": false,
+        "highlight": true
+      },
+      {
+        "id": "step_4",
+        "step_number": 4,
+        "title": "Input in Email field",
+        "action_type": "type",
+        "target_description": "email field",
+        "selector": "#signin-email",
+        "fallback_selectors": [
+          "input[name=\"email\"]",
+          "input[placeholder=\"E-mail\"]",
+          "//*[@id=\"signin-email\"]"
+        ],
+        "value_mode": "variable",
+        "value": "patidar.jayesh2006@gmail.com",
+        "variable_name": "var_email",
+        "wait_before_ms": 250,
+        "wait_after_ms": 300,
+        "timeout_ms": 10000,
+        "optional": false,
+        "highlight": true
+      },
+      {
+        "id": "step_5",
+        "step_number": 5,
+        "title": "Input in Password field",
+        "action_type": "type",
+        "target_description": "password field",
+        "selector": "#signin-password",
+        "fallback_selectors": [
+          "input[name=\"password\"]",
+          "input[placeholder=\"Password\"]",
+          "//*[@id=\"signin-password\"]"
+        ],
+        "value_mode": "variable",
+        "value": "Jayesh@20062251",
+        "variable_name": "password",
+        "wait_before_ms": 250,
+        "wait_after_ms": 300,
+        "timeout_ms": 10000,
+        "optional": false,
+        "highlight": true
+      },
+      {
+        "id": "step_6",
+        "step_number": 6,
+        "title": "Login Button",
+        "action_type": "click",
+        "target_description": "Login Button",
+        "selector": "#submitLogin",
+        "fallback_selectors": [
+          "//*[@id=\"submitLogin\"]"
+        ],
+        "value_mode": "fixed",
+        "value": "",
+        "variable_name": "",
+        "wait_before_ms": 300,
+        "wait_after_ms": 800,
+        "timeout_ms": 10000,
+        "optional": false,
+        "highlight": true
+      },
+      {
+        "id": "step_7",
+        "step_number": 7,
+        "title": "Continue Button",
+        "action_type": "click",
+        "target_description": "Continue Button",
+        "selector": "div#68fa2613fee728b2260037c5 > div:nth-of-type(2) > div > div:nth-of-type(2) > div > div > button",
+        "fallback_selectors": [
+          "//*[@id=\"68fa2613fee728b2260037c5\"]/div[2]/div[1]/div[2]/div[1]/div[1]/button[1]"
+        ],
+        "value_mode": "fixed",
+        "value": "",
+        "variable_name": "",
+        "wait_before_ms": 300,
+        "wait_after_ms": 800,
+        "timeout_ms": 10000,
+        "optional": false,
+        "highlight": true
+      },
+      {
+        "id": "step_8",
+        "step_number": 8,
+        "title": "Wait Delay",
+        "action_type": "wait",
+        "target_description": "Wait Timer",
+        "selector": "",
+        "fallback_selectors": [],
+        "value_mode": "fixed",
+        "value": 1000,
+        "variable_name": "",
+        "wait_before_ms": 0,
+        "wait_after_ms": 0,
+        "timeout_ms": 5000,
+        "optional": true,
+        "highlight": false
+      },
+      {
+        "id": "step_9",
+        "step_number": 9,
+        "title": "4.\nPython Fundamentals (Part 1) Button",
+        "action_type": "click",
+        "target_description": "4.\nPython Fundamentals (Part 1) Button",
+        "selector": "h2#lrn-sec-title-prime_python_fundamentals_part_1 > button",
+        "fallback_selectors": [
+          "//*[@id=\"lrn-sec-title-prime_python_fundamentals_part_1\"]/button[1]"
+        ],
+        "value_mode": "fixed",
+        "value": "",
+        "variable_name": "",
+        "wait_before_ms": 300,
+        "wait_after_ms": 800,
+        "timeout_ms": 10000,
+        "optional": false,
+        "highlight": true
+      },
+      {
+        "id": "step_10",
+        "step_number": 10,
+        "title": "Lecture Notes Button",
+        "action_type": "click",
+        "target_description": "Lecture Notes Button",
+        "selector": "ul#lrn-sec-units-prime_python_fundamentals_part_1 > li:nth-of-type(14) > div > a",
+        "fallback_selectors": [
+          "//*[@id=\"lrn-sec-units-prime_python_fundamentals_part_1\"]/li[14]/div[1]/a[1]"
+        ],
+        "value_mode": "fixed",
+        "value": "",
+        "variable_name": "",
+        "wait_before_ms": 300,
+        "wait_after_ms": 800,
+        "timeout_ms": 10000,
+        "optional": false,
+        "highlight": true
+      }
+    ],
+    "branching": {
+      "enabled": true,
+      "check_type": "url_or_element",
+      "failure_selector": "#error-message",
+      "success_url_contains": "dashboard",
+      "success_selector": "",
+      "failure_branch": {
+        "title": "Login Failed return error",
+        "subtitle": "End of the RPA BOT task",
+        "outcome": "error",
+        "message": "Invalid authentication credentials.",
+        "status_code": 401
+      },
+      "success_branch": {
+        "title": "Login Successful",
+        "subtitle": "End of the RPA BOT task",
+        "outcome": "success",
+        "message": "Workflow reached target success state.",
+        "status_code": 200
+      }
+    },
+    "created_at": "2026-09-07T22:58:44.042907",
+    "updated_at": "2026-09-07T22:58:44.042907"
+  },
+  "saved_at": "2026-09-07T22:58:44.051138"
+}
