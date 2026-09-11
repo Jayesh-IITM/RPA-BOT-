@@ -29,11 +29,8 @@ COPY . .
 # Package the Chrome Extension on build so it is immediately downloadable
 RUN python scripts/package_extension.py
 
-# Create persistent storage directory
+# Create persistent storage directory (mounted via Railway Volumes at runtime)
 RUN mkdir -p /app/backend/data/recordings /app/backend/data/screenshots
-
-# Volume mount for bot storage and recordings persistence
-VOLUME ["/app/backend/data"]
 
 # Expose web application port
 EXPOSE 5000
