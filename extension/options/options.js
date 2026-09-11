@@ -2,7 +2,7 @@
  * MahaSetu RPA Recorder - Options / Settings Script
  */
 
-const DEFAULT_SERVER = "http://127.0.0.1:5000";
+const DEFAULT_SERVER = "https://rpa-bot-production.up.railway.app";
 
 document.addEventListener("DOMContentLoaded", () => {
   const serverInput = document.getElementById("server-url");
@@ -117,7 +117,11 @@ document.addEventListener("DOMContentLoaded", () => {
 function getBackendUrl(callback) {
   const storage = chrome.storage.sync || chrome.storage.local;
   storage.get(["serverUrl"], (res) => {
-    callback(res && res.serverUrl ? res.serverUrl : DEFAULT_SERVER);
+    if (!res || !res.serverUrl || res.serverUrl === "http://127.0.0.1:5000" || res.serverUrl === "http://localhost:5000") {
+      callback(DEFAULT_SERVER);
+    } else {
+      callback(res.serverUrl);
+    }
   });
 }
 

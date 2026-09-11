@@ -66,7 +66,7 @@ In your service's **Variables** tab in Railway, you can customize:
 2. Under **Public Networking**, click **Generate Domain**.
 3. Railway will give you a live URL, such as:
    ```text
-   https://mahasetu-rpa-production.up.railway.app
+   https://rpa-bot-production.up.railway.app
    ```
 4. Click your generated URL to open the MahaSetu Visual Flowchart Builder live!
 
@@ -78,9 +78,9 @@ Once your Railway instance is live:
 1. Open Google Chrome with the MahaSetu RPA Recorder extension installed.
 2. Click the extension icon in the toolbar.
 3. Click the gear icon (`⚙`) in the header (or right-click -> **Options**).
-4. Enter your Railway domain:
+4. The extension now defaults automatically to:
    ```text
-   https://your-service-name.up.railway.app
+   https://rpa-bot-production.up.railway.app
    ```
 5. Click **Test Ping** — the indicator turns green: `✓ Connected (v1.0.0)`.
 6. Click **Save Settings**.
@@ -92,7 +92,7 @@ Once your Railway instance is live:
 
 Run the automated verification suite from your terminal against your live Railway URL:
 ```bash
-python verify_deployment.py --url https://your-service-name.up.railway.app
+python verify_deployment.py --url https://rpa-bot-production.up.railway.app
 ```
 
 This verifies:

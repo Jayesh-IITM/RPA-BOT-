@@ -572,6 +572,12 @@ class BotExecutionEngine:
             nav_url = value or primary_sel
             if not nav_url.startswith("http://") and not nav_url.startswith("https://"):
                 nav_url = "http://" + nav_url
+
+            # Map dynamic container port for cloud deployments (Railway, Render, etc.)
+            active_port = os.getenv("PORT", "5000")
+            if active_port != "5000":
+                nav_url = re.sub(r"://(?:127\.0\.0\.1|localhost):5000\b", f"://127.0.0.1:{active_port}", nav_url)
+
             page.goto(nav_url, wait_until="domcontentloaded", timeout=timeout)
             return f"Navigated to {nav_url}"
 

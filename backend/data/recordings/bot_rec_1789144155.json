@@ -1,0 +1,599 @@
+{
+  "recording_id": "bot_rec_1789144155",
+  "raw_actions": [
+    {
+      "fallbacks": [
+        "a:has-text(\"Excalidraw Whiteboard\")",
+        "//a[contains(normalize-space(), \"Excalidraw Whiteboard\")]"
+      ],
+      "selector": "div > div > span > a",
+      "target_name": "Excalidraw Whiteboard",
+      "text": "Excalidraw Whiteboard",
+      "type": "click"
+    },
+    {
+      "fallbacks": [
+        "button[aria-label=\"Rectangle\"]",
+        "button[title=\"Rectangle — R or 2\"]",
+        "[data-testid=\"toolbar-rectangle\"]",
+        "//button[contains(normalize-space(), \"R\")]"
+      ],
+      "selector": "[data-testid=\"toolbar-rectangle\"]",
+      "target_name": "toolbar-rectangle",
+      "text": "R",
+      "type": "click"
+    },
+    {
+      "action_type": "canvas_draw",
+      "end_percent_x": 0.7688,
+      "end_percent_y": 0.6925,
+      "end_x": 1476,
+      "end_y": 660,
+      "fallbacks": [
+        "//canvas"
+      ],
+      "selector": "div#root > div > div > canvas:nth-of-type(2)",
+      "shape_hint": "rectangle",
+      "start_percent_x": 0.2771,
+      "start_percent_y": 0.2476,
+      "start_x": 532,
+      "start_y": 236,
+      "target_name": "Draw on Canvas (28%, 25% → 77%, 69%)",
+      "text": "Draw rectangle from (28%, 25%) to (77%, 69%)",
+      "type": "canvas_draw"
+    },
+    {
+      "fallbacks": [
+        "button[aria-label=\"Text\"]",
+        "button[title=\"Text — T or 8\"]",
+        "[data-testid=\"toolbar-text\"]",
+        "//button[contains(normalize-space(), \"T\")]"
+      ],
+      "selector": "[data-testid=\"toolbar-text\"]",
+      "target_name": "toolbar-text",
+      "text": "T",
+      "type": "click"
+    },
+    {
+      "action_type": "canvas_click",
+      "fallbacks": [
+        "//canvas"
+      ],
+      "offset_x": 644,
+      "offset_y": 295,
+      "percent_x": 0.3354,
+      "percent_y": 0.3095,
+      "selector": "div#root > div > div > canvas",
+      "target_name": "Canvas Point (34%, 31%)",
+      "text": "Click canvas point at (34%, 31%)",
+      "type": "canvas_click"
+    },
+    {
+      "fallbacks": [],
+      "input_type": "textarea",
+      "selector": "div > div > div:nth-of-type(2) > textarea",
+      "target_name": "textarea",
+      "type": "input",
+      "value": "Namaste jiii"
+    },
+    {
+      "fallbacks": [
+        "button[aria-label=\"Rectangle\"]",
+        "button[title=\"Rectangle — R or 2\"]",
+        "[data-testid=\"toolbar-rectangle\"]",
+        "//button[contains(normalize-space(), \"R\")]"
+      ],
+      "selector": "[data-testid=\"toolbar-rectangle\"]",
+      "target_name": "toolbar-rectangle",
+      "text": "R",
+      "type": "click"
+    },
+    {
+      "action_type": "canvas_draw",
+      "end_percent_x": 0.724,
+      "end_percent_y": 0.5719,
+      "end_x": 1390,
+      "end_y": 545,
+      "fallbacks": [
+        "//canvas"
+      ],
+      "selector": "div#root > div > div > canvas:nth-of-type(2)",
+      "shape_hint": "rectangle",
+      "start_percent_x": 0.3391,
+      "start_percent_y": 0.3631,
+      "start_x": 651,
+      "start_y": 346,
+      "target_name": "Draw on Canvas (34%, 36% → 72%, 57%)",
+      "text": "Draw rectangle from (34%, 36%) to (72%, 57%)",
+      "type": "canvas_draw"
+    },
+    {
+      "action_type": "canvas_click",
+      "fallbacks": [
+        "//canvas"
+      ],
+      "offset_x": 1077,
+      "offset_y": 121,
+      "percent_x": 0.5609,
+      "percent_y": 0.127,
+      "selector": "div#root > div > div > canvas",
+      "target_name": "Canvas Point (56%, 13%)",
+      "text": "Click canvas point at (56%, 13%)",
+      "type": "canvas_click"
+    },
+    {
+      "fallbacks": [
+        "button[aria-label=\"Text\"]",
+        "button[title=\"Text — T or 8\"]",
+        "[data-testid=\"toolbar-text\"]",
+        "//button[contains(normalize-space(), \"T\")]"
+      ],
+      "selector": "[data-testid=\"toolbar-text\"]",
+      "target_name": "toolbar-text",
+      "text": "T",
+      "type": "click"
+    },
+    {
+      "action_type": "canvas_click",
+      "fallbacks": [
+        "//canvas"
+      ],
+      "offset_x": 746,
+      "offset_y": 397,
+      "percent_x": 0.3885,
+      "percent_y": 0.4166,
+      "selector": "div#root > div > div > canvas",
+      "target_name": "Canvas Point (39%, 42%)",
+      "text": "Click canvas point at (39%, 42%)",
+      "type": "canvas_click"
+    },
+    {
+      "fallbacks": [],
+      "input_type": "textarea",
+      "selector": "div > div > div:nth-of-type(2) > textarea",
+      "target_name": "textarea",
+      "type": "input",
+      "value": "Namaste again"
+    },
+    {
+      "action_type": "canvas_click",
+      "fallbacks": [
+        "//canvas"
+      ],
+      "offset_x": 1568,
+      "offset_y": 387,
+      "percent_x": 0.8167,
+      "percent_y": 0.4061,
+      "selector": "div#root > div > div > canvas",
+      "target_name": "Canvas Point (82%, 41%)",
+      "text": "Click canvas point at (82%, 41%)",
+      "type": "canvas_click"
+    },
+    {
+      "fallbacks": [
+        "[data-testid=\"main-menu-trigger\"]"
+      ],
+      "selector": "[data-testid=\"main-menu-trigger\"]",
+      "target_name": "main-menu-trigger",
+      "text": "",
+      "type": "click"
+    },
+    {
+      "fallbacks": [
+        "button[aria-label=\"Export image...\"]",
+        "button:has-text(\"Export image...\")",
+        "button[title=\"Export image...\"]",
+        "[data-testid=\"image-export-button\"]",
+        "//button[contains(normalize-space(), \"Export image...\")]"
+      ],
+      "selector": "[data-testid=\"image-export-button\"]",
+      "target_name": "image-export-button",
+      "text": "Export image...",
+      "type": "click"
+    },
+    {
+      "fallbacks": [
+        "button:has-text(\"PNG\")",
+        "div > div:nth-of-type(2) > div:nth-of-type(5) > button",
+        "//button[contains(normalize-space(), \"PNG\")]"
+      ],
+      "selector": "button[aria-label=\"Export to PNG\"]",
+      "target_name": "Export to PNG",
+      "text": "PNG",
+      "type": "click"
+    }
+  ],
+  "bot_data": {
+    "id": "bot_rec_1789144155",
+    "name": "Recorded Path - 9:59:15 PM",
+    "description": "Workflow automatically generated from Chrome Extension path trace on https://excalidraw.com/",
+    "initial_url": "https://excalidraw.com/",
+    "variables": [
+      {
+        "name": "var_textarea",
+        "default_value": "Namaste again",
+        "type": "string",
+        "description": "Input for textarea",
+        "required": true
+      }
+    ],
+    "steps": [
+      {
+        "id": "step_1",
+        "step_number": 1,
+        "title": "Extension initiated on excalidraw.com",
+        "action_type": "navigate",
+        "target_description": "Initial URL",
+        "selector": "",
+        "fallback_selectors": [],
+        "value_mode": "fixed",
+        "value": "https://excalidraw.com/",
+        "variable_name": "",
+        "wait_before_ms": 200,
+        "wait_after_ms": 500,
+        "timeout_ms": 15000,
+        "optional": false,
+        "highlight": true
+      },
+      {
+        "id": "step_2",
+        "step_number": 2,
+        "title": "Excalidraw Whiteboard Button",
+        "action_type": "click",
+        "target_description": "Excalidraw Whiteboard Button",
+        "selector": "div > div > span > a",
+        "fallback_selectors": [
+          "a:has-text(\"Excalidraw Whiteboard\")",
+          "//a[contains(normalize-space(), \"Excalidraw Whiteboard\")]"
+        ],
+        "value_mode": "fixed",
+        "value": "",
+        "variable_name": "",
+        "wait_before_ms": 300,
+        "wait_after_ms": 800,
+        "timeout_ms": 10000,
+        "optional": false,
+        "highlight": true
+      },
+      {
+        "id": "step_3",
+        "step_number": 3,
+        "title": "R Button",
+        "action_type": "click",
+        "target_description": "R Button",
+        "selector": "[data-testid=\"toolbar-rectangle\"]",
+        "fallback_selectors": [
+          "button[aria-label=\"Rectangle\"]",
+          "button[title=\"Rectangle — R or 2\"]",
+          "[data-testid=\"toolbar-rectangle\"]",
+          "//button[contains(normalize-space(), \"R\")]"
+        ],
+        "value_mode": "fixed",
+        "value": "",
+        "variable_name": "",
+        "wait_before_ms": 300,
+        "wait_after_ms": 800,
+        "timeout_ms": 10000,
+        "optional": false,
+        "highlight": true
+      },
+      {
+        "id": "step_4",
+        "step_number": 4,
+        "title": "Draw Rectangle on Canvas",
+        "action_type": "canvas_draw",
+        "target_description": "Canvas Gesture (28%, 25% → 77%, 69%)",
+        "selector": "div#root > div > div > canvas:nth-of-type(2)",
+        "fallback_selectors": [
+          "//canvas"
+        ],
+        "value_mode": "fixed",
+        "value": "{\"start_percent_x\": 0.2771, \"start_percent_y\": 0.2476, \"end_percent_x\": 0.7688, \"end_percent_y\": 0.6925, \"start_x\": 532, \"start_y\": 236, \"end_x\": 1476, \"end_y\": 660, \"steps\": 20}",
+        "start_percent_x": 0.2771,
+        "start_percent_y": 0.2476,
+        "end_percent_x": 0.7688,
+        "end_percent_y": 0.6925,
+        "variable_name": "",
+        "wait_before_ms": 300,
+        "wait_after_ms": 600,
+        "timeout_ms": 10000,
+        "optional": false,
+        "highlight": true
+      },
+      {
+        "id": "step_5",
+        "step_number": 5,
+        "title": "T Button",
+        "action_type": "click",
+        "target_description": "T Button",
+        "selector": "[data-testid=\"toolbar-text\"]",
+        "fallback_selectors": [
+          "button[aria-label=\"Text\"]",
+          "button[title=\"Text — T or 8\"]",
+          "[data-testid=\"toolbar-text\"]",
+          "//button[contains(normalize-space(), \"T\")]"
+        ],
+        "value_mode": "fixed",
+        "value": "",
+        "variable_name": "",
+        "wait_before_ms": 300,
+        "wait_after_ms": 800,
+        "timeout_ms": 10000,
+        "optional": false,
+        "highlight": true
+      },
+      {
+        "id": "step_6",
+        "step_number": 6,
+        "title": "Click Canvas Point (34%, 31%)",
+        "action_type": "canvas_click",
+        "target_description": "Canvas Point (34%, 31%)",
+        "selector": "div#root > div > div > canvas",
+        "fallback_selectors": [
+          "//canvas"
+        ],
+        "value_mode": "fixed",
+        "value": "{\"percent_x\": 0.3354, \"percent_y\": 0.3095, \"offset_x\": 644, \"offset_y\": 295}",
+        "percent_x": 0.3354,
+        "percent_y": 0.3095,
+        "variable_name": "",
+        "wait_before_ms": 300,
+        "wait_after_ms": 500,
+        "timeout_ms": 10000,
+        "optional": false,
+        "highlight": true
+      },
+      {
+        "id": "step_7",
+        "step_number": 7,
+        "title": "Input in Textarea field",
+        "action_type": "type",
+        "target_description": "textarea field",
+        "selector": "div > div > div:nth-of-type(2) > textarea",
+        "fallback_selectors": [],
+        "value_mode": "variable",
+        "value": "Namaste jiii",
+        "variable_name": "var_textarea",
+        "wait_before_ms": 250,
+        "wait_after_ms": 300,
+        "timeout_ms": 10000,
+        "optional": false,
+        "highlight": true
+      },
+      {
+        "id": "step_8",
+        "step_number": 8,
+        "title": "R Button",
+        "action_type": "click",
+        "target_description": "R Button",
+        "selector": "[data-testid=\"toolbar-rectangle\"]",
+        "fallback_selectors": [
+          "button[aria-label=\"Rectangle\"]",
+          "button[title=\"Rectangle — R or 2\"]",
+          "[data-testid=\"toolbar-rectangle\"]",
+          "//button[contains(normalize-space(), \"R\")]"
+        ],
+        "value_mode": "fixed",
+        "value": "",
+        "variable_name": "",
+        "wait_before_ms": 300,
+        "wait_after_ms": 800,
+        "timeout_ms": 10000,
+        "optional": false,
+        "highlight": true
+      },
+      {
+        "id": "step_9",
+        "step_number": 9,
+        "title": "Draw Rectangle on Canvas",
+        "action_type": "canvas_draw",
+        "target_description": "Canvas Gesture (34%, 36% → 72%, 57%)",
+        "selector": "div#root > div > div > canvas:nth-of-type(2)",
+        "fallback_selectors": [
+          "//canvas"
+        ],
+        "value_mode": "fixed",
+        "value": "{\"start_percent_x\": 0.3391, \"start_percent_y\": 0.3631, \"end_percent_x\": 0.724, \"end_percent_y\": 0.5719, \"start_x\": 651, \"start_y\": 346, \"end_x\": 1390, \"end_y\": 545, \"steps\": 20}",
+        "start_percent_x": 0.3391,
+        "start_percent_y": 0.3631,
+        "end_percent_x": 0.724,
+        "end_percent_y": 0.5719,
+        "variable_name": "",
+        "wait_before_ms": 300,
+        "wait_after_ms": 600,
+        "timeout_ms": 10000,
+        "optional": false,
+        "highlight": true
+      },
+      {
+        "id": "step_10",
+        "step_number": 10,
+        "title": "Click Canvas Point (56%, 13%)",
+        "action_type": "canvas_click",
+        "target_description": "Canvas Point (56%, 13%)",
+        "selector": "div#root > div > div > canvas",
+        "fallback_selectors": [
+          "//canvas"
+        ],
+        "value_mode": "fixed",
+        "value": "{\"percent_x\": 0.5609, \"percent_y\": 0.127, \"offset_x\": 1077, \"offset_y\": 121}",
+        "percent_x": 0.5609,
+        "percent_y": 0.127,
+        "variable_name": "",
+        "wait_before_ms": 300,
+        "wait_after_ms": 500,
+        "timeout_ms": 10000,
+        "optional": false,
+        "highlight": true
+      },
+      {
+        "id": "step_11",
+        "step_number": 11,
+        "title": "T Button",
+        "action_type": "click",
+        "target_description": "T Button",
+        "selector": "[data-testid=\"toolbar-text\"]",
+        "fallback_selectors": [
+          "button[aria-label=\"Text\"]",
+          "button[title=\"Text — T or 8\"]",
+          "[data-testid=\"toolbar-text\"]",
+          "//button[contains(normalize-space(), \"T\")]"
+        ],
+        "value_mode": "fixed",
+        "value": "",
+        "variable_name": "",
+        "wait_before_ms": 300,
+        "wait_after_ms": 800,
+        "timeout_ms": 10000,
+        "optional": false,
+        "highlight": true
+      },
+      {
+        "id": "step_12",
+        "step_number": 12,
+        "title": "Click Canvas Point (39%, 42%)",
+        "action_type": "canvas_click",
+        "target_description": "Canvas Point (39%, 42%)",
+        "selector": "div#root > div > div > canvas",
+        "fallback_selectors": [
+          "//canvas"
+        ],
+        "value_mode": "fixed",
+        "value": "{\"percent_x\": 0.3885, \"percent_y\": 0.4166, \"offset_x\": 746, \"offset_y\": 397}",
+        "percent_x": 0.3885,
+        "percent_y": 0.4166,
+        "variable_name": "",
+        "wait_before_ms": 300,
+        "wait_after_ms": 500,
+        "timeout_ms": 10000,
+        "optional": false,
+        "highlight": true
+      },
+      {
+        "id": "step_13",
+        "step_number": 13,
+        "title": "Input in Textarea field",
+        "action_type": "type",
+        "target_description": "textarea field",
+        "selector": "div > div > div:nth-of-type(2) > textarea",
+        "fallback_selectors": [],
+        "value_mode": "variable",
+        "value": "Namaste again",
+        "variable_name": "var_textarea",
+        "wait_before_ms": 250,
+        "wait_after_ms": 300,
+        "timeout_ms": 10000,
+        "optional": false,
+        "highlight": true
+      },
+      {
+        "id": "step_14",
+        "step_number": 14,
+        "title": "Click Canvas Point (82%, 41%)",
+        "action_type": "canvas_click",
+        "target_description": "Canvas Point (82%, 41%)",
+        "selector": "div#root > div > div > canvas",
+        "fallback_selectors": [
+          "//canvas"
+        ],
+        "value_mode": "fixed",
+        "value": "{\"percent_x\": 0.8167, \"percent_y\": 0.4061, \"offset_x\": 1568, \"offset_y\": 387}",
+        "percent_x": 0.8167,
+        "percent_y": 0.4061,
+        "variable_name": "",
+        "wait_before_ms": 300,
+        "wait_after_ms": 500,
+        "timeout_ms": 10000,
+        "optional": false,
+        "highlight": true
+      },
+      {
+        "id": "step_15",
+        "step_number": 15,
+        "title": "Main-Menu-Trigger Button",
+        "action_type": "click",
+        "target_description": "main-menu-trigger Button",
+        "selector": "[data-testid=\"main-menu-trigger\"]",
+        "fallback_selectors": [
+          "[data-testid=\"main-menu-trigger\"]"
+        ],
+        "value_mode": "fixed",
+        "value": "",
+        "variable_name": "",
+        "wait_before_ms": 300,
+        "wait_after_ms": 800,
+        "timeout_ms": 10000,
+        "optional": false,
+        "highlight": true
+      },
+      {
+        "id": "step_16",
+        "step_number": 16,
+        "title": "Export Image... Button",
+        "action_type": "click",
+        "target_description": "Export image... Button",
+        "selector": "[data-testid=\"image-export-button\"]",
+        "fallback_selectors": [
+          "button[aria-label=\"Export image...\"]",
+          "button:has-text(\"Export image...\")",
+          "button[title=\"Export image...\"]",
+          "[data-testid=\"image-export-button\"]",
+          "//button[contains(normalize-space(), \"Export image...\")]"
+        ],
+        "value_mode": "fixed",
+        "value": "",
+        "variable_name": "",
+        "wait_before_ms": 300,
+        "wait_after_ms": 800,
+        "timeout_ms": 10000,
+        "optional": false,
+        "highlight": true
+      },
+      {
+        "id": "step_17",
+        "step_number": 17,
+        "title": "Png Button",
+        "action_type": "click",
+        "target_description": "PNG Button",
+        "selector": "button[aria-label=\"Export to PNG\"]",
+        "fallback_selectors": [
+          "button:has-text(\"PNG\")",
+          "div > div:nth-of-type(2) > div:nth-of-type(5) > button",
+          "//button[contains(normalize-space(), \"PNG\")]"
+        ],
+        "value_mode": "fixed",
+        "value": "",
+        "variable_name": "",
+        "wait_before_ms": 300,
+        "wait_after_ms": 800,
+        "timeout_ms": 10000,
+        "optional": false,
+        "highlight": true
+      }
+    ],
+    "branching": {
+      "enabled": true,
+      "check_type": "url_or_element",
+      "failure_selector": "#error-message",
+      "success_url_contains": "dashboard",
+      "success_selector": "",
+      "failure_branch": {
+        "title": "Login Failed return error",
+        "subtitle": "End of the RPA BOT task",
+        "outcome": "error",
+        "message": "Invalid authentication credentials.",
+        "status_code": 401
+      },
+      "success_branch": {
+        "title": "Login Successful",
+        "subtitle": "End of the RPA BOT task",
+        "outcome": "success",
+        "message": "Workflow reached target success state.",
+        "status_code": 200
+      }
+    },
+    "created_at": "2026-09-11T21:59:15.861190",
+    "updated_at": "2026-09-11T21:59:15.861190"
+  },
+  "saved_at": "2026-09-11T21:59:15.871668"
+}

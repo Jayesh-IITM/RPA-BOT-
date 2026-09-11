@@ -2,7 +2,7 @@
  * MahaSetu RPA Recorder - Popup Script
  */
 
-const DEFAULT_SERVER_URL = "http://127.0.0.1:5000";
+const DEFAULT_SERVER_URL = "https://rpa-bot-production.up.railway.app";
 let activeBackendUrl = DEFAULT_SERVER_URL;
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -178,7 +178,11 @@ document.addEventListener("DOMContentLoaded", () => {
 function getStoredBackendUrl(callback) {
   const storage = chrome.storage.sync || chrome.storage.local;
   storage.get(["serverUrl"], (data) => {
-    callback(data && data.serverUrl ? data.serverUrl : DEFAULT_SERVER_URL);
+    if (!data || !data.serverUrl || data.serverUrl === "http://127.0.0.1:5000" || data.serverUrl === "http://localhost:5000") {
+      callback(DEFAULT_SERVER_URL);
+    } else {
+      callback(data.serverUrl);
+    }
   });
 }
 

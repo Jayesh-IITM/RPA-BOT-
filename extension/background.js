@@ -2,20 +2,31 @@
  * MahaSetu RPA Recorder - Background Service Worker (Manifest V3)
  */
 
-const DEFAULT_BACKEND = "http://127.0.0.1:5000";
+const DEFAULT_BACKEND = "https://rpa-bot-production.up.railway.app";
 
 function getBackendUrl() {
   return new Promise((resolve) => {
     const storage = chrome.storage.sync || chrome.storage.local;
     storage.get(["serverUrl"], (data) => {
-      resolve(data && data.serverUrl ? data.serverUrl : DEFAULT_BACKEND);
+      // Migrate old default or missing URL to production Railway instance
+      if (!data || !data.serverUrl || data.serverUrl === "http://127.0.0.1:5000" || data.serverUrl === "http://localhost:5000") {
+        resolve(DEFAULT_BACKEND);
+      } else {
+        resolve(data.serverUrl);
+      }
     });
   });
 }
 
 chrome.runtime.onInstalled.addListener(() => {
-  console.log("MahaSetu RPA Recorder Extension Installed");
+  console.log("MahaSetu RPA Recorder Extension Installed/Updated");
   chrome.storage.local.set({ isRecording: false, recordedActions: [] });
+  const storage = chrome.storage.sync || chrome.storage.local;
+  storage.get(["serverUrl"], (data) => {
+    if (!data || !data.serverUrl || data.serverUrl === "http://127.0.0.1:5000" || data.serverUrl === "http://localhost:5000") {
+      storage.set({ serverUrl: DEFAULT_BACKEND });
+    }
+  });
 });
 
 // Handle messages from content script or popup
