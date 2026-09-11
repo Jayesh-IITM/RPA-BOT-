@@ -4,51 +4,92 @@
   <meta charset="UTF-8">
   <title>MahaSetu RPA Recorder</title>
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", Roboto, sans-serif; }
+    
     body {
-      width: 320px;
-      background: #0f172a;
+      width: 360px;
+      background: radial-gradient(circle at 50% 0%, #151d32 0%, #070a13 100%);
       color: #f8fafc;
-      padding: 16px;
+      padding: 14px;
+      overflow-x: hidden;
     }
+
+    /* Top Brand Header */
     .header {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      margin-bottom: 14px;
+      margin-bottom: 11px;
       padding-bottom: 10px;
-      border-bottom: 1px solid #1e293b;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     }
     .brand-container {
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 9px;
     }
     .brand-icon {
-      width: 20px;
-      height: 20px;
-      border-radius: 4px;
-    }
-    .brand {
-      border: 1.5px dashed #10b981;
+      width: 24px;
+      height: 24px;
       border-radius: 6px;
-      padding: 2px 8px;
+      box-shadow: 0 0 10px rgba(56, 189, 248, 0.3);
+    }
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+    }
+    .brand-title {
       font-size: 13px;
-      font-weight: 700;
-      color: #fff;
+      font-weight: 800;
+      letter-spacing: -0.2px;
+      background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .brand-sub {
+      font-size: 9px;
+      color: #64748b;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
     }
     .header-actions {
       display: flex;
       align-items: center;
       gap: 6px;
     }
-    .btn-icon {
-      background: transparent;
-      border: 1px solid #334155;
+    .status-badge {
+      font-size: 10px;
+      padding: 3px 8px;
+      border-radius: 99px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      transition: all 0.3s ease;
+    }
+    .status-idle {
+      background: rgba(100, 116, 139, 0.15);
       color: #94a3b8;
-      border-radius: 4px;
-      width: 24px;
-      height: 24px;
+      border: 1px solid rgba(148, 163, 184, 0.2);
+    }
+    .status-recording {
+      background: rgba(239, 68, 68, 0.15);
+      color: #f87171;
+      border: 1px solid rgba(239, 68, 68, 0.5);
+      animation: pulseRecord 1.5s infinite;
+    }
+    @keyframes pulseRecord {
+      0%, 100% { box-shadow: 0 0 0 rgba(239, 68, 68, 0); }
+      50% { box-shadow: 0 0 10px rgba(239, 68, 68, 0.5); }
+    }
+
+    .btn-icon {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      color: #94a3b8;
+      border-radius: 6px;
+      width: 26px;
+      height: 26px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -57,56 +98,58 @@
       transition: all 0.2s;
     }
     .btn-icon:hover {
-      background: rgba(255, 255, 255, 0.08);
+      background: rgba(255, 255, 255, 0.1);
       color: #fff;
-      border-color: #475569;
+      border-color: rgba(255, 255, 255, 0.2);
     }
-    .status-badge {
-      font-size: 11px;
-      padding: 2px 7px;
-      border-radius: 99px;
-      font-weight: 600;
-    }
-    .status-idle { background: rgba(100, 116, 139, 0.2); color: #94a3b8; }
-    .status-recording { background: rgba(239, 68, 68, 0.2); color: #f87171; border: 1px solid #ef4444; }
-    
-    /* Server connection pill */
+
+    /* Server Connection Pill */
     .server-pill {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      background: #090d16;
-      border: 1px solid #1e293b;
-      border-radius: 6px;
-      padding: 5px 8px;
+      background: rgba(3, 7, 18, 0.75);
+      border: 1px solid rgba(56, 189, 248, 0.2);
+      border-radius: 8px;
+      padding: 6px 10px;
       margin-bottom: 12px;
       font-size: 11px;
+      backdrop-filter: blur(8px);
+    }
+    .server-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #94a3b8;
+      transition: all 0.3s;
+    }
+    .server-dot.online {
+      background: #10b981;
+      box-shadow: 0 0 8px #10b981;
+    }
+    .server-dot.offline {
+      background: #ef4444;
+      box-shadow: 0 0 8px #ef4444;
     }
     .server-url-display {
       color: #38bdf8;
-      font-family: monospace;
-      max-width: 190px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 10.5px;
+      max-width: 200px;
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
     }
-    .server-dot {
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background: #94a3b8;
-    }
-    .server-dot.online { background: #10b981; box-shadow: 0 0 6px #10b981; }
-    .server-dot.offline { background: #ef4444; }
 
     /* Settings Drawer */
     #settings-drawer {
       display: none;
-      background: #131b2e;
-      border: 1px solid #2d3748;
-      border-radius: 6px;
+      background: #0d1527;
+      border: 1px solid #1e293b;
+      border-radius: 8px;
       padding: 10px;
       margin-bottom: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
     }
     .drawer-title {
       font-size: 11px;
@@ -119,11 +162,11 @@
     }
     .drawer-input {
       width: 100%;
-      background: #090d16;
+      background: #060911;
       border: 1px solid #334155;
       color: #fff;
-      padding: 6px 8px;
-      border-radius: 4px;
+      padding: 7px 9px;
+      border-radius: 5px;
       font-size: 11px;
       font-family: monospace;
       outline: none;
@@ -135,66 +178,175 @@
       gap: 6px;
     }
 
+    /* Action Cards */
+    .action-card {
+      background: rgba(255, 255, 255, 0.025);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      border-radius: 10px;
+      padding: 12px;
+      margin-bottom: 10px;
+    }
+
     .btn {
       width: 100%;
-      padding: 9px;
-      border-radius: 6px;
+      padding: 10px 12px;
+      border-radius: 8px;
       font-size: 12px;
-      font-weight: 600;
+      font-weight: 700;
       cursor: pointer;
       border: none;
-      transition: all 0.2s;
-      margin-bottom: 8px;
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 6px;
+      gap: 8px;
+      letter-spacing: 0.2px;
     }
     .btn-record {
-      background: #0284c7;
+      background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
       color: #fff;
+      box-shadow: 0 4px 14px rgba(2, 132, 199, 0.35);
     }
     .btn-record:hover {
-      background: #0369a1;
+      background: linear-gradient(135deg, #0369a1 0%, #075985 100%);
+      transform: translateY(-1px);
+      box-shadow: 0 6px 18px rgba(2, 132, 199, 0.45);
     }
     .btn-stop {
-      background: #10b981;
-      color: #06150f;
-      font-weight: 700;
+      background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+      color: #ffffff;
+      box-shadow: 0 4px 14px rgba(16, 185, 129, 0.35);
     }
     .btn-stop:hover {
-      background: #34d399;
+      background: linear-gradient(135deg, #059669 0%, #047857 100%);
+      transform: translateY(-1px);
     }
     .btn-outline {
-      background: transparent;
-      border: 1px solid #334155;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.09);
       color: #cbd5e1;
     }
     .btn-outline:hover {
-      background: rgba(255, 255, 255, 0.05);
+      background: rgba(255, 255, 255, 0.08);
+      color: #fff;
+      border-color: rgba(255, 255, 255, 0.18);
     }
     .btn-sm {
-      padding: 4px 8px;
+      padding: 5px 9px;
       font-size: 10px;
-      font-weight: 600;
-      border-radius: 4px;
+      font-weight: 700;
+      border-radius: 5px;
       cursor: pointer;
       border: none;
+      transition: all 0.15s;
     }
+
+    /* Badges list */
+    .badge-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+      margin-top: 8px;
+    }
+    .pill {
+      font-size: 9.5px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 4px;
+      padding: 2px 6px;
+      color: #94a3b8;
+    }
+    .pill-green {
+      color: #34d399;
+      background: rgba(16, 185, 129, 0.08);
+      border-color: rgba(16, 185, 129, 0.2);
+    }
+
+    /* Live Action Counter in recording */
+    .record-counter-box {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(239, 68, 68, 0.08);
+      border: 1px solid rgba(239, 68, 68, 0.25);
+      border-radius: 6px;
+      padding: 8px 10px;
+      margin-bottom: 10px;
+      font-size: 11px;
+    }
+
+    /* Saved Bots Quick Section */
+    .bots-section {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 8px;
+      margin-bottom: 10px;
+      overflow: hidden;
+    }
+    .bots-header {
+      padding: 7px 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+      font-size: 11px;
+      font-weight: 700;
+      color: #cbd5e1;
+      background: rgba(255, 255, 255, 0.02);
+    }
+    .bots-header:hover {
+      color: #38bdf8;
+    }
+    .bots-list {
+      max-height: 120px;
+      overflow-y: auto;
+      display: none;
+      padding: 6px 8px;
+    }
+    .bot-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 5px 6px;
+      border-radius: 5px;
+      margin-bottom: 4px;
+      background: rgba(0, 0, 0, 0.25);
+      border: 1px solid rgba(255, 255, 255, 0.04);
+      font-size: 10.5px;
+    }
+    .bot-item:hover {
+      border-color: rgba(56, 189, 248, 0.3);
+    }
+
+    .nav-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px;
+      margin-top: 4px;
+    }
+
     .footer {
-      font-size: 10px;
-      color: #64748b;
+      font-size: 9.5px;
+      color: #475569;
       text-align: center;
       margin-top: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
     }
   </style>
 </head>
 <body>
 
+  <!-- Brand Header -->
   <div class="header">
     <div class="brand-container">
       <img src="../icons/icon32.png" alt="Icon" class="brand-icon" />
-      <div class="brand">MahaSetu - RPA</div>
+      <div class="brand-text">
+        <div class="brand-title">MahaSetu RPA</div>
+        <div class="brand-sub">Path Traced Bot Ecosystem</div>
+      </div>
     </div>
     <div class="header-actions">
       <span id="popup-status" class="status-badge status-idle">IDLE</span>
@@ -202,57 +354,85 @@
     </div>
   </div>
 
-  <!-- Server Connection Status Pill -->
+  <!-- Server Connection Status Bar -->
   <div class="server-pill">
-    <div style="display: flex; align-items: center; gap: 6px;">
+    <div style="display: flex; align-items: center; gap: 6px; overflow: hidden;">
       <span id="server-status-dot" class="server-dot" title="Checking server..."></span>
-      <span style="color: #94a3b8;">Server:</span>
+      <span style="color: #94a3b8; font-size: 10px;">Cloud:</span>
       <span id="server-url-display" class="server-url-display">rpa-bot-production.up.railway.app</span>
     </div>
-    <span id="server-ping-badge" style="color: #64748b; font-size: 10px;">--ms</span>
+    <span id="server-ping-badge" style="color: #34d399; font-size: 10px; font-weight: 700;">--ms</span>
   </div>
 
-  <!-- Inline Server Settings Drawer -->
+  <!-- Collapsible Settings Drawer -->
   <div id="settings-drawer">
     <div class="drawer-title">
-      <span>Backend Server URL</span>
+      <span>Backend Server Endpoint</span>
       <span id="btn-close-drawer" style="cursor: pointer; color: #94a3b8;">✕</span>
     </div>
     <input type="text" id="input-server-url" class="drawer-input" placeholder="https://rpa-bot-production.up.railway.app" />
     <div class="drawer-btn-row">
-      <button id="btn-save-server" class="btn-sm" style="background: #10b981; color: #06150f; font-weight: 700;">Save</button>
+      <button id="btn-save-server" class="btn-sm" style="background: #10b981; color: #06150f;">Save</button>
       <button id="btn-test-server" class="btn-sm" style="background: #0284c7; color: #fff;">Test Ping</button>
-      <button id="btn-open-options" class="btn-sm" style="background: transparent; border: 1px solid #334155; color: #cbd5e1;">More...</button>
+      <button id="btn-open-options" class="btn-sm" style="background: transparent; border: 1px solid #334155; color: #cbd5e1;">Options ↗</button>
     </div>
     <div id="drawer-msg" style="font-size: 10px; margin-top: 6px; display: none;"></div>
   </div>
 
-  <div id="idle-controls">
-    <p style="font-size: 12px; color: #94a3b8; margin-bottom: 12px; line-height: 1.4;">
-      Click below to record user interactions on this tab. Clicks, typed inputs, canvas gestures, and form actions are captured.
-    </p>
-    <button id="btn-start-record" class="btn btn-record">
-      Start Recording
+  <!-- Main Recording Area -->
+  <div class="action-card">
+    <div id="idle-controls">
+      <p style="font-size: 11px; color: #94a3b8; margin-bottom: 10px; line-height: 1.4;">
+        Record clicks, typed inputs, canvas gestures, and form actions on this tab.
+      </p>
+      <button id="btn-start-record" class="btn btn-record">
+        <span>⏺</span> Start Recording Path
+      </button>
+      <div class="badge-pills">
+        <span class="pill pill-green">✓ Noise Filtering</span>
+        <span class="pill pill-green">✓ Multi-Selectors</span>
+        <span class="pill">✓ Canvas Gestures</span>
+      </div>
+    </div>
+
+    <div id="active-controls" style="display: none;">
+      <div class="record-counter-box">
+        <span style="color: #f87171; font-weight: 700; display: flex; align-items: center; gap: 6px;">
+          <span style="width: 8px; height: 8px; border-radius: 50%; background: #ef4444; animation: pulseRecord 1s infinite;"></span>
+          Recording in Progress
+        </span>
+        <span id="action-counter" style="color: #cbd5e1; font-weight: 600; font-family: monospace;">0 actions</span>
+      </div>
+      <button id="btn-stop-record" class="btn btn-stop">
+        <span>⏹</span> Stop & Export to Visual Builder
+      </button>
+    </div>
+  </div>
+
+  <!-- Saved Bots Quick Trigger / API Runner in Popup -->
+  <div class="bots-section">
+    <div class="bots-header" id="btn-toggle-bots">
+      <span>⚡ Saved Bots & API Trigger</span>
+      <span id="bots-chevron" style="font-size: 10px; color: #94a3b8;">▼</span>
+    </div>
+    <div class="bots-list" id="bots-list-container">
+      <div style="color: #64748b; font-size: 10px; padding: 4px;">Loading saved bots from server...</div>
+    </div>
+  </div>
+
+  <!-- Navigation Portals Row -->
+  <div class="nav-grid">
+    <button id="btn-open-portal" class="btn btn-outline" style="font-size: 11px; padding: 8px;">
+      Flowchart Builder ↗
+    </button>
+    <button id="btn-open-demo" class="btn btn-outline" style="font-size: 11px; padding: 8px;">
+      Demo Target ↗
     </button>
   </div>
 
-  <div id="active-controls" style="display: none;">
-    <p style="font-size: 12px; color: #34d399; margin-bottom: 12px;">
-      ● Recording in progress! Use the in-page bar or click below to finish.
-    </p>
-    <button id="btn-stop-record" class="btn btn-stop">
-      Stop & Send to MahaSetu
-    </button>
+  <div class="footer">
+    <span>MahaSetu RPA Engine</span> &bull; <span>Playwright Headless</span> &bull; <span>v1.0.0</span>
   </div>
-
-  <button id="btn-open-portal" class="btn btn-outline" style="margin-top: 4px;">
-    Open MahaSetu Portal
-  </button>
-  <button id="btn-open-demo" class="btn btn-outline">
-    Open Demo Target Portal
-  </button>
-
-  <div class="footer">MahaSetu Automation Engine &bull; Playwright &bull; v1.0.0</div>
 
   <script src="popup.js"></script>
 </body>

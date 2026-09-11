@@ -29,6 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initLocalStorageSync();
   renderWorkflowCanvas();
   bindGlobalEvents();
+  initBotCatalogSelector();
   updateAutoSaveUI("saved");
 
   // Close quick-insert popovers when clicking outside
@@ -865,3 +866,223 @@ function escapeHtml(str) {
     .replace(/"/g, "&quot;")
     .replace(/'/g, "&#039;");
 }
+
+// --------------------------------------------------------------------------
+// Bot Catalog Quick Selector
+// --------------------------------------------------------------------------
+async function initBotCatalogSelector() {
+  const select = document.getElementById("bot-catalog-select");
+  if (!select) return;
+
+  try {
+    const res = await fetch("/api/bots");
+    const data = await res.json();
+    if (data && data.success && Array.isArray(data.bots)) {
+      select.innerHTML = "";
+      data.bots.forEach(b => {
+        const opt = document.createElement("option");
+        opt.value = b.id;
+        opt.innerText = `${b.name} (${(b.steps || []).length} steps)`;
+        if (b.id === currentBot.id) {
+          opt.selected = true;
+        }
+        select.appendChild(opt);
+      });
+
+      select.addEventListener("change", (e) => {
+        const targetId = e.target.value;
+        if (targetId && targetId !== currentBot.id) {
+          window.location.href = `/builder?bot_id=${encodeURIComponent(targetId)}`;
+        }
+      });
+    }
+  } catch (err) {
+    console.warn("Could not load bot catalog:", err);
+  }
+}
+
+// --------------------------------------------------------------------------
+// API Activation & Payloads Modal Controller
+// --------------------------------------------------------------------------
+let activeApiPayloadData = null;
+
+async function openApiModal() {
+  const modal = document.getElementById("api-integration-modal");
+  if (!modal) return;
+
+  const endpointUrl = `${window.location.origin}/api/bots/${currentBot.id}/execute`;
+  const endpointElem = document.getElementById("api-endpoint-url");
+  if (endpointElem) endpointElem.innerText = endpointUrl;
+
+  // Build default variables dictionary
+  const sampleVars = {};
+  (currentBot.variables || []).forEach(v => {
+    sampleVars[v.name] = v.default_value || "";
+  });
+
+  const defaultJson = {
+    variables: sampleVars,
+    options: {
+      headless: true,
+      timeout_ms: 15000,
+      take_screenshots: true
+    },
+    webhook_url: "https://your-backend.com/api/rpa/callback"
+  };
+
+  // Populate dynamic test variable fields
+  const testVarsContainer = document.getElementById("api-test-vars-container");
+  if (testVarsContainer) {
+    testVarsContainer.innerHTML = "";
+    if (!currentBot.variables || currentBot.variables.length === 0) {
+      testVarsContainer.innerHTML = `<p style="color: var(--text-muted); font-size: 0.8rem; grid-column: 1 / -1;">No runtime variables required for this bot. Ready to trigger!</p>`;
+    } else {
+      currentBot.variables.forEach(v => {
+        const grp = document.createElement("div");
+        grp.className = "form-group";
+        grp.style.marginBottom = "0.4rem";
+        grp.innerHTML = `
+          <label class="form-label" style="font-size: 0.75rem; margin-bottom: 3px;">
+            ${escapeHtml(v.description || v.name)} (<code>${escapeHtml(v.name)}</code>)
+          </label>
+          <input type="${v.type === 'password' ? 'password' : 'text'}"
+                 class="form-control api-test-var-input"
+                 style="padding: 0.35rem 0.6rem; font-size: 0.8rem;"
+                 data-var-name="${escapeHtml(v.name)}"
+                 value="${escapeHtml(v.default_value || '')}" />
+        `;
+        testVarsContainer.appendChild(grp);
+      });
+    }
+  }
+
+  // Pre-fill panes with local defaults first
+  renderApiSnippets(endpointUrl, defaultJson);
+
+  modal.classList.add("active");
+
+  // Fetch verified server-generated payloads & snippets
+  try {
+    const res = await fetch(`/api/bots/${currentBot.id}/payloads`);
+    const data = await res.json();
+    if (data && data.success) {
+      activeApiPayloadData = data;
+      renderApiSnippets(data.endpoint || endpointUrl, data.json_body, data.xml_body, data.snippets);
+    }
+  } catch (err) {
+    console.warn("Could not fetch remote snippets:", err);
+  }
+}
+
+function renderApiSnippets(endpoint, jsonBody, xmlBody = "", snippets = {}) {
+  const codeJson = document.getElementById("code-json-payload");
+  if (codeJson) codeJson.innerText = JSON.stringify(jsonBody, null, 2);
+
+  const codeCurl = document.getElementById("code-curl-payload");
+  if (codeCurl) {
+    codeCurl.innerText = snippets.curl_json || `curl -X POST "${endpoint}" \\\n  -H "Content-Type: application/json" \\\n  -d '${JSON.stringify(jsonBody, null, 2)}'`;
+  }
+
+  const codeNode = document.getElementById("code-nodejs-payload");
+  if (codeNode) {
+    codeNode.innerText = snippets.javascript || `const response = await fetch("${endpoint}", {\n  method: "POST",\n  headers: { "Content-Type": "application/json" },\n  body: JSON.stringify(${JSON.stringify(jsonBody, null, 2)})\n});\n\nconst result = await response.json();\nconsole.log("RPA Result:", result);`;
+  }
+
+  const codePy = document.getElementById("code-python-payload");
+  if (codePy) {
+    codePy.innerText = snippets.python || `import requests\n\nurl = "${endpoint}"\nheaders = {"Content-Type": "application/json"}\npayload = ${JSON.stringify(jsonBody, null, 4)}\n\nresponse = requests.post(url, json=payload, headers=headers)\nprint("Status Code:", response.status_code)\nprint("Response:", response.json())`;
+  }
+
+  const codeXml = document.getElementById("code-xml-payload");
+  if (codeXml) {
+    codeXml.innerText = xmlBody || `<?xml version="1.0" encoding="UTF-8"?>\n<RpaExecutionRequest>\n  <BotId>${currentBot.id}</BotId>\n  <Variables>\n${Object.entries(jsonBody.variables || {}).map(([k,v]) => `    <Variable name="${k}">${v}</Variable>`).join("\n")}\n  </Variables>\n  <Options>\n    <Headless>true</Headless>\n    <TimeoutMs>15000</TimeoutMs>\n  </Options>\n</RpaExecutionRequest>`;
+  }
+}
+
+function closeApiModal() {
+  const modal = document.getElementById("api-integration-modal");
+  if (modal) modal.classList.remove("active");
+}
+
+function switchApiTab(tabName) {
+  document.querySelectorAll(".api-tab").forEach(tab => {
+    tab.classList.toggle("active", tab.dataset.tab === tabName);
+  });
+  document.querySelectorAll(".api-pane").forEach(pane => {
+    pane.classList.toggle("active", pane.id === `api-pane-${tabName}`);
+  });
+}
+
+function copyApiEndpoint() {
+  const endpoint = document.getElementById("api-endpoint-url")?.innerText;
+  if (endpoint) {
+    navigator.clipboard.writeText(endpoint);
+    showToast("✓ Endpoint copied to clipboard!");
+  }
+}
+
+async function executeApiSimulation() {
+  const btn = document.getElementById("btn-run-api-test");
+  const respArea = document.getElementById("api-test-response-area");
+  const respCode = document.getElementById("api-test-response-json");
+  const statusPill = document.getElementById("api-test-status-pill");
+
+  // Collect test variables
+  const vars = {};
+  document.querySelectorAll(".api-test-var-input").forEach(inp => {
+    const name = inp.dataset.varName;
+    if (name) vars[name] = inp.value;
+  });
+
+  const isHeadless = document.getElementById("api-test-headless")?.checked !== false;
+
+  const payload = {
+    variables: vars,
+    options: {
+      headless: isHeadless,
+      take_screenshots: true
+    }
+  };
+
+  btn.disabled = true;
+  btn.innerText = "⏳ Calling API Endpoint...";
+  respArea.style.display = "block";
+  respCode.innerText = "Sending HTTP POST request to /api/bots/" + currentBot.id + "/execute ...";
+  statusPill.innerText = "PENDING";
+  statusPill.className = "badge-status";
+  statusPill.style.background = "rgba(56, 189, 248, 0.2)";
+  statusPill.style.color = "#38bdf8";
+
+  const startTime = Date.now();
+  try {
+    const res = await fetch(`/api/bots/${currentBot.id}/execute`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload)
+    });
+
+    const latency = Date.now() - startTime;
+    const json = await res.json();
+
+    respCode.innerText = JSON.stringify(json, null, 2);
+    if (res.ok && json.success) {
+      statusPill.innerText = `HTTP ${res.status} OK (${latency}ms)`;
+      statusPill.style.background = "rgba(16, 185, 129, 0.2)";
+      statusPill.style.color = "#34d399";
+      showToast("✓ RPA Bot executed successfully via API!");
+    } else {
+      statusPill.innerText = `HTTP ${res.status} ${res.statusText || 'Error'} (${latency}ms)`;
+      statusPill.style.background = "rgba(244, 63, 94, 0.2)";
+      statusPill.style.color = "#f43f5e";
+    }
+  } catch (err) {
+    respCode.innerText = "Network Error: " + err.message;
+    statusPill.innerText = "FAILED";
+    statusPill.style.background = "rgba(244, 63, 94, 0.2)";
+    statusPill.style.color = "#f43f5e";
+  } finally {
+    btn.disabled = false;
+    btn.innerText = "⚡ Trigger via API Now";
+  }
+}
+

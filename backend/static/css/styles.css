@@ -850,3 +850,67 @@ body {
   border-color: var(--border-accent);
   transform: translateY(-2px);
 }
+
+/* --------------------------------------------------------------------------
+   API Activation & Payloads Modal
+   -------------------------------------------------------------------------- */
+.api-tab {
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  color: var(--text-secondary);
+  padding: 0.6rem 1rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.api-tab:hover {
+  color: #ffffff;
+}
+
+.api-tab.active {
+  color: #38bdf8;
+  border-bottom-color: #38bdf8;
+}
+
+.api-pane {
+  display: none;
+}
+
+.api-pane.active {
+  display: block;
+}
+
+.code-box {
+  background: #060911;
+  border: 1px solid #1e293b;
+  border-radius: var(--radius-sm);
+  padding: 1rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.82rem;
+  color: #e2e8f0;
+  overflow-x: auto;
+  max-height: 280px;
+  line-height: 1.5;
+}
+
+.btn-copy-code {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid #334155;
+  color: #cbd5e1;
+  padding: 0.25rem 0.65rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-copy-code:hover {
+  background: #0284c7;
+  color: #ffffff;
+  border-color: #0284c7;
+}
+
