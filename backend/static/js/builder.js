@@ -38,6 +38,28 @@ document.addEventListener("DOMContentLoaded", () => {
       closeAllQuickInsertPopovers();
     }
   });
+
+  // Close modals when clicking outside on the dark backdrop
+  document.addEventListener("click", (e) => {
+    if (e.target && e.target.classList && e.target.classList.contains("modal-overlay")) {
+      e.target.classList.remove("active");
+      if (e.target.id === "test-bot-modal" && testEventSource) {
+        testEventSource.close();
+        testEventSource = null;
+      }
+    }
+  });
+
+  // Close active modals on Escape key
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+      document.querySelectorAll(".modal-overlay.active").forEach(m => m.classList.remove("active"));
+      if (testEventSource) {
+        testEventSource.close();
+        testEventSource = null;
+      }
+    }
+  });
 });
 
 function bindGlobalEvents() {
@@ -908,16 +930,25 @@ let activeApiPayloadData = null;
 
 async function openApiModal() {
   const modal = document.getElementById("api-integration-modal");
-  if (!modal) return;
+  if (!modal) {
+    console.error("Modal #api-integration-modal not found!");
+    return;
+  }
 
-  const endpointUrl = `${window.location.origin}/api/bots/${currentBot.id}/execute`;
+  // Ensure currentBot is defined
+  if (!currentBot) {
+    currentBot = { id: "govbridge_login_bot_01", name: "GovBridge Portal Citizen Login", variables: [] };
+  }
+  const botId = currentBot.id || "govbridge_login_bot_01";
+
+  const endpointUrl = `${window.location.origin}/api/bots/${botId}/execute`;
   const endpointElem = document.getElementById("api-endpoint-url");
   if (endpointElem) endpointElem.innerText = endpointUrl;
 
   // Build default variables dictionary
   const sampleVars = {};
   (currentBot.variables || []).forEach(v => {
-    sampleVars[v.name] = v.default_value || "";
+    if (v && v.name) sampleVars[v.name] = v.default_value || "";
   });
 
   const defaultJson = {
@@ -938,6 +969,7 @@ async function openApiModal() {
       testVarsContainer.innerHTML = `<p style="color: var(--text-muted); font-size: 0.8rem; grid-column: 1 / -1;">No runtime variables required for this bot. Ready to trigger!</p>`;
     } else {
       currentBot.variables.forEach(v => {
+        if (!v || !v.name) return;
         const grp = document.createElement("div");
         grp.className = "form-group";
         grp.style.marginBottom = "0.4rem";
@@ -959,15 +991,19 @@ async function openApiModal() {
   // Pre-fill panes with local defaults first
   renderApiSnippets(endpointUrl, defaultJson);
 
+  // Close any other active modal before showing
+  document.querySelectorAll(".modal-overlay.active").forEach(m => m.classList.remove("active"));
   modal.classList.add("active");
 
   // Fetch verified server-generated payloads & snippets
   try {
-    const res = await fetch(`/api/bots/${currentBot.id}/payloads`);
-    const data = await res.json();
-    if (data && data.success) {
-      activeApiPayloadData = data;
-      renderApiSnippets(data.endpoint || endpointUrl, data.json_body, data.xml_body, data.snippets);
+    const res = await fetch(`/api/bots/${botId}/payloads`);
+    if (res.ok) {
+      const data = await res.json();
+      if (data && data.success) {
+        activeApiPayloadData = data;
+        renderApiSnippets(data.endpoint || endpointUrl, data.json_body, data.xml_body, data.snippets);
+      }
     }
   } catch (err) {
     console.warn("Could not fetch remote snippets:", err);
